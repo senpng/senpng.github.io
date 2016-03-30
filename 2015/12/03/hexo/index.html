@@ -1,0 +1,1067 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,NexT," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="Hexohexo是一款基于Node.js的静态博客框架。
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+
+扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo-创建自己的博客">
+<meta property="og:url" content="https://senpng.github.io/2015/12/03/hexo/index.html">
+<meta property="og:site_name" content="SenPng的技术博客">
+<meta property="og:description" content="Hexohexo是一款基于Node.js的静态博客框架。
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+
+扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta property="og:updated_time" content="2016-02-22T10:23:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo-创建自己的博客">
+<meta name="twitter:description" content="Hexohexo是一款基于Node.js的静态博客框架。
+特性
+风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
+
+流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
+
+扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> Hexo-创建自己的博客 | SenPng的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71259236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SenPng的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo-创建自己的博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-03T14:13:03+08:00" content="2015-12-03">
+              2015-12-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h2 id="Hexo"><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a></h2><p>hexo是一款基于Node.js的<strong>静态</strong>博客框架。</p>
+<h3 id="特性">特性</h3><ul>
+<li><p>风一般的速度<br>Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</p>
+</li>
+<li><p>流畅的撰写<br>支持GitHub Flavored Markdown和所有Octopress的插件。</p>
+</li>
+<li><p>扩展性<br>Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.</p>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="安装">安装</h3><p>前提是必须先安装 Node.js。</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span>
+</code></pre><h3 id="升级">升级</h3><p>更新hexo到最新版</p>
+<pre><code>npm <span class="operator"><span class="keyword">update</span> hexo -<span class="keyword">g</span></span>
+</code></pre><h3 id="初始化">初始化</h3><pre><code>hexo init <span class="tag">&lt;<span class="title">folder</span>&gt;</span>
+</code></pre><p>如果指定 <code>&lt;folder&gt;</code>，便会在目前的资料夹建立一个名为 <code>&lt;folder&gt;</code> 的新资料夹；否则会在目前资料夹初始化。</p>
+<h3 id="创建新文章">创建新文章</h3><pre><code>hexo <span class="keyword">new</span> [layout] &lt;name&gt;
+hexo <span class="keyword">new</span> <span class="string">"Hello World"</span>
+hexo <span class="keyword">new</span> page <span class="string">"about"</span>
+hexo n page <span class="string">"about"</span>
+</code></pre><p><code>[layout]</code> 为 <code>scaffolds</code> 目录下的模版文件名。<br>如果不指定 <code>[layout]</code>，默认生成的md文件放在 <code>source/_post/</code> 目录下。</p>
+<h3 id="生成网站">生成网站</h3><pre><code>hexo <span class="keyword">generate</span>
+hexo <span class="keyword">g</span>
+</code></pre><h3 id="服务器">服务器</h3><pre><code>hexo <span class="keyword">server</span>
+hexo s
+</code></pre><p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 <strong>4000</strong>，可在 <strong>_config.yml</strong> 设定。</p>
+<h3 id="部署">部署</h3><p>这里介绍下git部署</p>
+<p>安装<strong>hexo-deployer-git</strong></p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span>
+</code></pre><p>修改<code>_config.yml</code>:</p>
+<pre><code>deploy:
+  <span class="keyword">type</span>: git
+  repo: &lt;repository url&gt;
+  branch: [branch]
+  <span class="keyword">message</span>: [<span class="keyword">message</span>]
+</code></pre><p>部署</p>
+<pre><code>hexo <span class="keyword">d</span> --<span class="keyword">generate</span>
+</code></pre><h3 id="默认目录结构">默认目录结构</h3><ul>
+<li>.deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
+<li>public：执行hexo generate命令，输出的静态网页内容目录</li>
+<li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
+<li>scripts：扩展脚本目录，这里可以自定义一些javascript脚本</li>
+<li>source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。<ul>
+<li>_drafts：草稿文章</li>
+<li>_posts：发布文章</li>
+</ul>
+</li>
+<li>themes：主题文件目录</li>
+<li>_config.yml：全局配置文件，大多数的设置都在这里</li>
+<li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
+</ul>
+<h3 id="站点配置文件__config-yml_简单说明">站点配置文件 <em>_config.yml</em> 简单说明</h3><pre><code><span class="preprocessor"># Hexo Configuration</span>
+<span class="preprocessor">## Docs: http://hexo.io/docs/configuration.html</span>
+<span class="preprocessor">## Source: https://github.com/hexojs/hexo/</span>
+
+<span class="preprocessor"># Site #整站的基本信息</span>
+<span class="label">title:</span> SenPng的技术博客 <span class="preprocessor">#网站标题</span>
+<span class="label">subtitle:</span> <span class="preprocessor">#网站副标题</span>
+<span class="label">description:</span> 技术博客 <span class="preprocessor">#网站描述，给搜索引擎用的，在生成html中的head-&gt;meta中可看到</span>
+<span class="label">author:</span> SenPng <span class="preprocessor">#网站作者，在下方显示</span>
+<span class="label">email:</span> senpng@qq.com <span class="preprocessor">#联系邮箱</span>
+<span class="label">language:</span> <span class="built_in">zh</span>-Hans <span class="preprocessor">#语言</span>
+<span class="label">timezone:</span>
+
+<span class="preprocessor"># URL #域名</span>
+<span class="preprocessor">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
+<span class="label">url:</span> http://senpng.me <span class="preprocessor">#你的域名</span>
+<span class="label">root:</span> /
+<span class="label">permalink:</span> :year/:month/:day/:title/
+<span class="label">permalink_defaults:</span>
+
+<span class="preprocessor"># Directory #文件结构</span>
+<span class="label">source_dir:</span> source
+<span class="label">public_dir:</span> public
+<span class="label">tag_dir:</span> tags
+<span class="label">archive_dir:</span> archives
+<span class="label">category_dir:</span> categories
+<span class="label">code_dir:</span> downloads/code
+<span class="label">i18n_dir:</span> :lang
+<span class="label">skip_render:</span>
+
+<span class="preprocessor"># Writing #写文章选项</span>
+<span class="label">new_post_name:</span> :title.md <span class="preprocessor"># File name of new posts</span>
+<span class="label">default_layout:</span> post <span class="preprocessor">#默认layout方式</span>
+<span class="label">titlecase:</span> false <span class="preprocessor"># Transform title into titlecase</span>
+<span class="label">external_link:</span> true <span class="preprocessor"># Open external links in new tab</span>
+<span class="label">filename_case:</span> <span class="number">0</span>
+<span class="label">render_drafts:</span> false
+<span class="label">post_asset_folder:</span> false
+<span class="label">relative_link:</span> false
+<span class="label">future:</span> true
+<span class="label">highlight:</span> <span class="preprocessor">#代码高亮</span>
+  enable: true <span class="preprocessor">#是否启用</span>
+  line_number: true <span class="preprocessor">#是否显示行号</span>
+  auto_detect: true
+  tab_replace:
+
+<span class="preprocessor"># Category &amp; Tag #分类与标签</span>
+<span class="label">default_category:</span> uncategorized
+<span class="label">category_map:</span>
+<span class="label">tag_map:</span>
+
+<span class="preprocessor"># Server #本地服务参数</span>
+<span class="preprocessor">## Hexo uses Connect as a server</span>
+<span class="preprocessor">## You can customize the logger format as defined in</span>
+<span class="preprocessor">## http://www.senchalabs.org/connect/logger.html</span>
+<span class="label">port:</span> <span class="number">4000</span>
+<span class="label">logger:</span> true
+<span class="label">logger_format:</span>
+
+<span class="preprocessor"># Date / Time format #日期显示格式</span>
+<span class="preprocessor">## Hexo uses Moment.js to parse and display date</span>
+<span class="preprocessor">## You can customize the date format as defined in</span>
+<span class="preprocessor">## http://momentjs.com/docs/#/displaying/format/</span>
+<span class="label">date_format:</span> YYYY-MM-DD
+<span class="label">time_format:</span> HH:mm:ss
+
+<span class="preprocessor"># Pagination #分页设置</span>
+<span class="preprocessor">## Set per_page to 0 to disable pagination</span>
+<span class="label">per_page:</span> <span class="number">10</span> <span class="preprocessor">#每页10篇文章</span>
+<span class="label">pagination_dir:</span> page
+
+<span class="preprocessor"># Extensions</span>
+<span class="preprocessor">## Plugins: http://hexo.io/plugins/</span>
+<span class="preprocessor">## Themes: http://hexo.io/themes/</span>
+<span class="label">theme:</span> next <span class="preprocessor"># 主题</span>
+
+<span class="preprocessor"># Deployment #部署</span>
+<span class="preprocessor">## Docs: http://hexo.io/docs/deployment.html</span>
+<span class="label">deploy:</span>
+  type: git
+  repo: git@github.com:senpng/senpng.github.io.git
+  branch: master
+  message: Site updated:{.{ now(<span class="string">"YYYY-MM-DD HH:mm:ss"</span>) }} <span class="preprocessor">#这里的 . 需要去掉</span>
+</code></pre><h3 id="常见错误">常见错误</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>解决方法:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo --no-optional</span><br></pre></td></tr></table></figure></p>
+<h2 id="主题_NexT">主题 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></h2><h3 id="下载_NexT_主题">下载 NexT 主题</h3><p>在终端窗口下，定位到 Hexo 站点目录下</p>
+<pre><code><span class="keyword">cd</span> your-hexo-site
+git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span>
+</code></pre><h3 id="启用_NexT_主题">启用 NexT 主题</h3><p>克隆/下载 完成后，打开 站点配置文件，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>。</p>
+<h3 id="验证主题是否启用">验证主题是否启用</h3><p>运行 <code>hexo s --debug</code>，并访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，确保站点正确运行。</p>
+<h3 id="主题设定">主题设定</h3><h4 id="选择_Scheme">选择 Scheme</h4><p>NexT 通过 Scheme 提供主题中的主题。 Mist 是 NexT 的第一款 Scheme。<br>启用 Mist 仅需在 主题配置文件 中将 <code>#scheme: Mist</code> 前面的 # 注释去掉即可。</p>
+<h4 id="语言设置">语言设置</h4><p>编辑 站点配置文件，将 <code>language</code> 设置成你所需要的语言。<br>例如选用正体中文，则配置为：</p>
+<pre><code><span class="label">language:</span> <span class="built_in">zh</span>-hk
+</code></pre><p>可用的语言如以下表格所示：</p>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>代码</th>
+<th>设定值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>English</td>
+<td>en</td>
+<td>language: en</td>
+</tr>
+<tr>
+<td>简体中文</td>
+<td>zh-Hans</td>
+<td>language: zh-Hans</td>
+</tr>
+<tr>
+<td>French</td>
+<td>fr-FR</td>
+<td>language: fr-FR</td>
+</tr>
+<tr>
+<td>正体中文</td>
+<td>zh-hk/zh-tw</td>
+<td>language: zh-hk</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td>ru</td>
+<td>language: ru</td>
+</tr>
+<tr>
+<td>German</td>
+<td>de</td>
+<td>language: de</td>
+</tr>
+</tbody>
+</table>
+<h4 id="菜单设置">菜单设置</h4><p>菜单配置在 <strong>主题配置文件</strong> 的 <code>menu</code>。 若你的站点运行在子目录中，请将链接前缀的 <code>/</code> 去掉。默认支持的菜单项有：</p>
+<table>
+<thead>
+<tr>
+<th>键值</th>
+<th>设定值</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>home</td>
+<td>home: /</td>
+<td>主页</td>
+</tr>
+<tr>
+<td>archives</td>
+<td>archives: /archives</td>
+<td>归档页</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>categories: /categories</td>
+<td>分类页（需手动创建）</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>tags: /tags</td>
+<td>标签页（需手动创建）</td>
+</tr>
+<tr>
+<td>about</td>
+<td>about: /about</td>
+<td>关于页面 （需手动创建）</td>
+</tr>
+<tr>
+<td>commonweal</td>
+<td>commonweal: /404.html</td>
+<td>公益 404 （需手动创建）</td>
+</tr>
+</tbody>
+</table>
+<h5 id="菜单示例配置：">菜单示例配置：</h5><pre><code><span class="tag">menu</span>:
+  home: /
+  archives: /archives
+  <span class="id">#about</span>: /about
+  <span class="id">#categories</span>: /categories
+  tags: /tags
+  <span class="id">#commonweal</span>: /<span class="number">404</span>.html
+</code></pre><h4 id="侧栏设置">侧栏设置</h4><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示。可以通过修改 <strong>主题配置文件</strong> 中的  <code>sidebar</code> 字段来控制侧栏的行为。</p>
+<p>支持的选项有：</p>
+<ul>
+<li><code>post</code> - 默认行为，在文章页面（拥有目录列表）时显示</li>
+<li><code>always</code> - 在所有页面中都显示</li>
+<li><code>hide</code> - 在所有页面中都隐藏（可以手动展开）</li>
+</ul>
+<h4 id="侧栏示例配置：">侧栏示例配置：</h4><pre><code><span class="attribute">sidebar</span>: <span class="string">post</span>
+</code></pre><h4 id="头像设置">头像设置</h4><p>编辑 站点配置文件，新增字段 <code>avatar</code>， 值设置成头像的链接地址。</p>
+<p>其中，头像的链接地址可以是：</p>
+<p>地址  值<br>完整的互联网 URL  <code>https://avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</code><br>站点内的地址  <code>/uploads/avatar.jpg</code> - 需要将你的头像图片放置在 站点的 <code>source/uploads/</code>（可能需要新建 <code>uploads</code> 目录）<br><code>/images/avatar.jpg</code> - 需要将你的头像图片放置在 主题的 <code>source/images/</code> 目录下<br>头像设置示例：</p>
+<pre><code><span class="string">avatar:</span> <span class="string">https:</span><span class="comment">//avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</span>
+</code></pre><h4 id="作者名称">作者名称</h4><p>编辑 站点配置文件，设置 <code>author</code> 为你的昵称。</p>
+<h4 id="站点描述设置">站点描述设置</h4><p>编辑 站点配置文件，设置 <code>description</code>字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
+<h4 id="主题配置文件__config-yml_简单说明">主题配置文件 <em>_config.yml</em> 简单说明</h4><pre><code><span class="preprocessor"># 菜单配置</span>
+menu:
+  home: /
+  archives: /archives
+  # categories: /categories
+  tags: /tags
+  about: /about
+  #commonweal: /<span class="number">404.</span>html
+
+
+<span class="preprocessor"># Enable/Disable menu icons.</span>
+<span class="preprocessor"># Icon Mapping:</span>
+<span class="preprocessor">#   Map a menu item to a specific FontAwesome icon name.</span>
+<span class="preprocessor">#   Key is the name of menu item and value is the name of FontAwsome icon.</span>
+<span class="preprocessor">#   When an question mask icon presenting up means that the item has no mapping icon.</span>
+menu_icons:
+  enable: <span class="literal">true</span>
+  # Icon Mapping.
+  home: home
+  about: user
+  categories: th
+  tags: tags
+  archives: archive
+  commonweal: heartbeat
+
+
+<span class="preprocessor"># Mist</span>
+<span class="preprocessor"># 使用 Mist 主题</span>
+<span class="preprocessor">#scheme: Mist</span>
+
+<span class="preprocessor"># Sidebar 侧栏行为，可选值有</span>
+<span class="preprocessor">#  - post   默认值，在文章页面自动展开侧栏</span>
+<span class="preprocessor">#  - always 在所有页面自动展开侧栏</span>
+<span class="preprocessor">#  - hide   在手动点击侧栏的开关按钮时展开</span>
+<span class="preprocessor">#  - remove </span>
+<span class="preprocessor">#sidebar: post</span>
+<span class="preprocessor">#sidebar: always</span>
+sidebar: hide
+<span class="preprocessor">#sidebar: remove</span>
+
+<span class="preprocessor"># Social Icons</span>
+social_icons:
+  enable: <span class="literal">true</span>
+  # Icon Mappings
+  GitHub: github
+  Twitter: twitter
+  Weibo: weibo
+
+
+<span class="preprocessor"># Sidebar Avatar ＃头像</span>
+avatar: /images/avatar.png
+
+
+<span class="preprocessor"># Social links ＃友情链接</span>
+social:
+  GitHub: https:<span class="comment">//github.com/senpng</span>
+
+
+<span class="preprocessor"># TOC in the Sidebar</span>
+toc:
+  enable: <span class="literal">true</span>
+
+  # Automatically add list number to toc.
+  number: <span class="literal">true</span>
+
+
+<span class="preprocessor"># 代码高亮主题</span>
+<span class="preprocessor"># available: normal | night | night eighties | night blue | night bright</span>
+highlight_theme: normal
+
+<span class="preprocessor"># `阅读全文` 按钮跳转之后是否自动滚动页面到设置 `&lt;!-- more --&gt;` 的地方。</span>
+scroll_to_more: <span class="literal">true</span>
+
+<span class="preprocessor"># 自动形成摘要</span>
+auto_excerpt:
+  enable: <span class="literal">true</span>
+  length: <span class="number">150</span>
+
+  默认截取的长度为 <span class="number">150</span> 字符，可以根据需要自行设定
+
+<span class="preprocessor"># Use Lato font</span>
+use_font_lato: <span class="literal">true</span>
+
+<span class="preprocessor"># MathJax support</span>
+<span class="preprocessor"># 开启数学公式渲染支持，默认关闭。设置为 `true` 开启。</span>
+mathjax: <span class="literal">true</span>
+
+
+<span class="preprocessor">#! ---------------------------------------------------------------</span>
+<span class="preprocessor">#! DO NOT EDIT THE FOLLOWING SETTINGS</span>
+<span class="preprocessor">#! UNLESS YOU KNOW WHAT YOU ARE DOING</span>
+<span class="preprocessor">#! ---------------------------------------------------------------</span>
+
+<span class="preprocessor"># Motion</span>
+use_motion: <span class="literal">true</span>
+
+<span class="preprocessor"># Fancybox</span>
+fancybox: <span class="literal">true</span>
+
+<span class="preprocessor"># Static files</span>
+vendors: vendors
+css: css
+js: js
+images: images
+
+<span class="preprocessor"># Theme version</span>
+version: <span class="number">0.4</span><span class="number">.5</span><span class="number">.2</span>
+</code></pre></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+            <a href="/tags/NexT/" rel="tag">#NexT</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/03/zsh/" rel="prev" title="终端折腾：Oh－My－ZSH">
+                终端折腾：Oh－My－ZSH <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="SenPng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">SenPng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">技术博客</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/senpng" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">1.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级"><span class="nav-number">1.3.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">1.5.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成网站"><span class="nav-number">1.6.</span> <span class="nav-text">生成网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器"><span class="nav-number">1.7.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">1.8.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认目录结构"><span class="nav-number">1.9.</span> <span class="nav-text">默认目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点配置文件__config-yml_简单说明"><span class="nav-number">1.10.</span> <span class="nav-text">站点配置文件 _config.yml 简单说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-number">1.11.</span> <span class="nav-text">常见错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题_NexT"><span class="nav-number">2.</span> <span class="nav-text">主题 NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载_NexT_主题"><span class="nav-number">2.1.</span> <span class="nav-text">下载 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用_NexT_主题"><span class="nav-number">2.2.</span> <span class="nav-text">启用 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题是否启用"><span class="nav-number">2.3.</span> <span class="nav-text">验证主题是否启用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题设定"><span class="nav-number">2.4.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择_Scheme"><span class="nav-number">2.4.1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语言设置"><span class="nav-number">2.4.2.</span> <span class="nav-text">语言设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单设置"><span class="nav-number">2.4.3.</span> <span class="nav-text">菜单设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#菜单示例配置："><span class="nav-number">2.4.3.1.</span> <span class="nav-text">菜单示例配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏设置"><span class="nav-number">2.4.4.</span> <span class="nav-text">侧栏设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏示例配置："><span class="nav-number">2.4.5.</span> <span class="nav-text">侧栏示例配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-number">2.4.6.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作者名称"><span class="nav-number">2.4.7.</span> <span class="nav-text">作者名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站点描述设置"><span class="nav-number">2.4.8.</span> <span class="nav-text">站点描述设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置文件__config-yml_简单说明"><span class="nav-number">2.4.9.</span> <span class="nav-text">主题配置文件 _config.yml 简单说明</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SenPng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+</body>
+</html>

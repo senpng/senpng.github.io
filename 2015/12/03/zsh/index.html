@@ -1,0 +1,783 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Terminal,powerline,vim,zsh," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="了解 Oh-My-ZSHShellShell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。Linux/Unix提供了很多种Shell，为毛要这么多Shell？难道用来炒着吃么？那我问你，你同类型的衣服怎么有那么多件？花色，质地还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="终端折腾：Oh－My－ZSH">
+<meta property="og:url" content="https://senpng.github.io/2015/12/03/zsh/index.html">
+<meta property="og:site_name" content="SenPng的技术博客">
+<meta property="og:description" content="了解 Oh-My-ZSHShellShell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。Linux/Unix提供了很多种Shell，为毛要这么多Shell？难道用来炒着吃么？那我问你，你同类型的衣服怎么有那么多件？花色，质地还">
+<meta property="og:image" content="https://senpng.github.io/images/zsh/vim.png">
+<meta property="og:image" content="https://senpng.github.io/images/zsh/terminal.png">
+<meta property="og:updated_time" content="2015-12-18T11:06:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="终端折腾：Oh－My－ZSH">
+<meta name="twitter:description" content="了解 Oh-My-ZSHShellShell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。Linux/Unix提供了很多种Shell，为毛要这么多Shell？难道用来炒着吃么？那我问你，你同类型的衣服怎么有那么多件？花色，质地还">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 终端折腾：Oh－My－ZSH | SenPng的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71259236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SenPng的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                终端折腾：Oh－My－ZSH
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-03T17:36:18+08:00" content="2015-12-03">
+              2015-12-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h2 id="了解_Oh-My-ZSH">了解 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">Oh-My-ZSH</a></h2><h3 id="Shell"><a href="http://zhuanlan.zhihu.com/mactalk/19556676" target="_blank" rel="external">Shell</a></h3><p>Shell是Linux/Unix的一个外壳，你理解成衣服也行。它负责外界与Linux内核的交互，接收用户或其他应用程序的命令，然后把这些命令转化成内核能理解的语言，传给内核，内核是真正干活的，干完之后再把结果返回用户或应用程序。Linux/Unix提供了很多种Shell，为毛要这么多Shell？难道用来炒着吃么？那我问你，你同类型的衣服怎么有那么多件？花色，质地还不一样。写程序比买衣服复杂多了，而且程序员往往负责把复杂的事情搞简单，简单的事情搞复杂。牛程序员看到不爽的Shell，就会自己重新写一套，慢慢形成了一些标准，常用的Shell有这么几种，sh、bash、csh等，想知道你的系统有几种shell，可以通过以下命令查看：</p>
+<pre><code>cat <span class="regexp">/etc/</span>shells
+</code></pre><p>显示如下：</p>
+<pre><code><span class="regexp">/bin/</span>bash
+<span class="regexp">/bin/</span>csh
+<span class="regexp">/bin/</span>ksh
+<span class="regexp">/bin/</span>sh
+<span class="regexp">/bin/</span>tcsh
+<span class="regexp">/bin/</span>zsh
+</code></pre><p>在 Linux 里执行这个命令和 Mac 略有不同，你会发现 Mac 多了一个 zsh，也就是说 OS X 系统预装了个 zsh。</p>
+<p>目前常用的 Linux 系统和 OS X 系统的默认 Shell 都是 bash，但是真正强大的 Shell 是深藏不露的 zsh， 这货绝对是马车中的跑车，跑车中的飞行车，史称『终极 Shell』，但是由于配置过于复杂，所以初期无人问津，很多人跑过来看看 zsh 的配置指南，什么都不说转身就走了。直到有一天，国外有个穷极无聊的程序员开发出了一个能够让你快速上手的zsh项目，叫做「oh my zsh」。这玩意就像「X天叫你学会 C++」系列，可以让你神功速成，而且是真的。</p>
+<h2 id="安装">安装</h2><p>选其中一个即可</p>
+<p><strong>Curl</strong></p>
+<pre><code>sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span>
+</code></pre><p><strong>Wget</strong></p>
+<pre><code>sh -c <span class="string">"<span class="variable">$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>"</span>
+</code></pre><h2 id="配置_-zshrc">配置 <em>.zshrc</em></h2><p>文件位置: <code>~/.zshrc</code></p>
+<h3 id="主题">主题</h3><p>oh-my-zsh有很多<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" target="_blank" rel="external">主题</a>。</p>
+<p>可以根据自己的喜好设置主题:</p>
+<pre><code><span class="setting">ZSH_THEME=<span class="value"><span class="string">"amuse"</span></span></span>
+</code></pre><h3 id="插件">插件</h3><p>oh-my-zsh有很多<a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins" target="_blank" rel="external">插件</a>。</p>
+<p>这里就着重介绍几个不错的插件，后续会补充。</p>
+<h4 id="autojump">autojump</h4><p>首先需要先安装 <code>autojump</code></p>
+<pre><code><span class="keyword">brew </span>install autojump
+</code></pre><p>修改 <code>.zshrc</code> 配置文件</p>
+<pre><code>plugins=<span class="list">(<span class="keyword">git</span> autojump)</span>
+</code></pre><p>常用命令</p>
+<pre><code>j [目录的名字或名字的一部分] ＃<span class="built_in">cd</span> 某目录路径
+
+jo [目录的名字或名字的一部分] <span class="comment">#打开某目录</span>
+
+j <span class="operator">-a</span> [目录] <span class="comment">#添加目录</span>
+
+j <span class="operator">-s</span> <span class="comment">#显示所有的记录</span>
+</code></pre><h4 id="待补充">待补充</h4><h2 id="PowerLine"><a href="https://github.com/powerline/powerline" target="_blank" rel="external">PowerLine</a></h2><p>在安装配置zsh的时候，我发现了一个强大的功能插件：<code>PowerLine</code>，先贴张我已经配置好的截图。</p>
+<p><img src="/images/zsh/vim.png" alt="Vim"></p>
+<p>注意到Vim界面下的那条状态栏了没？就是那个，目前我也就当显示好看用的:)</p>
+<p>zsh终端也可以配置成使用PowerLine的。不过个人觉得不怎么好看，就没使用。我这里就再贴张zsh使用PowerLine的截图</p>
+<p><img src="/images/zsh/terminal.png" alt="Terminal"></p>
+<h3 id="安装-1">安装</h3><p>需要先安装 <code>python</code></p>
+<pre><code>brew install <span class="keyword">python</span>
+pip install git+gi<span class="variable">t:</span>//github.<span class="keyword">com</span>/powerline/powerline
+</code></pre><p>然后安装 <code>macvim</code></p>
+<pre><code><span class="comment">brew</span> <span class="comment">install</span> <span class="comment">macvim</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">env</span><span class="literal">-</span><span class="comment">std</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">override</span><span class="literal">-</span><span class="comment">system</span><span class="literal">-</span><span class="comment">vim</span>
+</code></pre><p>安装 <a href="https://github.com/powerline/fonts" target="_blank" rel="external">字体</a> 文件，不然一些字符无法再终端上显示，比如分支字符</p>
+<pre><code>git clone https:<span class="comment">//github.com/powerline/fonts.git</span>
+<span class="keyword">cd</span> fonts
+./install.<span class="keyword">sh</span>
+<span class="keyword">cd</span> .. &amp;&amp; <span class="keyword">rm</span> -rf fonts 
+</code></pre><h3 id="配置">配置</h3><p>终端需要设置下字体，需要选择带Powerline的字体，比如：</p>
+<pre><code>Meslo LG S <span class="keyword">for</span> Powerline
+</code></pre><p>配置Vim <code>~/.vimrc</code></p>
+<pre><code><span class="operator"><span class="keyword">set</span> rtp+=/usr/<span class="keyword">local</span>/lib/python2<span class="number">.7</span>/site-packages/powerline/bindings/vim #这里需要改成自己的安装路径
+<span class="keyword">set</span> guifont=Meslo\ LG\ S\ <span class="keyword">for</span>\ Powerline
+<span class="keyword">set</span> laststatus=<span class="number">2</span>
+let <span class="keyword">g</span>:Powerline_symbols = <span class="string">'fancy'</span>
+<span class="keyword">set</span> <span class="keyword">encoding</span>=utf-<span class="number">8</span>
+<span class="keyword">set</span> t_Co=<span class="number">256</span>
+<span class="keyword">set</span> <span class="built_in">number</span>
+<span class="keyword">set</span> fillchars+=stl:\ ,stlnc:\
+<span class="keyword">set</span> term=xterm-<span class="number">256</span>color
+<span class="keyword">set</span> termencoding=utf-<span class="number">8</span></span>
+</code></pre><h3 id="Vim颜色主题配置">Vim颜色主题配置</h3><p>安装 <code>Pathogen</code></p>
+<pre><code><span class="built_in">mkdir</span> -<span class="keyword">p</span> ~/.<span class="keyword">vim</span>/autoload ~/.<span class="keyword">vim</span>/bundle &amp;&amp; \
+<span class="keyword">cd</span> ~/.<span class="keyword">vim</span>/
+git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/tpope/<span class="keyword">vim</span>-pathogen.git
+mv <span class="keyword">vim</span>-pathogent/autoload ./
+rm -rf <span class="keyword">vim</span>-pathogent
+</code></pre><p>在 <code>.vimrc</code> 中添加</p>
+<pre><code>execute pathogen#<span class="function"><span class="title">infect</span><span class="params">()</span></span>
+</code></pre><p>下载颜色配置</p>
+<pre><code><span class="keyword">cd</span> ~/.<span class="keyword">vim</span>/bundle
+git clone gi<span class="variable">t:</span>//github.<span class="keyword">com</span>/altercation/<span class="keyword">vim</span>-colors-solarized.git #solarized颜色主题
+git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/endel/<span class="keyword">vim</span>-github-<span class="keyword">colorscheme</span>.git #github颜色主题
+</code></pre><p>这里的颜色配置文件可以选择其中一个clone;</p>
+<p>修改 <code>.vimrc</code>，在 <code>execute pathogen#infect()</code> 下面添加</p>
+<pre><code><span class="keyword">syntax</span> enable
+<span class="keyword">set</span> background=light
+<span class="keyword">colorscheme</span> github
+</code></pre><p>最终配置文件示例</p>
+<pre><code><span class="operator"><span class="keyword">set</span> rtp+=/usr/<span class="keyword">local</span>/lib/python2<span class="number">.7</span>/site-packages/powerline/bindings/vim
+<span class="keyword">set</span> guifont=Meslo\ LG\ S\ <span class="keyword">for</span>\ Powerline
+<span class="keyword">set</span> laststatus=<span class="number">2</span>
+let <span class="keyword">g</span>:Powerline_symbols = <span class="string">'fancy'</span>
+<span class="keyword">set</span> <span class="keyword">encoding</span>=utf-<span class="number">8</span>
+<span class="keyword">set</span> t_Co=<span class="number">256</span>
+<span class="keyword">set</span> <span class="built_in">number</span>
+<span class="keyword">set</span> fillchars+=stl:\ ,stlnc:\
+<span class="keyword">set</span> term=xterm-<span class="number">256</span>color
+<span class="keyword">set</span> termencoding=utf-<span class="number">8</span>
+
+<span class="keyword">execute</span> pathogen#infect()
+syntax <span class="keyword">enable</span>
+<span class="keyword">set</span> background=light
+colorscheme github</span>
+</code></pre></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Terminal/" rel="tag">#Terminal</a>
+          
+            <a href="/tags/powerline/" rel="tag">#powerline</a>
+          
+            <a href="/tags/vim/" rel="tag">#vim</a>
+          
+            <a href="/tags/zsh/" rel="tag">#zsh</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/03/hexo/" rel="next" title="Hexo-创建自己的博客">
+                <i class="fa fa-chevron-left"></i> Hexo-创建自己的博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/04/swift/" rel="prev" title="Swift学习笔记">
+                Swift学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar.png" alt="SenPng" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">SenPng</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">技术博客</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/senpng" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#了解_Oh-My-ZSH"><span class="nav-number">1.</span> <span class="nav-text">了解 Oh-My-ZSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell"><span class="nav-number">1.1.</span> <span class="nav-text">Shell</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置_-zshrc"><span class="nav-number">3.</span> <span class="nav-text">配置 .zshrc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">3.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件"><span class="nav-number">3.2.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#autojump"><span class="nav-number">3.2.1.</span> <span class="nav-text">autojump</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待补充"><span class="nav-number">3.2.2.</span> <span class="nav-text">待补充</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerLine"><span class="nav-number">4.</span> <span class="nav-text">PowerLine</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">4.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">4.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vim颜色主题配置"><span class="nav-number">4.3.</span> <span class="nav-text">Vim颜色主题配置</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SenPng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+  
+
+</body>
+</html>
