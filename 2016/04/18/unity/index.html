@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux,socks5," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -51,22 +51,40 @@
 
 
 
-<meta name="description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
+<meta name="description" content="Render Mode(渲染模式)
+Screen space - Overlay
+
+在场景中UI被渲染在屏幕上(即使在场景中没有相机，也将呈现UI)。如果屏幕大小改变或更改了分辨率，画布将自动更改大小，以很好的适配屏幕。
+
+
+Screen space - Camera
+
+类似于Screen Space - Overlay。但在这种渲染模式下，画布被放置在指定相机前的一个给定的距离上，通过指定的相机">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Socks5搭建">
-<meta property="og:url" content="https://senpng.github.io/2015/12/10/socks5/index.html">
+<meta property="og:title" content="Unity学习笔记">
+<meta property="og:url" content="https://senpng.github.io/2016/04/18/unity/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
-<meta property="og:updated_time" content="2015-12-18T11:06:48.000Z">
+<meta property="og:description" content="Render Mode(渲染模式)
+Screen space - Overlay
+
+在场景中UI被渲染在屏幕上(即使在场景中没有相机，也将呈现UI)。如果屏幕大小改变或更改了分辨率，画布将自动更改大小，以很好的适配屏幕。
+
+
+Screen space - Camera
+
+类似于Screen Space - Overlay。但在这种渲染模式下，画布被放置在指定相机前的一个给定的距离上，通过指定的相机">
+<meta property="og:updated_time" content="2016-04-18T03:53:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Socks5搭建">
-<meta name="twitter:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
+<meta name="twitter:title" content="Unity学习笔记">
+<meta name="twitter:description" content="Render Mode(渲染模式)
+Screen space - Overlay
+
+在场景中UI被渲染在屏幕上(即使在场景中没有相机，也将呈现UI)。如果屏幕大小改变或更改了分辨率，画布将自动更改大小，以很好的适配屏幕。
+
+
+Screen space - Camera
+
+类似于Screen Space - Overlay。但在这种渲染模式下，画布被放置在指定相机前的一个给定的距离上，通过指定的相机">
 
 
 
@@ -78,7 +96,7 @@ ta">
   };
 </script>
 
-  <title> Linux Socks5搭建 | SenPng的技术博客 </title>
+  <title> Unity学习笔记 | SenPng的技术博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +245,7 @@ ta">
             
             
               
-                Linux Socks5搭建
+                Unity学习笔记
               
             
           </h1>
@@ -236,8 +254,8 @@ ta">
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-12-10T14:05:24+08:00" content="2015-12-10">
-              2015-12-10
+            <time itemprop="dateCreated" datetime="2016-04-18T11:46:55+08:00" content="2016-04-18">
+              2016-04-18
             </time>
           </span>
 
@@ -260,65 +278,57 @@ ta">
       
 
       
-        <span itemprop="articleBody"><h2 id="安装socks5">安装socks5</h2><h3 id="安装依赖开发库">安装依赖开发库</h3><pre><code>yum <span class="keyword">install</span> pam-devel openldap-devel openssl-devel
-</code></pre><h3 id="安装socks_5">安装socks 5</h3><pre><code>wget http:<span class="comment">//downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;ts=1396802581&amp;use_mirror=cznic</span>
-tar -xzvf ss5-<span class="number">3.8</span><span class="number">.9</span>-<span class="number">8.</span>tar.gz
-cd ss5-<span class="number">3.8</span><span class="number">.9</span>
-./configure
-make &amp;&amp; make install
-</code></pre><h2 id="socks_5配置">socks 5配置</h2><h3 id="修改配置文件">修改配置文件</h3><pre><code>vim /etc/opt/ss5/ss5.conf
-
-auth <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – -
-改为
-auth <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – u
-
-permit – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – – – – -
-改成为
-permit u <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – – – – -
-</code></pre><h3 id="添加socket_5用户">添加socket 5用户</h3><pre><code>cat /etc/<span class="built_in">opt</span>/ss5/ss5.passwd
-<span class="preprocessor">#用户  密码</span>
-senpng <span class="number">123456</span>
-</code></pre><h2 id="启动socket_5">启动socket 5</h2><p>默认情况ss5文件没有执行权限</p>
-<pre><code>chmod <span class="keyword">u</span>+x /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/ss5
-</code></pre><p>启动</p>
-<pre><code><span class="keyword">sh</span> /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/ss5 start
-</code></pre><p>如果觉得使用sh来启动麻烦，那么按如下方法：</p>
-<pre><code>chkconfig <span class="comment">--add ss5 //可选</span>
-chkconfig ss5 <span class="command"><span class="keyword">on</span> //可选</span>
-service ss5 <span class="built_in">start</span>
-</code></pre><p>查看是否启动</p>
-<pre><code>netstat -lntp  | grep ss5
-tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">1080</span>   <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:*      LISTEN      <span class="number">14262</span>/ss5
-</code></pre><p>默认端口1080</p>
+        <span itemprop="articleBody"><h2 id="Render_Mode(渲染模式)">Render Mode(渲染模式)</h2><ul>
+<li><p>Screen space - Overlay</p>
+<blockquote>
+<p>在场景中UI被渲染在屏幕上(即使在场景中没有相机，也将呈现UI)。如果屏幕大小改变或更改了分辨率，画布将自动更改大小，以很好的适配屏幕。</p>
+</blockquote>
+</li>
+<li><p>Screen space - Camera</p>
+<blockquote>
+<p>类似于Screen Space - Overlay。但在这种渲染模式下，画布被放置在指定相机前的一个给定的距离上，通过指定的相机UI被呈现出来，Camera setting会影响到UI的现实。如果屏幕大小改变或更改了分辨率，画布将自动更改大小，以很好的适配屏幕。</p>
+</blockquote>
+</li>
+<li>World Space<blockquote>
+<p>在这种模式下呈现UI，UI好像是3D场景中的一个平面plane对象。与上面两种不同，plane不需要面对镜头，可以是面向你喜欢的任意方向。可以使用Rect Transform设置画布的大小，但其屏幕的大小将取决于拍摄的角度和相机的距离。场景中的其他对象可以pass behind，通过或者在画布上面。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Canvas_Scaler">Canvas Scaler</h2><ul>
+<li>Constant Pixel Size<blockquote>
+<p>以像素进行缩放</p>
+</blockquote>
+</li>
+<li>Scale With Screen Size<blockquote>
+<p>以宽度为标准进行缩放</p>
+</blockquote>
+</li>
+<li>Constant Physical Size<blockquote>
+<p>以物理尺寸进行缩放</p>
+</blockquote>
+</li>
+</ul>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
-          
-            <a href="/tags/socks5/" rel="tag">#socks5</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/04/swift/" rel="next" title="Swift学习笔记">
-                <i class="fa fa-chevron-left"></i> Swift学习笔记
+              <a href="/2016/03/30/other/" rel="next" title="其它">
+                <i class="fa fa-chevron-left"></i> 其它
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/10/javascrip-es6/" rel="prev" title="JavaScrip ECMAScript 6 入门">
-                JavaScrip ECMAScript 6 入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/05/objc-zen-book/" rel="prev" title="禅与Objective-C编程艺术">
+                禅与Objective-C编程艺术 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -443,7 +453,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装socks5"><span class="nav-number">1.</span> <span class="nav-text">安装socks5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖开发库"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖开发库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装socks_5"><span class="nav-number">1.2.</span> <span class="nav-text">安装socks 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socks_5配置"><span class="nav-number">2.</span> <span class="nav-text">socks 5配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加socket_5用户"><span class="nav-number">2.2.</span> <span class="nav-text">添加socket 5用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动socket_5"><span class="nav-number">3.</span> <span class="nav-text">启动socket 5</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Render_Mode(渲染模式)"><span class="nav-number">1.</span> <span class="nav-text">Render Mode(渲染模式)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas_Scaler"><span class="nav-number">2.</span> <span class="nav-text">Canvas Scaler</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
