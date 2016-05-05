@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -26,13 +32,36 @@
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
 
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -44,7 +73,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -109,10 +138,16 @@ nil 和 BOOL 检查
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -121,15 +156,6 @@ nil 和 BOOL 检查
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -146,7 +172,16 @@ nil 和 BOOL 检查
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -175,7 +210,7 @@ nil 和 BOOL 检查
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -198,16 +233,6 @@ nil 和 BOOL 检查
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
@@ -217,18 +242,7 @@ nil 和 BOOL 检查
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
       
     </ul>
   
@@ -241,8 +255,9 @@ nil 和 BOOL 检查
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -273,7 +288,10 @@ nil 和 BOOL 检查
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-05-05T10:54:53+08:00" content="2016-05-05">
               2016-05-05
             </time>
@@ -287,18 +305,22 @@ nil 和 BOOL 检查
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><ul>
+        <ul>
 <li>原文 <a href="https://github.com/objc-zen/objc-zen-book" target="_blank" rel="external">https://github.com/objc-zen/objc-zen-book</a></li>
 <li>Gitbook 链接(包含 PDF, mobi, epub 格式): <a href="http://yourtion.gitbooks.io/objc-zen-book-cn/" target="_blank" rel="external">http://yourtion.gitbooks.io/objc-zen-book-cn/</a> (感谢 <a href="https://github.com/yourtion" target="_blank" rel="external">yourtion</a> 整理 )</li>
 </ul>
@@ -1113,7 +1135,20 @@ nil 和 BOOL 检查
 <li><a href="http://www.cimgf.com/zds-code-style-guide/" target="_blank" rel="external">Marcus Zarra</a></li>
 <li><a href="https://github.com/raywenderlich/objective-c-style-guide" target="_blank" rel="external">Ray Wenderlich</a></li>
 </ul>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -1149,21 +1184,19 @@ nil 和 BOOL 检查
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -1191,10 +1224,12 @@ nil 和 BOOL 检查
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/avatar.png" alt="SenPng" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="SenPng" />
           <p class="site-author-name" itemprop="name">SenPng</p>
+          <p class="site-description motion-element" itemprop="description">技术博客</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">技术博客</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -1203,19 +1238,23 @@ nil 和 BOOL 检查
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">分类</span>
-              </a>
-          </div>
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">20</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -1225,10 +1264,11 @@ nil 和 BOOL 检查
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/senpng" target="_blank">
+                <a href="https://github.com/senpng" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
+                    <i class="fa fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
@@ -1238,17 +1278,13 @@ nil 和 BOOL 检查
         
         
 
-        <div class="links-of-author motion-element">
-          
-        </div>
+        
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -1257,9 +1293,6 @@ nil 和 BOOL 检查
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Swift"><span class="nav-number">1.1.</span> <span class="nav-text">Swift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贡献给社区"><span class="nav-number">1.2.</span> <span class="nav-text">贡献给社区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作者"><span class="nav-number">1.3.</span> <span class="nav-text">作者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于中文翻译"><span class="nav-number">1.4.</span> <span class="nav-text">关于中文翻译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#条件语句"><span class="nav-number">2.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#尤达表达式"><span class="nav-number">2.1.</span> <span class="nav-text">尤达表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nil_和_BOOL_检查"><span class="nav-number">2.2.</span> <span class="nav-text">nil 和 BOOL 检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黄金大道"><span class="nav-number">2.3.</span> <span class="nav-text">黄金大道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂的表达式"><span class="nav-number">2.4.</span> <span class="nav-text">复杂的表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三元运算符"><span class="nav-number">2.5.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误处理"><span class="nav-number">2.6.</span> <span class="nav-text">错误处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case语句"><span class="nav-number">3.</span> <span class="nav-text">Case语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举类型"><span class="nav-number">3.0.1.</span> <span class="nav-text">枚举类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命名"><span class="nav-number">4.</span> <span class="nav-text">命名</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用的约定"><span class="nav-number">4.1.</span> <span class="nav-text">通用的约定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常量"><span class="nav-number">4.2.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">4.3.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字面值"><span class="nav-number">4.4.</span> <span class="nav-text">字面值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">5.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类名"><span class="nav-number">5.1.</span> <span class="nav-text">类名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initializer_和_dealloc"><span class="nav-number">5.2.</span> <span class="nav-text">Initializer 和 dealloc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Designated_和_Secondary_初始化方法"><span class="nav-number">5.2.1.</span> <span class="nav-text">Designated 和 Secondary 初始化方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Designated_Initializer"><span class="nav-number">5.2.1.1.</span> <span class="nav-text">Designated Initializer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Secondary_Initializer"><span class="nav-number">5.2.1.2.</span> <span class="nav-text">Secondary Initializer</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-number">5.2.1.2.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instancetype"><span class="nav-number">5.2.2.</span> <span class="nav-text">instancetype</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考-1"><span class="nav-number">5.2.2.0.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化模式"><span class="nav-number">5.2.3.</span> <span class="nav-text">初始化模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类簇_（class_cluster)"><span class="nav-number">5.2.3.1.</span> <span class="nav-text">类簇 （class cluster)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单例"><span class="nav-number">5.2.3.2.</span> <span class="nav-text">单例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性"><span class="nav-number">5.3.</span> <span class="nav-text">属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Init_和_Dealloc"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">Init 和 Dealloc</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点符号"><span class="nav-number">5.3.0.2.</span> <span class="nav-text">点符号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性定义"><span class="nav-number">5.3.1.</span> <span class="nav-text">属性定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#私有属性"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">私有属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变对象"><span class="nav-number">5.3.2.</span> <span class="nav-text">可变对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#懒加载（Lazy_Loading）"><span class="nav-number">5.3.3.</span> <span class="nav-text">懒加载（Lazy Loading）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法-1"><span class="nav-number">5.4.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数断言"><span class="nav-number">5.4.1.</span> <span class="nav-text">参数断言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私有方法"><span class="nav-number">5.4.2.</span> <span class="nav-text">私有方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相等性"><span class="nav-number">5.5.</span> <span class="nav-text">相等性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Categories"><span class="nav-number">6.</span> <span class="nav-text">Categories</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Protocols"><span class="nav-number">7.</span> <span class="nav-text">Protocols</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSNotification"><span class="nav-number">8.</span> <span class="nav-text">NSNotification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#美化代码"><span class="nav-number">9.</span> <span class="nav-text">美化代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#空格"><span class="nav-number">9.0.1.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换行"><span class="nav-number">9.0.2.</span> <span class="nav-text">换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#括号"><span class="nav-number">9.0.3.</span> <span class="nav-text">括号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码组织"><span class="nav-number">10.</span> <span class="nav-text">代码组织</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#利用代码块"><span class="nav-number">10.1.</span> <span class="nav-text">利用代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pragma"><span class="nav-number">10.2.</span> <span class="nav-text">Pragma</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pragma_Mark"><span class="nav-number">10.2.1.</span> <span class="nav-text">Pragma Mark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于_pragma"><span class="nav-number">10.2.2.</span> <span class="nav-text">关于 pragma</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忽略没用使用变量的编译警告"><span class="nav-number">10.2.3.</span> <span class="nav-text">忽略没用使用变量的编译警告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#明确编译器警告和错误"><span class="nav-number">10.3.</span> <span class="nav-text">明确编译器警告和错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串文档"><span class="nav-number">10.4.</span> <span class="nav-text">字符串文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">10.5.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#头文档"><span class="nav-number">10.5.1.</span> <span class="nav-text">头文档</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象间的通讯"><span class="nav-number">11.</span> <span class="nav-text">对象间的通讯</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block"><span class="nav-number">11.1.</span> <span class="nav-text">Block</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深入_Block"><span class="nav-number">11.1.1.</span> <span class="nav-text">深入 Block</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#self_的循环引用"><span class="nav-number">11.1.2.</span> <span class="nav-text">self 的循环引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#委托和数据源"><span class="nav-number">11.2.</span> <span class="nav-text">委托和数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承"><span class="nav-number">11.2.1.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多重委托"><span class="nav-number">11.2.2.</span> <span class="nav-text">多重委托</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面向切面编程"><span class="nav-number">12.</span> <span class="nav-text">面向切面编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">13.</span> <span class="nav-text">参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#其他的_Objective-C_风格指南"><span class="nav-number">13.0.1.</span> <span class="nav-text">其他的 Objective-C 风格指南</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
         </section>
       
 
@@ -1267,7 +1300,8 @@ nil 和 BOOL 检查
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -1277,7 +1311,7 @@ nil 和 BOOL 检查
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">SenPng</span>
 </div>
@@ -1289,240 +1323,106 @@ nil 和 BOOL 检查
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
+        
 
-
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  
-
-  
-    
-    
-
-  
-
-
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
-
-
-
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-  </script>
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  </script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
   
 
 </body>

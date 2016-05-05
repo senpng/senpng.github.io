@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-next   use-motion ">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -26,13 +32,36 @@
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
 
 
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="ES6,JavaScript," />
@@ -44,7 +73,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
 
 
 
@@ -71,10 +100,16 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post',
-    motion: true
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
   };
 </script>
 
@@ -83,15 +118,6 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -108,7 +134,16 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -137,7 +172,7 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -160,16 +195,6 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
-            
-              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
-            
-            分类
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
@@ -179,18 +204,7 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
 
-      
       
     </ul>
   
@@ -203,8 +217,9 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content">
-          
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -235,7 +250,10 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2015-12-10T16:46:35+08:00" content="2015-12-10">
               2015-12-10
             </time>
@@ -249,18 +267,22 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p><strong>此文章为引用修改！</strong><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">引用地址</a></p>
+        <p><strong>此文章为引用修改！</strong><a href="http://es6.ruanyifeng.com/" target="_blank" rel="external">引用地址</a></p>
 <h2 id="ECMAScript_6简介">ECMAScript 6简介</h2><p>ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
 <p>标准的制定者有计划，以后每年发布一次标准，使用年份作为标准的版本。因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015。也就是说，ES6就是ES2015，下一年应该会发布小幅修订的ES2016。</p>
 <h3 id="ECMAScript和JavaScript的关系">ECMAScript和JavaScript的关系</h3><p>一个常见的问题是，ECMAScript和JavaScript到底是什么关系？</p>
@@ -3957,7 +3979,20 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 <li>Modernizr, <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills#ecmascript-6-harmony" target="_blank" rel="external">HTML5 Cross Browser Polyfills</a>: ES6垫片库清单</li>
 <li>Facebook, <a href="https://github.com/facebook/regenerator" target="_blank" rel="external">regenerator</a>: 将Generator函数转为ES5的转码器</li>
 </ul>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -4005,21 +4040,19 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
   </div>
 
 
-        </div>
+          </div>
+          
 
-        
 
-
-        
+          
   <div class="comments" id="comments">
     
   </div>
 
 
-      </div>
-
-      
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -4047,10 +4080,12 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/avatar.png" alt="SenPng" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="SenPng" />
           <p class="site-author-name" itemprop="name">SenPng</p>
+          <p class="site-description motion-element" itemprop="description">技术博客</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">技术博客</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -4059,19 +4094,23 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            <a href="/categories">
-              <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">分类</span>
-              </a>
-          </div>
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">20</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -4081,10 +4120,11 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/senpng" target="_blank">
+                <a href="https://github.com/senpng" target="_blank" title="GitHub">
                   
-                    <i class="fa fa-github"></i> GitHub
+                    <i class="fa fa-github"></i>
                   
+                  GitHub
                 </a>
               </span>
             
@@ -4094,17 +4134,13 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
         
         
 
-        <div class="links-of-author motion-element">
-          
-        </div>
+        
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
           <div class="post-toc">
             
               
@@ -4113,9 +4149,6 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript_6简介"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript 6简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript和JavaScript的关系"><span class="nav-number">1.1.</span> <span class="nav-text">ECMAScript和JavaScript的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript的历史"><span class="nav-number">1.2.</span> <span class="nav-text">ECMAScript的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署进度"><span class="nav-number">1.3.</span> <span class="nav-text">部署进度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel转码器"><span class="nav-number">1.4.</span> <span class="nav-text">Babel转码器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行环境"><span class="nav-number">1.4.1.</span> <span class="nav-text">命令行环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器环境"><span class="nav-number">1.4.2.</span> <span class="nav-text">浏览器环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node环境"><span class="nav-number">1.4.3.</span> <span class="nav-text">Node环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线转换"><span class="nav-number">1.4.4.</span> <span class="nav-text">在线转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Traceur转码器"><span class="nav-number">1.5.</span> <span class="nav-text">Traceur转码器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#直接插入网页"><span class="nav-number">1.5.1.</span> <span class="nav-text">直接插入网页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线转换-1"><span class="nav-number">1.5.2.</span> <span class="nav-text">在线转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行转换"><span class="nav-number">1.5.3.</span> <span class="nav-text">命令行转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-js环境的用法"><span class="nav-number">1.5.4.</span> <span class="nav-text">Node.js环境的用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript_7"><span class="nav-number">1.6.</span> <span class="nav-text">ECMAScript 7</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const命令"><span class="nav-number">2.</span> <span class="nav-text">let和const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let命令"><span class="nav-number">2.1.</span> <span class="nav-text">let命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法"><span class="nav-number">2.1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不存在变量提升"><span class="nav-number">2.1.2.</span> <span class="nav-text">不存在变量提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#暂时性死区"><span class="nav-number">2.1.3.</span> <span class="nav-text">暂时性死区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不允许重复声明"><span class="nav-number">2.1.4.</span> <span class="nav-text">不允许重复声明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">2.2.</span> <span class="nav-text">块级作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么需要块级作用域？"><span class="nav-number">2.2.1.</span> <span class="nav-text">为什么需要块级作用域？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6的块级作用域"><span class="nav-number">2.2.2.</span> <span class="nav-text">ES6的块级作用域</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const命令"><span class="nav-number">2.3.</span> <span class="nav-text">const命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨模块常量"><span class="nav-number">2.4.</span> <span class="nav-text">跨模块常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局对象的属性"><span class="nav-number">2.5.</span> <span class="nav-text">全局对象的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的解构赋值"><span class="nav-number">3.</span> <span class="nav-text">变量的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的解构赋值"><span class="nav-number">3.1.</span> <span class="nav-text">数组的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-1"><span class="nav-number">3.1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认值"><span class="nav-number">3.1.2.</span> <span class="nav-text">默认值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的解构赋值"><span class="nav-number">3.2.</span> <span class="nav-text">对象的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的解构赋值"><span class="nav-number">3.3.</span> <span class="nav-text">字符串的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值和布尔值的解构赋值"><span class="nav-number">3.4.</span> <span class="nav-text">数值和布尔值的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数的解构赋值"><span class="nav-number">3.5.</span> <span class="nav-text">函数参数的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圆括号问题"><span class="nav-number">3.6.</span> <span class="nav-text">圆括号问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不能使用圆括号的情况"><span class="nav-number">3.6.1.</span> <span class="nav-text">不能使用圆括号的情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可以使用圆括号的情况"><span class="nav-number">3.6.2.</span> <span class="nav-text">可以使用圆括号的情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用途"><span class="nav-number">3.7.</span> <span class="nav-text">用途</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串的扩展"><span class="nav-number">4.</span> <span class="nav-text">字符串的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符的Unicode表示法"><span class="nav-number">4.1.</span> <span class="nav-text">字符的Unicode表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#codePointAt()"><span class="nav-number">4.2.</span> <span class="nav-text">codePointAt()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-fromCodePoint()"><span class="nav-number">4.3.</span> <span class="nav-text">String.fromCodePoint()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的遍历器接口"><span class="nav-number">4.4.</span> <span class="nav-text">字符串的遍历器接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#at()"><span class="nav-number">4.5.</span> <span class="nav-text">at()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#normalize()"><span class="nav-number">4.6.</span> <span class="nav-text">normalize()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#includes(),_startsWith(),_endsWith()"><span class="nav-number">4.7.</span> <span class="nav-text">includes(), startsWith(), endsWith()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#repeat()"><span class="nav-number">4.8.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#padStart()，padEnd()"><span class="nav-number">4.9.</span> <span class="nav-text">padStart()，padEnd()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板字符串"><span class="nav-number">4.10.</span> <span class="nav-text">模板字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例：模板编译"><span class="nav-number">4.11.</span> <span class="nav-text">实例：模板编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标签模板"><span class="nav-number">4.12.</span> <span class="nav-text">标签模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-raw()"><span class="nav-number">4.13.</span> <span class="nav-text">String.raw()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则的扩展"><span class="nav-number">5.</span> <span class="nav-text">正则的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp构造函数"><span class="nav-number">5.1.</span> <span class="nav-text">RegExp构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的正则方法"><span class="nav-number">5.2.</span> <span class="nav-text">字符串的正则方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u修饰符"><span class="nav-number">5.3.</span> <span class="nav-text">u修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#y修饰符"><span class="nav-number">5.4.</span> <span class="nav-text">y修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sticky属性"><span class="nav-number">5.5.</span> <span class="nav-text">sticky属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flags属性"><span class="nav-number">5.6.</span> <span class="nav-text">flags属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-escape()"><span class="nav-number">5.7.</span> <span class="nav-text">RegExp.escape()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值的扩展"><span class="nav-number">6.</span> <span class="nav-text">数值的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制和八进制表示法"><span class="nav-number">6.1.</span> <span class="nav-text">二进制和八进制表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isFinite(),_Number-isNaN()"><span class="nav-number">6.2.</span> <span class="nav-text">Number.isFinite(), Number.isNaN()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-parseInt(),_Number-parseFloat()"><span class="nav-number">6.3.</span> <span class="nav-text">Number.parseInt(), Number.parseFloat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isInteger()"><span class="nav-number">6.4.</span> <span class="nav-text">Number.isInteger()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">6.5.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全整数和Number-isSafeInteger()"><span class="nav-number">6.6.</span> <span class="nav-text">安全整数和Number.isSafeInteger()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math对象的扩展"><span class="nav-number">6.7.</span> <span class="nav-text">Math对象的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-trunc()"><span class="nav-number">6.7.1.</span> <span class="nav-text">Math.trunc()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-sign()"><span class="nav-number">6.7.2.</span> <span class="nav-text">Math.sign()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-cbrt()"><span class="nav-number">6.7.3.</span> <span class="nav-text">Math.cbrt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-clz32()"><span class="nav-number">6.7.4.</span> <span class="nav-text">Math.clz32()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-imul()"><span class="nav-number">6.7.5.</span> <span class="nav-text">Math.imul()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-fround()"><span class="nav-number">6.7.6.</span> <span class="nav-text">Math.fround()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-hypot()"><span class="nav-number">6.7.7.</span> <span class="nav-text">Math.hypot()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对数方法"><span class="nav-number">6.7.8.</span> <span class="nav-text">对数方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三角函数方法"><span class="nav-number">6.7.9.</span> <span class="nav-text">三角函数方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指数运算符"><span class="nav-number">6.8.</span> <span class="nav-text">指数运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的扩展"><span class="nav-number">7.</span> <span class="nav-text">数组的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-from()"><span class="nav-number">7.1.</span> <span class="nav-text">Array.from()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-of()"><span class="nav-number">7.2.</span> <span class="nav-text">Array.of()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的copyWithin()"><span class="nav-number">7.3.</span> <span class="nav-text">数组实例的copyWithin()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的find()和findIndex()"><span class="nav-number">7.4.</span> <span class="nav-text">数组实例的find()和findIndex()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的fill()"><span class="nav-number">7.5.</span> <span class="nav-text">数组实例的fill()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的entries()，keys()和values()"><span class="nav-number">7.6.</span> <span class="nav-text">数组实例的entries()，keys()和values()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组实例的includes()"><span class="nav-number">7.7.</span> <span class="nav-text">数组实例的includes()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的空位"><span class="nav-number">7.8.</span> <span class="nav-text">数组的空位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组推导"><span class="nav-number">7.9.</span> <span class="nav-text">数组推导</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的扩展"><span class="nav-number">8.</span> <span class="nav-text">函数的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数的默认值"><span class="nav-number">8.1.</span> <span class="nav-text">函数参数的默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-2"><span class="nav-number">8.1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与解构赋值默认值结合使用"><span class="nav-number">8.1.2.</span> <span class="nav-text">与解构赋值默认值结合使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数默认值的位置"><span class="nav-number">8.1.3.</span> <span class="nav-text">参数默认值的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的length属性"><span class="nav-number">8.1.4.</span> <span class="nav-text">函数的length属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">8.1.5.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用"><span class="nav-number">8.1.6.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rest参数"><span class="nav-number">8.2.</span> <span class="nav-text">rest参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展运算符"><span class="nav-number">8.3.</span> <span class="nav-text">扩展运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#含义"><span class="nav-number">8.3.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替代数组的apply方法"><span class="nav-number">8.3.2.</span> <span class="nav-text">替代数组的apply方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展运算符的应用"><span class="nav-number">8.3.3.</span> <span class="nav-text">扩展运算符的应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#name属性"><span class="nav-number">8.4.</span> <span class="nav-text">name属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭头函数"><span class="nav-number">8.5.</span> <span class="nav-text">箭头函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-3"><span class="nav-number">8.5.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用注意点"><span class="nav-number">8.5.2.</span> <span class="nav-text">使用注意点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套的箭头函数"><span class="nav-number">8.5.3.</span> <span class="nav-text">嵌套的箭头函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数绑定"><span class="nav-number">8.6.</span> <span class="nav-text">函数绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尾调用优化"><span class="nav-number">8.7.</span> <span class="nav-text">尾调用优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是尾调用？"><span class="nav-number">8.7.1.</span> <span class="nav-text">什么是尾调用？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尾调用优化-1"><span class="nav-number">8.7.2.</span> <span class="nav-text">尾调用优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#尾递归"><span class="nav-number">8.7.3.</span> <span class="nav-text">尾递归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#递归函数的改写"><span class="nav-number">8.7.4.</span> <span class="nav-text">递归函数的改写</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数的尾逗号"><span class="nav-number">8.8.</span> <span class="nav-text">函数参数的尾逗号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的扩展"><span class="nav-number">9.</span> <span class="nav-text">对象的扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的简洁表示法"><span class="nav-number">9.1.</span> <span class="nav-text">属性的简洁表示法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性名表达式"><span class="nav-number">9.2.</span> <span class="nav-text">属性名表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的name属性"><span class="nav-number">9.3.</span> <span class="nav-text">方法的name属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-is()"><span class="nav-number">9.4.</span> <span class="nav-text">Object.is()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-assign()"><span class="nav-number">9.5.</span> <span class="nav-text">Object.assign()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的可枚举性"><span class="nav-number">9.6.</span> <span class="nav-text">属性的可枚举性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的遍历"><span class="nav-number">9.7.</span> <span class="nav-text">属性的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#__proto__属性，Object-setPrototypeOf()，Object-getPrototypeOf()"><span class="nav-number">9.8.</span> <span class="nav-text">__proto__属性，Object.setPrototypeOf()，Object.getPrototypeOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的扩展运算符"><span class="nav-number">9.9.</span> <span class="nav-text">对象的扩展运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">10.</span> <span class="nav-text">Symbol</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">10.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为属性名的Symbol"><span class="nav-number">10.2.</span> <span class="nav-text">作为属性名的Symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例：消除魔术字符串"><span class="nav-number">10.3.</span> <span class="nav-text">实例：消除魔术字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性名的遍历"><span class="nav-number">10.4.</span> <span class="nav-text">属性名的遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol-for()，Symbol-keyFor()"><span class="nav-number">10.5.</span> <span class="nav-text">Symbol.for()，Symbol.keyFor()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内置的Symbol值"><span class="nav-number">10.6.</span> <span class="nav-text">内置的Symbol值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-hasInstance"><span class="nav-number">10.6.1.</span> <span class="nav-text">Symbol.hasInstance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-isConcatSpreadable"><span class="nav-number">10.6.2.</span> <span class="nav-text">Symbol.isConcatSpreadable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-species"><span class="nav-number">10.6.3.</span> <span class="nav-text">Symbol.species</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-match"><span class="nav-number">10.6.4.</span> <span class="nav-text">Symbol.match</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-replace"><span class="nav-number">10.6.5.</span> <span class="nav-text">Symbol.replace</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-search"><span class="nav-number">10.6.6.</span> <span class="nav-text">Symbol.search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-split"><span class="nav-number">10.6.7.</span> <span class="nav-text">Symbol.split</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-iterator"><span class="nav-number">10.6.8.</span> <span class="nav-text">Symbol.iterator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-toPrimitive"><span class="nav-number">10.6.9.</span> <span class="nav-text">Symbol.toPrimitive</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-toStringTag"><span class="nav-number">10.6.10.</span> <span class="nav-text">Symbol.toStringTag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Symbol-unscopables"><span class="nav-number">10.6.11.</span> <span class="nav-text">Symbol.unscopables</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy和Reflect"><span class="nav-number">11.</span> <span class="nav-text">Proxy和Reflect</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy概述"><span class="nav-number">11.1.</span> <span class="nav-text">Proxy概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy实例的方法"><span class="nav-number">11.2.</span> <span class="nav-text">Proxy实例的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get()"><span class="nav-number">11.2.1.</span> <span class="nav-text">get()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#set()"><span class="nav-number">11.2.2.</span> <span class="nav-text">set()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apply()"><span class="nav-number">11.2.3.</span> <span class="nav-text">apply()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#has()"><span class="nav-number">11.2.4.</span> <span class="nav-text">has()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#construct()"><span class="nav-number">11.2.5.</span> <span class="nav-text">construct()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deleteProperty()"><span class="nav-number">11.2.6.</span> <span class="nav-text">deleteProperty()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#defineProperty()"><span class="nav-number">11.2.7.</span> <span class="nav-text">defineProperty()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enumerate()"><span class="nav-number">11.2.8.</span> <span class="nav-text">enumerate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getOwnPropertyDescriptor()"><span class="nav-number">11.2.9.</span> <span class="nav-text">getOwnPropertyDescriptor()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getPrototypeOf()"><span class="nav-number">11.2.10.</span> <span class="nav-text">getPrototypeOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isExtensible()"><span class="nav-number">11.2.11.</span> <span class="nav-text">isExtensible()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ownKeys()"><span class="nav-number">11.2.12.</span> <span class="nav-text">ownKeys()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preventExtensions()"><span class="nav-number">11.2.13.</span> <span class="nav-text">preventExtensions()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setPrototypeOf()"><span class="nav-number">11.2.14.</span> <span class="nav-text">setPrototypeOf()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy-revocable()"><span class="nav-number">11.3.</span> <span class="nav-text">Proxy.revocable()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect概述"><span class="nav-number">11.4.</span> <span class="nav-text">Reflect概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reflect对象的方法"><span class="nav-number">11.5.</span> <span class="nav-text">Reflect对象的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二进制数组"><span class="nav-number">12.</span> <span class="nav-text">二进制数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayBuffer对象"><span class="nav-number">12.1.</span> <span class="nav-text">ArrayBuffer对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-1"><span class="nav-number">12.1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayBuffer-prototype-byteLength"><span class="nav-number">12.1.2.</span> <span class="nav-text">ArrayBuffer.prototype.byteLength</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayBuffer-prototype-slice()"><span class="nav-number">12.1.3.</span> <span class="nav-text">ArrayBuffer.prototype.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayBuffer-isView()"><span class="nav-number">12.1.4.</span> <span class="nav-text">ArrayBuffer.isView()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypedArray视图"><span class="nav-number">12.2.</span> <span class="nav-text">TypedArray视图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概述-2"><span class="nav-number">12.2.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数"><span class="nav-number">12.2.2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组方法"><span class="nav-number">12.2.3.</span> <span class="nav-text">数组方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字节序"><span class="nav-number">12.2.4.</span> <span class="nav-text">字节序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BYTES_PER_ELEMENT属性"><span class="nav-number">12.2.5.</span> <span class="nav-text">BYTES_PER_ELEMENT属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayBuffer与字符串的互相转换"><span class="nav-number">12.2.6.</span> <span class="nav-text">ArrayBuffer与字符串的互相转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#溢出"><span class="nav-number">12.2.7.</span> <span class="nav-text">溢出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-buffer"><span class="nav-number">12.2.8.</span> <span class="nav-text">TypedArray.prototype.buffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-byteLength，TypedArray-prototype-byteOffset"><span class="nav-number">12.2.9.</span> <span class="nav-text">TypedArray.prototype.byteLength，TypedArray.prototype.byteOffset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-length"><span class="nav-number">12.2.10.</span> <span class="nav-text">TypedArray.prototype.length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-set()"><span class="nav-number">12.2.11.</span> <span class="nav-text">TypedArray.prototype.set()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-subarray()"><span class="nav-number">12.2.12.</span> <span class="nav-text">TypedArray.prototype.subarray()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-prototype-slice()"><span class="nav-number">12.2.13.</span> <span class="nav-text">TypedArray.prototype.slice()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-of()"><span class="nav-number">12.2.14.</span> <span class="nav-text">TypedArray.of()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-from()"><span class="nav-number">12.2.15.</span> <span class="nav-text">TypedArray.from()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合视图"><span class="nav-number">12.3.</span> <span class="nav-text">复合视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataView视图"><span class="nav-number">12.4.</span> <span class="nav-text">DataView视图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制数组的应用"><span class="nav-number">12.5.</span> <span class="nav-text">二进制数组的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX"><span class="nav-number">12.5.1.</span> <span class="nav-text">AJAX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Canvas"><span class="nav-number">12.5.2.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebSocket"><span class="nav-number">12.5.3.</span> <span class="nav-text">WebSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fetch_API"><span class="nav-number">12.5.4.</span> <span class="nav-text">Fetch API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#File_API"><span class="nav-number">12.5.5.</span> <span class="nav-text">File API</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set和Map数据结构"><span class="nav-number">13.</span> <span class="nav-text">Set和Map数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">13.1.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-4"><span class="nav-number">13.1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set实例的属性和方法"><span class="nav-number">13.1.2.</span> <span class="nav-text">Set实例的属性和方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历操作"><span class="nav-number">13.1.3.</span> <span class="nav-text">遍历操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakSet"><span class="nav-number">13.2.</span> <span class="nav-text">WeakSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">13.3.</span> <span class="nav-text">Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Map结构的目的和基本用法"><span class="nav-number">13.3.1.</span> <span class="nav-text">Map结构的目的和基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例的属性和操作方法"><span class="nav-number">13.3.2.</span> <span class="nav-text">实例的属性和操作方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历方法"><span class="nav-number">13.3.3.</span> <span class="nav-text">遍历方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与其他数据结构的互相转换"><span class="nav-number">13.3.4.</span> <span class="nav-text">与其他数据结构的互相转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WeakMap"><span class="nav-number">13.4.</span> <span class="nav-text">WeakMap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator和for…of循环"><span class="nav-number">14.</span> <span class="nav-text">Iterator和for…of循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator（遍历器）的概念"><span class="nav-number">14.1.</span> <span class="nav-text">Iterator（遍历器）的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构的默认Iterator接口"><span class="nav-number">14.2.</span> <span class="nav-text">数据结构的默认Iterator接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用Iterator接口的场合"><span class="nav-number">14.3.</span> <span class="nav-text">调用Iterator接口的场合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的Iterator接口"><span class="nav-number">14.4.</span> <span class="nav-text">字符串的Iterator接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator接口与Generator函数"><span class="nav-number">14.5.</span> <span class="nav-text">Iterator接口与Generator函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历器对象的return()，throw()"><span class="nav-number">14.6.</span> <span class="nav-text">遍历器对象的return()，throw()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…of循环"><span class="nav-number">14.7.</span> <span class="nav-text">for…of循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">14.7.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set和Map结构"><span class="nav-number">14.7.2.</span> <span class="nav-text">Set和Map结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算生成的数据结构"><span class="nav-number">14.7.3.</span> <span class="nav-text">计算生成的数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类似数组的对象"><span class="nav-number">14.7.4.</span> <span class="nav-text">类似数组的对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">14.7.5.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与其他遍历语法的比较"><span class="nav-number">14.7.6.</span> <span class="nav-text">与其他遍历语法的比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator_函数"><span class="nav-number">15.</span> <span class="nav-text">Generator 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">15.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本概念"><span class="nav-number">15.1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#yield语句"><span class="nav-number">15.1.2.</span> <span class="nav-text">yield语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与Iterator接口的关系"><span class="nav-number">15.1.3.</span> <span class="nav-text">与Iterator接口的关系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next方法的参数"><span class="nav-number">15.2.</span> <span class="nav-text">next方法的参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for…of循环-1"><span class="nav-number">15.3.</span> <span class="nav-text">for…of循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator-prototype-throw()"><span class="nav-number">15.4.</span> <span class="nav-text">Generator.prototype.throw()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator-prototype-return()"><span class="nav-number">15.5.</span> <span class="nav-text">Generator.prototype.return()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yield*语句"><span class="nav-number">15.6.</span> <span class="nav-text">yield*语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作为对象属性的Generator函数"><span class="nav-number">15.7.</span> <span class="nav-text">作为对象属性的Generator函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator函数的this"><span class="nav-number">15.8.</span> <span class="nav-text">Generator函数的this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator函数推导"><span class="nav-number">15.9.</span> <span class="nav-text">Generator函数推导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含义-1"><span class="nav-number">15.10.</span> <span class="nav-text">含义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator与状态机"><span class="nav-number">15.10.1.</span> <span class="nav-text">Generator与状态机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator与协程"><span class="nav-number">15.10.2.</span> <span class="nav-text">Generator与协程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用-1"><span class="nav-number">15.11.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）异步操作的同步化表达"><span class="nav-number">15.11.1.</span> <span class="nav-text">（1）异步操作的同步化表达</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）控制流管理"><span class="nav-number">15.11.2.</span> <span class="nav-text">（2）控制流管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）部署iterator接口"><span class="nav-number">15.11.3.</span> <span class="nav-text">（3）部署iterator接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（4）作为数据结构"><span class="nav-number">15.11.4.</span> <span class="nav-text">（4）作为数据结构</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise对象"><span class="nav-number">16.</span> <span class="nav-text">Promise对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise的含义"><span class="nav-number">16.1.</span> <span class="nav-text">Promise的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法-5"><span class="nav-number">16.2.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-prototype-then()"><span class="nav-number">16.3.</span> <span class="nav-text">Promise.prototype.then()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-prototype-catch()"><span class="nav-number">16.4.</span> <span class="nav-text">Promise.prototype.catch()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-all()"><span class="nav-number">16.5.</span> <span class="nav-text">Promise.all()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-race()"><span class="nav-number">16.6.</span> <span class="nav-text">Promise.race()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-resolve()"><span class="nav-number">16.7.</span> <span class="nav-text">Promise.resolve()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-reject()"><span class="nav-number">16.8.</span> <span class="nav-text">Promise.reject()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个有用的附加方法"><span class="nav-number">16.9.</span> <span class="nav-text">两个有用的附加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#done()"><span class="nav-number">16.9.1.</span> <span class="nav-text">done()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#finally()"><span class="nav-number">16.9.2.</span> <span class="nav-text">finally()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用-2"><span class="nav-number">16.10.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#加载图片"><span class="nav-number">16.10.1.</span> <span class="nav-text">加载图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator函数与Promise的结合"><span class="nav-number">16.10.2.</span> <span class="nav-text">Generator函数与Promise的结合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async函数"><span class="nav-number">16.11.</span> <span class="nav-text">async函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步操作和Async函数"><span class="nav-number">17.</span> <span class="nav-text">异步操作和Async函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念-1"><span class="nav-number">17.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步"><span class="nav-number">17.1.1.</span> <span class="nav-text">异步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回调函数"><span class="nav-number">17.1.2.</span> <span class="nav-text">回调函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise"><span class="nav-number">17.1.3.</span> <span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator函数"><span class="nav-number">17.2.</span> <span class="nav-text">Generator函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协程"><span class="nav-number">17.2.1.</span> <span class="nav-text">协程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator函数的概念"><span class="nav-number">17.2.2.</span> <span class="nav-text">Generator函数的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator函数的数据交换和错误处理"><span class="nav-number">17.2.3.</span> <span class="nav-text">Generator函数的数据交换和错误处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异步任务的封装"><span class="nav-number">17.2.4.</span> <span class="nav-text">异步任务的封装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thunk函数"><span class="nav-number">17.3.</span> <span class="nav-text">Thunk函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参数的求值策略"><span class="nav-number">17.3.1.</span> <span class="nav-text">参数的求值策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thunk函数的含义"><span class="nav-number">17.3.2.</span> <span class="nav-text">Thunk函数的含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript语言的Thunk函数"><span class="nav-number">17.3.3.</span> <span class="nav-text">JavaScript语言的Thunk函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thunkify模块"><span class="nav-number">17.3.4.</span> <span class="nav-text">Thunkify模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generator_函数的流程管理"><span class="nav-number">17.3.5.</span> <span class="nav-text">Generator 函数的流程管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Thunk函数的自动流程管理"><span class="nav-number">17.3.6.</span> <span class="nav-text">Thunk函数的自动流程管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#co模块"><span class="nav-number">17.4.</span> <span class="nav-text">co模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-6"><span class="nav-number">17.4.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co模块的原理"><span class="nav-number">17.4.2.</span> <span class="nav-text">co模块的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于Promise对象的自动执行"><span class="nav-number">17.4.3.</span> <span class="nav-text">基于Promise对象的自动执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#co模块的源码"><span class="nav-number">17.4.4.</span> <span class="nav-text">co模块的源码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理并发的异步操作"><span class="nav-number">17.4.5.</span> <span class="nav-text">处理并发的异步操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async函数-1"><span class="nav-number">17.5.</span> <span class="nav-text">async函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#含义-2"><span class="nav-number">17.5.1.</span> <span class="nav-text">含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#async函数的实现"><span class="nav-number">17.5.2.</span> <span class="nav-text">async函数的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#async_函数的用法"><span class="nav-number">17.5.3.</span> <span class="nav-text">async 函数的用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意点"><span class="nav-number">17.5.4.</span> <span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#与Promise、Generator的比较"><span class="nav-number">17.5.5.</span> <span class="nav-text">与Promise、Generator的比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">18.</span> <span class="nav-text">Class</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Class基本语法"><span class="nav-number">18.1.</span> <span class="nav-text">Class基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class的继承"><span class="nav-number">18.2.</span> <span class="nav-text">Class的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法-7"><span class="nav-number">18.2.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类的prototype属性和__proto__属性"><span class="nav-number">18.2.2.</span> <span class="nav-text">类的prototype属性和__proto__属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Extends_的继承目标"><span class="nav-number">18.2.3.</span> <span class="nav-text">Extends 的继承目标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-getPrototypeOf()"><span class="nav-number">18.2.4.</span> <span class="nav-text">Object.getPrototypeOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#super关键字"><span class="nav-number">18.2.5.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实例的__proto__属性"><span class="nav-number">18.2.6.</span> <span class="nav-text">实例的__proto__属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原生构造函数的继承"><span class="nav-number">18.3.</span> <span class="nav-text">原生构造函数的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class的取值函数（getter）和存值函数（setter）"><span class="nav-number">18.4.</span> <span class="nav-text">Class的取值函数（getter）和存值函数（setter）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class的Generator方法"><span class="nav-number">18.5.</span> <span class="nav-text">Class的Generator方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class的静态方法"><span class="nav-number">18.6.</span> <span class="nav-text">Class的静态方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class的静态属性"><span class="nav-number">18.7.</span> <span class="nav-text">Class的静态属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#new-target属性"><span class="nav-number">18.8.</span> <span class="nav-text">new.target属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mixin模式的实现"><span class="nav-number">18.9.</span> <span class="nav-text">Mixin模式的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修饰器"><span class="nav-number">19.</span> <span class="nav-text">修饰器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的修饰"><span class="nav-number">19.1.</span> <span class="nav-text">类的修饰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的修饰"><span class="nav-number">19.2.</span> <span class="nav-text">方法的修饰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么修饰器不能用于函数？"><span class="nav-number">19.3.</span> <span class="nav-text">为什么修饰器不能用于函数？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-decorators-js"><span class="nav-number">19.4.</span> <span class="nav-text">core-decorators.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用修饰器实现自动发布事件"><span class="nav-number">19.5.</span> <span class="nav-text">使用修饰器实现自动发布事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mixin"><span class="nav-number">19.6.</span> <span class="nav-text">Mixin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trait"><span class="nav-number">19.7.</span> <span class="nav-text">Trait</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel转码器的支持"><span class="nav-number">19.8.</span> <span class="nav-text">Babel转码器的支持</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Module"><span class="nav-number">20.</span> <span class="nav-text">Module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#严格模式"><span class="nav-number">20.1.</span> <span class="nav-text">严格模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export命令"><span class="nav-number">20.2.</span> <span class="nav-text">export命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import命令"><span class="nav-number">20.3.</span> <span class="nav-text">import命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块的整体加载"><span class="nav-number">20.4.</span> <span class="nav-text">模块的整体加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#export_default命令"><span class="nav-number">20.5.</span> <span class="nav-text">export default命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块的继承"><span class="nav-number">20.6.</span> <span class="nav-text">模块的继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6模块加载的实质"><span class="nav-number">20.7.</span> <span class="nav-text">ES6模块加载的实质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环加载"><span class="nav-number">20.8.</span> <span class="nav-text">循环加载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CommonJS模块的加载原理"><span class="nav-number">20.8.1.</span> <span class="nav-text">CommonJS模块的加载原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CommonJS模块的循环加载"><span class="nav-number">20.8.2.</span> <span class="nav-text">CommonJS模块的循环加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6模块的循环加载"><span class="nav-number">20.8.3.</span> <span class="nav-text">ES6模块的循环加载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6模块的转码"><span class="nav-number">20.9.</span> <span class="nav-text">ES6模块的转码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6_module_transpiler"><span class="nav-number">20.9.1.</span> <span class="nav-text">ES6 module transpiler</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SystemJS"><span class="nav-number">20.9.2.</span> <span class="nav-text">SystemJS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程风格"><span class="nav-number">21.</span> <span class="nav-text">编程风格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域-1"><span class="nav-number">21.1.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">21.2.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解构赋值"><span class="nav-number">21.3.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-1"><span class="nav-number">21.4.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组-1"><span class="nav-number">21.5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">21.6.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map结构"><span class="nav-number">21.7.</span> <span class="nav-text">Map结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-1"><span class="nav-number">21.8.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块"><span class="nav-number">21.9.</span> <span class="nav-text">模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ESLint的使用"><span class="nav-number">21.10.</span> <span class="nav-text">ESLint的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读懂_ECMAScript_规格"><span class="nav-number">22.</span> <span class="nav-text">读懂 ECMAScript 规格</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述-3"><span class="nav-number">22.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相等运算符"><span class="nav-number">22.2.</span> <span class="nav-text">相等运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的空位-1"><span class="nav-number">22.3.</span> <span class="nav-text">数组的空位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的map方法"><span class="nav-number">22.4.</span> <span class="nav-text">数组的map方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">23.</span> <span class="nav-text">参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#官方文件"><span class="nav-number">23.1.</span> <span class="nav-text">官方文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#综合介绍"><span class="nav-number">23.2.</span> <span class="nav-text">综合介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let和const"><span class="nav-number">23.3.</span> <span class="nav-text">let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解构赋值-1"><span class="nav-number">23.4.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串-1"><span class="nav-number">23.5.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则"><span class="nav-number">23.6.</span> <span class="nav-text">正则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-number">23.7.</span> <span class="nav-text">数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组-2"><span class="nav-number">23.8.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-1"><span class="nav-number">23.9.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象-2"><span class="nav-number">23.10.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy和Reflect-1"><span class="nav-number">23.11.</span> <span class="nav-text">Proxy和Reflect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol-1"><span class="nav-number">23.12.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制数组-1"><span class="nav-number">23.13.</span> <span class="nav-text">二进制数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set和Map"><span class="nav-number">23.14.</span> <span class="nav-text">Set和Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">23.15.</span> <span class="nav-text">Iterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">23.16.</span> <span class="nav-text">Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise对象-1"><span class="nav-number">23.17.</span> <span class="nav-text">Promise对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-2"><span class="nav-number">23.18.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decorator"><span class="nav-number">23.19.</span> <span class="nav-text">Decorator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Module-1"><span class="nav-number">23.20.</span> <span class="nav-text">Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-number">23.21.</span> <span class="nav-text">工具</span></a></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
         </section>
       
 
@@ -4123,7 +4156,8 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
@@ -4133,7 +4167,7 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">SenPng</span>
 </div>
@@ -4145,240 +4179,106 @@ ECMAScript 6简介ECMAScript 6（以下简称ES6）是JavaScript语言的下一�
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
+        
 
-
+        
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  
-
-  
-    
-    
-
-  
-
-
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
-    };
-  });
-</script>
-
-
-
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-  </script>
-
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  </script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
   
 
 
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
   
 
 </body>
