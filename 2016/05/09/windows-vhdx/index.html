@@ -1,0 +1,584 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是VHD/VHDX微软Microsoft Virtual Hard Disk format（虚拟磁盘）格式。随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。与旧的 VHD 格式相比，VHDX 具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows VHD/VHDX">
+<meta property="og:url" content="https://senpng.github.io/2016/05/09/windows-vhdx/index.html">
+<meta property="og:site_name" content="SenPng的技术博客">
+<meta property="og:description" content="什么是VHD/VHDX微软Microsoft Virtual Hard Disk format（虚拟磁盘）格式。随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。与旧的 VHD 格式相比，VHDX 具">
+<meta property="og:image" content="https://senpng.github.io/images/windows-vhdx/disk_manager.png">
+<meta property="og:updated_time" content="2016-05-09T03:57:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows VHD/VHDX">
+<meta name="twitter:description" content="什么是VHD/VHDX微软Microsoft Virtual Hard Disk format（虚拟磁盘）格式。随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。与旧的 VHD 格式相比，VHDX 具">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Windows VHD/VHDX | SenPng的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71259236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SenPng的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Windows VHD/VHDX
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-09T11:10:45+08:00" content="2016-05-09">
+              2016-05-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是VHD/VHDX">什么是VHD/VHDX</h2><p>微软Microsoft Virtual Hard Disk format（虚拟磁盘）格式。<br>随着虚拟环境的企业工作负荷的增加以及性能要求的提高，虚拟硬盘 (VHD) 格式需要适应这些变化。Windows Server 2012 中的 Hyper-V 引入了一个新版本的 VHD 格式，称为 VHDX，它在设计上可以处理当前以及将来的工作负荷。<br>与旧的 VHD 格式相比，VHDX 具有更大的存储容量。它还在电源故障期间提供数据损坏保护并且优化动态磁盘和差异磁盘的结构对齐方式，以防止在新的大型扇区物理磁盘上性能降级。</p>
+<h2 id="创建VHD/VHDX">创建VHD/VHDX</h2><p>启动命令行（管理员模式）<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">diskpart    //&#36827;&#20837;&#30913;&#30424;&#24037;&#20855;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#21019;&#24314;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#12290;&#24403;&#21069;&#20165;&#25903;&#25345; VHD &#21644; VHDX &#26684;&#24335;&#30340;&#25991;&#20214;&#65292;&#10;    &#23427;&#20204;&#26159;&#36890;&#36807;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#30340;&#10;    &#25991;&#20214;&#25193;&#23637;&#21517;(.vhd &#21644; .vhdx)&#25351;&#23450;&#30340;&#12290;&#10;&#10;&#35821;&#27861;:  CREATE VDISK FILE=&#60;&#34;filename&#34;&#62; MAXIMUM=&#60;N&#62; [TYPE=&#123;FIXED|EXPANDABLE&#125;]&#10;             [SD=&#60;SDDL string&#62;] [PARENT=&#60;&#34;filename&#34;&#62;] [SOURCE=&#60;&#34;filename&#34;&#62;]&#10;             [NOERR]&#10;             FILE=&#60;&#34;filename&#34;&#62;&#10;&#10;                &#25351;&#23450;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#30340;&#23436;&#25972;&#36335;&#24452;&#21644;&#25991;&#20214;&#21517;&#12290;&#10;                &#35813;&#25991;&#20214;&#21487;&#20197;&#20301;&#20110;&#32593;&#32476;&#20849;&#20139;&#19978;&#12290;&#10;&#10;    MAXIMUM=&#60;N&#62; &#34394;&#25311;&#30913;&#30424;&#20844;&#24320;&#30340;&#26368;&#22823;&#31354;&#38388;&#37327;&#65292;&#10;                &#20197;&#20806;&#23383;&#33410;(MB)&#20026;&#21333;&#20301;&#12290;&#10;&#10;    TYPE=&#123;FIXED|EXPANDABLE&#125;&#10;&#10;                FIXED &#25351;&#23450;&#22266;&#23450;&#22823;&#23567;&#30340;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#12290;EXPANDABLE&#10;                &#25351;&#23450;&#37325;&#26032;&#35843;&#25972;&#22823;&#23567;&#20197;&#36866;&#24212;&#25152;&#20998;&#37197;&#25968;&#25454;&#30340;&#10;                &#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#12290;&#40664;&#35748;&#20540;&#20026; FIXED&#12290;&#10;&#10;    [SD=&#60;SDDL string&#62;]&#10;&#10;                &#25351;&#23450;&#23433;&#20840;&#25551;&#36848;&#31526;&#23450;&#20041;&#35821;&#35328;(SDDL)&#26684;&#24335;&#10;                &#30340;&#23433;&#20840;&#25551;&#36848;&#31526;&#12290;&#40664;&#35748;&#24773;&#20917;&#19979;&#65292;&#10;                &#23433;&#20840;&#25551;&#36848;&#31526;&#26159;&#20174;&#29238;&#30446;&#24405;&#20013;&#33719;&#21462;&#30340;&#12290;&#10;&#10;                SDDL &#23383;&#31526;&#20018;&#21487;&#33021;&#27604;&#36739;&#22797;&#26434;&#65292;&#20294;&#24456;&#28789;&#27963;&#12290;&#10;                &#20854;&#26368;&#31616;&#21333;&#30340;&#26684;&#24335;&#26159;&#20445;&#25252;&#35775;&#38382;&#30340;&#23433;&#20840;&#25551;&#36848;&#31526;&#65292;&#31216;&#20026;&#33258;&#23450;&#20041;&#35775;&#38382;&#25511;&#21046;&#21015;&#34920;(DACL)&#12290;&#10;                &#20854;&#26684;&#24335;&#20026;:&#10;&#10;                D:&#60;DACL_FLAGS&#62;(&#60;STRING_ACE&#62;)(&#60;STRING_ACE&#62;)...(&#60;STRING_ACE&#62;)&#10;&#10;                &#24120;&#29992;&#30340; DACL_FLAGS &#20026;:&#10;&#10;                   &#34;P&#34; - DACL &#19981;&#24212;&#34987;&#26469;&#33258;&#29238;&#23481;&#22120;&#30340;&#10;                         &#20219;&#20309; ACL &#25152;&#35206;&#30422;(&#20445;&#25252;)&#12290;&#10;                         VHD &#25110; VHDX &#25991;&#20214;&#30340;&#23481;&#22120;&#23601;&#26159;&#10;                         &#20854;&#30446;&#24405;&#12290;&#10;                   &#34;AI&#34;- DACL &#24212;&#35813;&#20174;&#29238;&#23481;&#22120;&#33258;&#21160;&#10;                         &#32487;&#25215;&#12290;&#10;&#10;                STRING_ACE &#30340;&#26684;&#24335;&#20026;&#10;&#10;                   &#60;ACE_TYPE&#62;;;&#60;RIGHTS&#62;;;;&#60;ACCOUNT_ID&#62;&#10;&#10;                &#24120;&#29992;&#30340; ACE_TYPE &#20026;:&#10;&#10;                   &#34;A&#34; - &#20801;&#35768;&#35775;&#38382;&#12290;&#10;                   &#34;D&#34; - &#25298;&#32477;&#35775;&#38382;&#12290;&#10;&#10;                &#24120;&#29992;&#30340; RIGHTS &#20026;:&#10;&#10;                   &#34;GA&#34; - &#25152;&#26377;&#35775;&#38382;&#26435;&#38480;&#12290;&#10;                   &#34;GR&#34; - &#35835;&#21462;&#35775;&#38382;&#26435;&#38480;&#12290;&#10;                   &#34;GW&#39; - &#20889;&#20837;&#35775;&#38382;&#26435;&#38480;&#12290;&#10;&#10;                &#24120;&#29992;&#30340; ACCOUNT_ID &#20026;:&#10;&#10;                   &#34;BA&#34; - &#20869;&#32622;&#31649;&#29702;&#21592;&#10;                   &#34;AU&#34; - &#36890;&#36807;&#36523;&#20221;&#39564;&#35777;&#30340;&#29992;&#25143;&#12290;&#10;                   &#34;CO&#34; - &#21019;&#24314;&#32773;&#25152;&#26377;&#32773;&#12290;&#10;                   &#34;WD&#34; - &#20219;&#20309;&#20154;&#12290;&#10;&#10;                &#23558;&#25152;&#26377;&#36825;&#20123;&#25918;&#22312;&#19968;&#36215;&#65292;&#20363;&#22914;&#65292;&#10;&#10;                  D:P:(A;;GR;;;AU)&#10;&#10;                &#20026;&#25152;&#26377;&#36890;&#36807;&#36523;&#20221;&#39564;&#35777;&#30340;&#29992;&#25143;&#25480;&#20104;&#35835;&#21462;&#35775;&#38382;&#26435;&#38480;&#12290;&#10;&#10;                &#21516;&#26679;&#65292;&#10;&#10;                  D:P:(A;;GA;;;WD)&#10;&#10;                &#20026;&#20219;&#20309;&#20154;&#25480;&#20104;&#23436;&#20840;&#35775;&#38382;&#26435;&#38480;&#12290;&#10;&#10;                &#21487;&#20197;&#22312; Microsoft &#30340; MSDN &#32593;&#31449;&#19978;&#10;                &#25214;&#21040;&#26377;&#20851; SDDL &#30340;&#35814;&#32454;&#20449;&#24687;&#12290;&#10;&#10;    [PARENT=&#60;&#34;filename&#34;&#62;]&#10;&#10;                &#29992;&#20110;&#21019;&#24314;&#24046;&#24322;&#30913;&#30424;&#30340;&#29616;&#26377;&#29238;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#30340;&#36335;&#24452;&#12290;&#10;                &#23545;&#20110; PARENT &#21442;&#25968;&#65292;&#19981;&#24212;&#25351;&#23450; MAXIMUM&#65292;&#10;                &#22240;&#20026;&#24046;&#24322;&#30913;&#30424;&#20174;&#20854;&#29238;&#30446;&#24405;&#33719;&#21462;&#22823;&#23567;&#12290;&#10;                &#32780;&#19988;&#65292;&#20063;&#19981;&#24212;&#25351;&#23450; TYPE&#65292;&#10;                &#22240;&#20026;&#21482;&#33021;&#21019;&#24314; EXPANDABLE &#24046;&#24322;&#30913;&#30424;&#12290;&#10;&#10;&#10;    [SOURCE=&#60;&#34;filename&#34;&#62;]&#10;&#10;                &#29992;&#20110;&#39044;&#22635;&#20805;&#26032;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#30340;&#29616;&#26377;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#30340;&#36335;&#24452;&#12290;&#10;                &#24403;&#25351;&#23450; SOURCE &#26102;&#65292;&#10;                &#36755;&#20837;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#20013;&#30340;&#25968;&#25454;&#10;                &#23558;&#20174;&#36755;&#20837;&#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#36880;&#22359;&#22797;&#21046;&#21040;&#21019;&#24314;&#30340;&#10;                &#34394;&#25311;&#30913;&#30424;&#25991;&#20214;&#12290;&#10;                &#20294;&#19981;&#24314;&#31435;&#29238;&#23376;&#20851;&#31995;&#12290;&#10;&#10;&#10;    NOERR       &#20165;&#29992;&#20110;&#33050;&#26412;&#12290;&#36935;&#21040;&#38169;&#35823;&#26102;&#65292;DiskPart&#10;                &#20250;&#32487;&#32493;&#22788;&#29702;&#21629;&#20196;&#65292;&#22914;&#21516;&#27809;&#26377;&#20986;&#29616;&#38169;&#35823;&#19968;&#26679;&#12290;&#10;                &#22914;&#26524;&#19981;&#20351;&#29992; NOERR &#21442;&#25968;&#65292;&#38169;&#35823;&#20250;&#23548;&#33268; DiskPart &#36864;&#20986;&#10;                &#24182;&#36820;&#22238;&#38169;&#35823;&#20195;&#30721;&#12290;&#10;&#31034;&#20363;:&#10;&#10;    CREATE VDISK FILE=&#34;c:\test\test.vhd&#34; MAXIMUM=1000&#10;    CREATE VDISK FILE=&#34;c:\test\child.vhdx&#34; PARENT=&#34;c:\test\test.vhdx&#34;&#10;    CREATE VDISK FILE=&#34;c:\test\test.vhd&#34; MAXIMUM=1000 SD=&#34;D:P(A;;GA;;;WD)&#34;&#10;    CREATE VDISK FILE=&#34;c:\test\new.vhdx&#34; SOURCE=&#34;c:\test\test.vhd&#34;</span><br></pre></td></tr></table></figure>
+<h2 id="扩展VHDX大小">扩展VHDX大小</h2><p>启动命令行（管理员模式）<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">diskpart    //&#36827;&#20837;&#30913;&#30424;&#24037;&#20855;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">select vdisk file=&#60;path&#62;    //&#36873;&#20013;&#25351;&#23450;&#30340;vdhx&#25991;&#20214;&#10;expand vdisk maximum=&#60;N&#62;    //&#25193;&#23637;&#36873;&#20013;&#30340;vhdx&#25991;&#20214;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>扩展后需要进入<code>磁盘管理</code>将扩展后的部分<code>扩展卷</code><br><img src="/images/windows-vhdx/disk_manager.png" alt="磁盘管理"></p>
+</blockquote>
+<h2 id="关于基于母盘下的子盘大小扩展">关于基于母盘下的子盘大小扩展</h2><p>按照<em>规矩</em>只要基于母盘创建子盘后，母盘是不可以有任何修改的，不然会导致子盘无法正常使用。<br>自己尝试过，将母盘与子盘同时扩展相同大小，是可以扩展大小并正常使用的。我的猜想：可能是因为扩展大小并不是修改母盘内的数据，而是修改的<code>vhdx</code>的文件信息</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/05/objc-zen-book/" rel="next" title="禅与Objective-C编程艺术">
+                <i class="fa fa-chevron-left"></i> 禅与Objective-C编程艺术
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/09/macos-installer/" rel="prev" title="Mac OS Installer">
+                Mac OS Installer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="SenPng" />
+          <p class="site-author-name" itemprop="name">SenPng</p>
+          <p class="site-description motion-element" itemprop="description">技术博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/senpng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是VHD/VHDX"><span class="nav-number">1.</span> <span class="nav-text">什么是VHD/VHDX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建VHD/VHDX"><span class="nav-number">2.</span> <span class="nav-text">创建VHD/VHDX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展VHDX大小"><span class="nav-number">3.</span> <span class="nav-text">扩展VHDX大小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于基于母盘下的子盘大小扩展"><span class="nav-number">4.</span> <span class="nav-text">关于基于母盘下的子盘大小扩展</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SenPng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
