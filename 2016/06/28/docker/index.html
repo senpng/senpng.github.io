@@ -1,0 +1,608 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
+拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker">
+<meta property="og:url" content="https://senpng.github.io/2016/06/28/docker/index.html">
+<meta property="og:site_name" content="SenPng的技术博客">
+<meta property="og:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
+拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta property="og:image" content="https://senpng.github.io/images/1.jpg">
+<meta property="og:updated_time" content="2016-08-26T15:12:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Docker">
+<meta name="twitter:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
+拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Docker | SenPng的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71259236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SenPng的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Docker
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-28T00:00:00+08:00" content="2016-06-28">
+              2016-06-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是Docker?">什么是<code>Docker</code>?</h2><p>简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案</p>
+<p><img src="/images/1.jpg" alt=""><br>拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。<br>Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image,进而发布到不同的平台上运行</p>
+<h2 id="常用命令">常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker search &#123;name&#125; //搜索docker镜像</span><br><span class="line">docker pull &#123;name&#125; //下载指定镜像</span><br><span class="line">docker run &#123;name&#125; <span class="operator">-d</span> -t -i -rm //运行一个容器</span><br></pre></td></tr></table></figure>
+<h2 id="Dockerfile">Dockerfile</h2><p>编写完成Dockerfile之后，可以通过<code>docker build</code>命令来创建镜像。<br>基本的格式为 <code>docker build [选项] 路径</code>，该命令将读取指定路径下（包括子目录）的Dockerfile，并将该路径下所有内容发送给Docker服务端，由服务端来创建镜像。因此一般建议放置Dockerfile的目录为空目录。也可以通过<code>.dockerignore</code>文件（每一行添加一条匹配模式）来让Docker忽略路径下的目录和文件。<br>要指定镜像的标签信息，可以通过<code>-t</code>选项，例如<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo docker build -t myrepo/myapp /tmp/<span class="built_in">test</span>1/</span><br></pre></td></tr></table></figure></p>
+<p>###FROM<br>格式为<code>FROM &lt;image&gt;</code>或<code>FROM &lt;image&gt;:&lt;tag&gt;</code>。</p>
+<p>第一条指令必须为<code>FROM</code>指令。并且，如果在同一个Dockerfile中创建多个镜像时，可以使用多个 <code>FROM</code> 指令（每个镜像一次）。</p>
+<h3 id="MAINTAINER">MAINTAINER</h3><p>格式为<code>MAINTAINER &lt;name&gt;</code>, 指定维护者信息</p>
+<h3 id="RUN">RUN</h3><p>格式为<code>RUN &lt;command&gt;</code>或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></p>
+<h3 id="CMD">CMD</h3><p>支持三种格式</p>
+<ul>
+<li><code>CMD [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></li>
+<li><code>CMD cmmand param1 param2</code></li>
+<li><code>CMD [&quot;param1&quot;, &quot;param2&quot;]</code><br>每个Dockerfile只能有一条<code>CMD</code>命令</li>
+</ul>
+<h3 id="EXPOSR">EXPOSR</h3><p>格式为 <code>EXPOSE &lt;port&gt; [&lt;port&gt;...]</code><br>告诉 <code>Docker</code> 服务端容器暴露的端口号，供互联系统使用。在启动容器时需要通过 <code>-P</code>, <code>Docker</code> 主机会自动分配一个端口转发到指定的端口。</p>
+<h3 id="ENV">ENV</h3><p>格式为 <code>ENV &lt;key&gt; &lt;value&gt;</code><br>指定一个环境变量，可被后续 <code>RUN</code> 指令使用，并在容器运行保持</p>
+<h3 id="ADD">ADD</h3><p>格式为 <code>ADD &lt;src&gt; &lt;dest&gt;</code><br>该命令复制指定的 <code>&lt;src&gt;</code> 到容器中的 <code>&lt;dest&gt;</code>。其中 <code>&lt;src&gt;</code> 可以是Dockerfile所在目录的一个相对路径，也可以是一个URL，还可以是一个tar文件（自动解压为目录）</p>
+<h3 id="COPY">COPY</h3><p>格式为 <code>COPY &lt;src&gt; &lt;dest&gt;</code><br>复制本地主机的 <code>&lt;src&gt;</code> （为Dockerfile所在目录的相对路径）到容器中的 <code>dest</code>。<br>当使用本地目录为源目录时，推荐使用 <code>COPY</code>。</p>
+<h3 id="ENTRYPOINT">ENTRYPOINT</h3><p>两种格式：</p>
+<ul>
+<li><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></li>
+<li><code>ENTRYPOINT command param1 param2</code><br>配置容器启动后执行的命令，并且不可被 <code>docker run</code> 提供参数覆盖。<br>每个Dockerfile中只能有一个<code>ENTRYPOINT</code>，当指定多个时，只有最后一个起效。</li>
+</ul>
+<h3 id="VOLUME">VOLUME</h3><p>格式为 <code>VOLUME [&quot;/data&quot;]</code><br>创建一个可以从本地主机或者其它容器挂载的挂载点，一般用来存放数据库和需要保持的数据等</p>
+<h3 id="USER">USER</h3><p>格式为 <code>USER daemon</code><br>指定运行容器时的用户名或UID，后续的 <code>RUN</code> 也会使用指定用户<br>当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户，例如：<br><code>RUN groupadd -r postgres &amp;&amp; useradd -r -g postgres postgres</code>。要临时获取管理员权限可以使用 <code>gosu</code>，而不推荐 <code>sudo</code>。</p>
+<h3 id="WORKDIR">WORKDIR</h3><p>格式为 <code>WORKDIR /path/to/workdir</code><br>为后续的 <code>RUN</code>、<code>CMD</code>、<code>ENTRYPOINT</code>指令配置工作目录。<br>可以使用多个 <code>WORKDIR</code> 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径，例如：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></p>
+<p>则最终路径为 <code>/a/b/c</code></p>
+<h3 id="ONBUILD">ONBUILD</h3><p>格式为 <code>ONBUILD [INSTRUCTION]</code><br>配置当前所创建的镜像作为其它新创镜像的基础镜像时，所执行的操作指令。<br>例如，Dockerfile使用如下的内容创建了镜像<code>image-A</code>。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[...]</span><br><span class="line">ONBUILD ADD . /app/src</span><br><span class="line">ONBUILD RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure></p>
+<p>如果基于<code>image-A</code>创建新的镜像时，新的Dockerfile中使用 <code>FROM image-A</code> 指定基础镜像时，会自动执行 <code>ONBUILD</code> 指定内容，等价于在后面添加了两条指令。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM image-A</span><br><span class="line"></span><br><span class="line"><span class="comment">#Automatically run the following</span></span><br><span class="line">ADD . /app/src</span><br><span class="line">RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</span><br></pre></td></tr></table></figure></p>
+<p>使用 <code>ONBUILD</code> 指令的镜像，推荐在标签中注明，例如 <code>ruby:1.9-onbuild</code>。</p>
+<h2 id="导出镜像">导出镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#save 用于持久化镜像,保存的是所有这个镜像的版本记录，包括一些历史数据.</span></span><br><span class="line">docker save -o &lt;save_name&gt;.tar.gz &lt;image_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#export 用于持久化容器,导出的是容器当中所用的镜像内容.</span></span><br><span class="line">docker <span class="built_in">export</span> &lt;container_id&gt; &gt; ./&lt;save_name&gt;.tar.gz</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/26/webpack/" rel="next" title="Webpack">
+                <i class="fa fa-chevron-left"></i> Webpack
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/19/nodejs/" rel="prev" title="NodeJS">
+                NodeJS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="SenPng" />
+          <p class="site-author-name" itemprop="name">SenPng</p>
+          <p class="site-description motion-element" itemprop="description">技术博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/senpng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Docker?"><span class="nav-number">1.</span> <span class="nav-text">什么是Docker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">3.</span> <span class="nav-text">Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAINTAINER"><span class="nav-number">3.1.</span> <span class="nav-text">MAINTAINER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">3.2.</span> <span class="nav-text">RUN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">3.3.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSR"><span class="nav-number">3.4.</span> <span class="nav-text">EXPOSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">3.5.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD"><span class="nav-number">3.6.</span> <span class="nav-text">ADD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COPY"><span class="nav-number">3.7.</span> <span class="nav-text">COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENTRYPOINT"><span class="nav-number">3.8.</span> <span class="nav-text">ENTRYPOINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VOLUME"><span class="nav-number">3.9.</span> <span class="nav-text">VOLUME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">3.10.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">3.11.</span> <span class="nav-text">WORKDIR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONBUILD"><span class="nav-number">3.12.</span> <span class="nav-text">ONBUILD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出镜像"><span class="nav-number">4.</span> <span class="nav-text">导出镜像</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SenPng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

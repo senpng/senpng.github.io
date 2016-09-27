@@ -92,7 +92,7 @@ idevicesyslog
 idevicesyslog
 终端挂在app沙盒目录brew install libimobiledevicebrew install ifuse
 手动签名yololib PcwStore hook">
-<meta property="og:updated_time" content="2016-03-23T06:25:20.000Z">
+<meta property="og:updated_time" content="2016-07-14T05:35:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS-Hook">
 <meta name="twitter:description" content="本文章仅作娱乐交流本文章以一个app中嵌入自定义代码为示范，“破解”app;真机logbrew install libimobiledevicebrew install ideviceinstaller
@@ -289,6 +289,16 @@ idevicesyslog
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">idevicesyslog</span><br></pre></td></tr></table></figure>
 <h4 id="终端挂在app沙盒目录">终端挂在app沙盒目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install libimobiledevice</span><br><span class="line">brew install ifuse</span><br></pre></td></tr></table></figure>
 <h4 id="手动签名">手动签名</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yololib PcwStore hook1.dylib </span><br><span class="line">codesign <span class="operator">-f</span> <span class="operator">-s</span> <span class="string">"iPhone Developer: he baizhong (LA92F7PS39)"</span> PcwStore.app/hook1.dylib</span><br></pre></td></tr></table></figure>
+<h2 id="macOS_App_Hook">macOS App Hook</h2><p>编译生成<code>*.dylib</code><br>加载dylib的方法有很多，我们这里用DYLD_INSERT_LIBRARIES</p>
+<p>打开目录/Applications/<code>AppName</code>.app/Contents/MacOS/<br>复制<code>*.dylib</code>到该目录下<br>修改<code>AppName</code>为<code>AppName_</code><br>新建<code>AppName</code>，文本编辑器输入一下内容：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">UP_PATH=<span class="string">"`dirname "</span><span class="variable">$&#123;0&#125;</span><span class="string">"`"</span></span><br><span class="line">UP_BIN=<span class="string">"`dirname "</span><span class="variable">$&#123;0&#125;</span><span class="string">"`"</span>/AppName_</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> DYLD_INSERT_LIBRARIES=<span class="string">"<span class="variable">$&#123;UP_PATH&#125;</span>/*.dylib"</span></span><br><span class="line"></span><br><span class="line"><span class="string">"<span class="variable">$UP_BIN</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>保存，添加可执行属性<br>chmod 755 <code>AppName</code></p>
+<h2 id="Install_iOSOpenDev">Install iOSOpenDev</h2><p>官网下载<a href="">iOSOpenDev</a><br>安装下载好的pkg文件是无法正常安装成功的。需要进入<code>/opt/</code>目录下有安装时生成的文件<br><figure class="highlight processing"><table><tr><td class="code"><pre><span class="line">sudo ./iod-<span class="title">setup</span> base</span><br><span class="line">sudo ./iod-<span class="title">setup</span> sdk -sdk iphoneos</span><br></pre></td></tr></table></figure></p>
+<p>执行第二步会出现一个错误就是链接iOS 9.3的private framework失败，主要是在9.3的SDK里去掉了private framework。<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">PrivateFramework directory not <span class="string">found:</span> <span class="regexp">/Applications/</span>Xcode.app<span class="regexp">/Contents/</span>Developer<span class="regexp">/Platforms/</span>iPhoneOS.platform<span class="regexp">/Developer/</span>SDKs<span class="regexp">/iPhoneOS9.3.sdk/</span>System<span class="regexp">/Library/</span>PrivateFrameworks</span><br></pre></td></tr></table></figure></p>
+<p>解决办法：<br>将iOS9.2 SDK中的<code>PrivateFrameworks</code>文件夹复制到<code>iPhoneOS9.3.sdk/System/Library/</code>下。</p>
+<p>还会有其它错误<br>1、下载附件<br>附件中三个文件在xcode6里都可以找到，可以在升级xcode7前备份出来，升级xcode7以后再放回原位，也可以用我上传的，附件中文件后面的数字只做区分用，拷贝前需要删掉数字</p>
+<p>2、把Specifications1文件夹重命名为Specifications放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/</p>
+<p>3、把Specifications2文件夹重命名为Specifications放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/</p>
+<p>4、把usr3重命名为usr放到/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/</p>
 <h2 id="未完待续">未完待续</h2>
       
     </div>
@@ -391,7 +401,7 @@ idevicesyslog
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -448,7 +458,7 @@ idevicesyslog
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文章仅作娱乐交流"><span class="nav-number">1.</span> <span class="nav-text">本文章仅作娱乐交流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文章以一个app中嵌入自定义代码为示范，“破解”app;"><span class="nav-number">2.</span> <span class="nav-text">本文章以一个app中嵌入自定义代码为示范，“破解”app;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#真机log"><span class="nav-number">2.1.</span> <span class="nav-text">真机log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端挂在app沙盒目录"><span class="nav-number">2.2.</span> <span class="nav-text">终端挂在app沙盒目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手动签名"><span class="nav-number">2.3.</span> <span class="nav-text">手动签名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number"></span> <span class="nav-text">未完待续</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本文章仅作娱乐交流"><span class="nav-number">1.</span> <span class="nav-text">本文章仅作娱乐交流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本文章以一个app中嵌入自定义代码为示范，“破解”app;"><span class="nav-number">2.</span> <span class="nav-text">本文章以一个app中嵌入自定义代码为示范，“破解”app;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#真机log"><span class="nav-number">2.1.</span> <span class="nav-text">真机log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端挂在app沙盒目录"><span class="nav-number">2.2.</span> <span class="nav-text">终端挂在app沙盒目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手动签名"><span class="nav-number">2.3.</span> <span class="nav-text">手动签名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#macOS_App_Hook"><span class="nav-number"></span> <span class="nav-text">macOS App Hook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install_iOSOpenDev"><span class="nav-number"></span> <span class="nav-text">Install iOSOpenDev</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number"></span> <span class="nav-text">未完待续</span></a></div>
             
           </div>
         </section>

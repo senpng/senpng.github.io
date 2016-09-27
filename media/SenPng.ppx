@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxifierProfile version="101" platform="MacOSX" product_id="2" product_minver="200">
+    <Options>
+        <Resolve>
+            <AutoModeDetection enabled="true"/>
+            <ViaProxy enabled="false">
+                <TryLocalDnsFirst enabled="false"/>
+            </ViaProxy>
+            <ExclusionList ExcludeSimpleHostnames="true" ExcludeLocalhost="true" ExcludeSelfHostname="true" ExcludeLocalDomain="true">localhost;%SimpleHostnames%;%ComputerName%;*.local;
+</ExclusionList>
+        </Resolve>
+        <Encryption mode="basic"/>
+        <HttpProxiesSupport enabled="true"/>
+        <HandleDirectConnections enabled="false"/>
+        <ConnectionLoopDetection enabled="false"/>
+        <ProcessServices enabled="false"/>
+        <ProcessOtherUsers enabled="false"/>
+    </Options>
+    <ProxyList>
+        <Proxy id="100" type="SOCKS5">
+            <Address>127.0.0.1</Address>
+            <Port>1080</Port>
+            <Options>0</Options>
+        </Proxy>
+    </ProxyList>
+    <ChainList/>
+    <RuleList>
+        <Rule enabled="true">
+            <Name>ShadowsocksX [auto-created]</Name>
+            <Applications>ShadowsocksX</Applications>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Localhost</Name>
+            <Targets>localhost; 127.0.0.1; ::1; %ComputerName%</Targets>
+            <Action type="Direct"/>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Git</Name>
+            <Applications>git</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Curl</Name>
+            <Applications>curl</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Xcode</Name>
+            <Applications>Xcode</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Git</Name>
+            <Applications>git-remote-https</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>sublime</Name>
+            <Applications>plugin_host</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>iTranslate</Name>
+            <Applications>iTranslate</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>NPM</Name>
+            <Applications>node</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>Screenhero</Name>
+            <Applications>Screenhero</Applications>
+            <Targets>*.screenhero.com</Targets>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Eclipse</Name>
+            <Applications>eclipse-inst</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>MC</Name>
+            <Applications>java</Applications>
+            <Targets>*.minecraftforge.net;*</Targets>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>npm</Name>
+            <Applications>node</Applications>
+            <Targets>registry.npmjs.org</Targets>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>Google Chrome</Name>
+            <Applications>Google*Chrome</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Genymotion</Name>
+            <Applications>genymotion</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Perl</Name>
+            <Applications>perl*</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>Charles</Name>
+            <Applications>Charles</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>PcwStore</Name>
+            <Applications>PcwStore;
+*</Applications>
+            <Targets>115.182.53.111</Targets>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>App Store</Name>
+            <Applications>App*Store</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Vistual Studio Code</Name>
+            <Applications>Electron*Helper</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Ruby</Name>
+            <Applications>ruby</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Docker</Name>
+            <Applications>*docker*</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="false">
+            <Name>Docker Machine</Name>
+            <Applications>docker-machine</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Deco</Name>
+            <Applications>deco</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Atom</Name>
+            <Applications>node</Applications>
+            <Targets>atom.io</Targets>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Xcode</Name>
+            <Applications>Xcode</Applications>
+            <Action type="Proxy">100</Action>
+        </Rule>
+        <Rule enabled="true">
+            <Name>Default</Name>
+            <Action type="Direct"/>
+        </Rule>
+    </RuleList>
+</ProxifierProfile>

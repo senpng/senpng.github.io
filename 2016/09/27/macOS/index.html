@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="应用基本应用
+QQ
+MWeb
+Xcode8
+SQLiteProfessional
+xScope
+Cornerstone
+iTranslate
+
+Cocoapodsgem sources --remove https://rubygems.org/gem sources -a https://ruby.taobao.org/sudo gem install cocoapods --pre
+Brew">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS Reconfigure">
+<meta property="og:url" content="https://senpng.github.io/2016/09/27/macOS/index.html">
+<meta property="og:site_name" content="SenPng的技术博客">
+<meta property="og:description" content="应用基本应用
+QQ
+MWeb
+Xcode8
+SQLiteProfessional
+xScope
+Cornerstone
+iTranslate
+
+Cocoapodsgem sources --remove https://rubygems.org/gem sources -a https://ruby.taobao.org/sudo gem install cocoapods --pre
+Brew">
+<meta property="og:updated_time" content="2016-09-27T08:51:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="macOS Reconfigure">
+<meta name="twitter:description" content="应用基本应用
+QQ
+MWeb
+Xcode8
+SQLiteProfessional
+xScope
+Cornerstone
+iTranslate
+
+Cocoapodsgem sources --remove https://rubygems.org/gem sources -a https://ruby.taobao.org/sudo gem install cocoapods --pre
+Brew">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> macOS Reconfigure | SenPng的技术博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71259236-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">SenPng的技术博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                macOS Reconfigure
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-27T00:00:00+08:00" content="2016-09-27">
+              2016-09-27
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="应用">应用</h2><h3 id="基本应用">基本应用</h3><ul>
+<li>QQ</li>
+<li>MWeb</li>
+<li>Xcode8</li>
+<li>SQLiteProfessional</li>
+<li>xScope</li>
+<li>Cornerstone</li>
+<li>iTranslate</li>
+</ul>
+<h3 id="Cocoapods">Cocoapods</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gem sources --remove https://rubygems.org/</span><br><span class="line">gem sources <span class="operator">-a</span> https://ruby.taobao.org/</span><br><span class="line">sudo gem install cocoapods --pre</span><br></pre></td></tr></table></figure>
+<h3 id="Brew_安装应用">Brew 安装应用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br><span class="line">brew analytics off</span><br></pre></td></tr></table></figure>
+<h4 id="Git_SSH-Key">Git SSH-Key</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -b <span class="number">4096</span> -C <span class="string">"senpng@qq.com"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(ssh-agent -s)</span>"</span></span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+<h4 id="NVM">NVM</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install nvm</span><br><span class="line">nvm install node &amp;&amp; node <span class="built_in">alias</span> default node //安装最新node并设置为默认的版本</span><br><span class="line">mkdir ~/.nvm</span><br></pre></td></tr></table></figure>
+<p> 添加到<code>~/.zshrc</code>:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span><br><span class="line">. <span class="string">"<span class="variable">$(brew --prefix nvm)</span>/nvm.sh"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="ReactNative">ReactNative</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install watchman</span><br><span class="line">npm install -g react-native-cli</span><br></pre></td></tr></table></figure>
+<h4 id="Proxifier">Proxifier</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install proxifier</span><br></pre></td></tr></table></figure>
+<!--注册码：`P427L-9Y552-5433E-8DSR3-58Z68`
+[ppx](/media/SenPng.ppx)-->
+<h4 id="Sublime_Text3">Sublime Text3</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install sublime-text</span><br></pre></td></tr></table></figure>
+<p>安装Package Control<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen( <span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())</span><br></pre></td></tr></table></figure></p>
+<p>配置<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /Users/SenPng/Library/Application\ Support/Sublime\ Text\ <span class="number">3</span>/Packages/User</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:senpng/SublimeText3-User.git</span><br><span class="line">git pull origin master</span><br><span class="line">git branch --set-upstream-to=origin/master master</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p>
+<p>注册码<br><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">注册码</span><br><span class="line">—– BEGIN LICENSE —–</span><br><span class="line">Michael Barnes</span><br><span class="line">Single User License</span><br><span class="line">EA7E-<span class="number">821385</span></span><br><span class="line"><span class="number">8</span>A353C41 <span class="number">872</span>A0D5C DF9B2950 AFF6F667</span><br><span class="line">C458EA6D <span class="number">8</span>EA3C286 <span class="number">98</span>D1D650 <span class="number">131</span>A97AB</span><br><span class="line">AA919AEC EF20E143 B361B1E7 <span class="number">4</span>C8B7F04</span><br><span class="line">B085E65E <span class="number">2F</span>5F5360 <span class="number">8489</span>D422 FB8FC1AA</span><br><span class="line"><span class="number">93F</span>6323C FD7F7544 <span class="number">3F</span>39C318 D95E6480</span><br><span class="line">FCCC7561 <span class="number">8</span>A4A1741 <span class="number">68F</span>A4223 ADCEDE07</span><br><span class="line"><span class="number">200</span>C25BE DBBC4855 C4CFB774 C5EC138C</span><br><span class="line"><span class="number">0F</span>EC1CEF D9DCECEC D3A5DAD1 <span class="number">01316</span>C36</span><br><span class="line">—— END LICENSE ——</span><br></pre></td></tr></table></figure></p>
+<h4 id="Clean_My_Mac3">Clean My Mac3</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install cleanmymac</span><br></pre></td></tr></table></figure>
+<!--激活码：`id792986135929uks`-->
+<h4 id="iStat_Menus">iStat Menus</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install istat-menus</span><br></pre></td></tr></table></figure>
+<!--注册码：`9665-5955-6856-2071-0000`-->
+<h4 id="Android_Studio">Android Studio</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install java android-sdk android-studio</span><br></pre></td></tr></table></figure>
+<p>添加环境变量到<code>~/.zshrc</code><br><figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">export ANDROID_HOME=/usr/<span class="keyword">local</span>/<span class="built_in">opt</span>/android-sdk</span><br></pre></td></tr></table></figure></p>
+<h4 id="Archiver">Archiver</h4><p>需要下载<code>2.x</code>版本<br><!--注册码：`ARCA-7ME5-Z2W5-U3JH-323P`--></p>
+<h4 id="NTFS14">NTFS14</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install paragon-ntfs</span><br></pre></td></tr></table></figure>
+<!--激活文件放入`/Library/Application Support/Paragon Software/`
+[NTFS14](/media/NTFS14.)-->
+<h4 id="Sketch">Sketch</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install sketch</span><br></pre></td></tr></table></figure>
+<h4 id="Dash">Dash</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install dash</span><br></pre></td></tr></table></figure>
+<!-- [license](/media/license.dash-license) -->
+<h4 id="Reveal">Reveal</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install reveal</span><br></pre></td></tr></table></figure>
+<!-- [macreveal-Reveal-iOS](/media/macreveal-Reveal-iOS.reveallicense) -->
+<h4 id="Other">Other</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br><span class="line">brew cask install google-chrome java android-studio shadowsocksx thunder paw</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm i -g cnpm http-server</span><br><span class="line">npm i -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="ZSH">ZSH</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置">配置</h4><h5 id="主题">主题</h5><figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="setting">ZSH_THEME=<span class="value"><span class="string">"amuse"</span></span></span></span><br></pre></td></tr></table></figure>
+<p>修改<code>vim ~/.oh-my-zsh/themes/amuse.zsh-theme</code> –&gt; 🕒</p>
+<h5 id="插件">插件</h5><h6 id="autojump">autojump</h6><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install autojump</span><br></pre></td></tr></table></figure>
+<p>修改<code>~/.zshrc</code>配置<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">plugins=(git autojump zsh_reload)</span><br></pre></td></tr></table></figure></p>
+<h6 id="powerline">powerline</h6><p>安装<code>powerline</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install python</span><br><span class="line">pip install git+git://github.com/powerline/powerline</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts.git</span><br><span class="line"><span class="built_in">cd</span> fonts</span><br><span class="line">./install.sh</span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; rm -rf fonts</span><br></pre></td></tr></table></figure></p>
+<p>设置终端字体<br><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">Meslo LG S <span class="keyword">for</span> Powerline</span><br></pre></td></tr></table></figure></p>
+<p>修改<code>~/.zshrc</code>配置<br><figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">. /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">python2</span>.7/<span class="title">site</span>-<span class="title">packages</span>/<span class="title">powerline</span>/<span class="title">bindings</span>/<span class="title">zsh</span>/<span class="title">powerline</span>.<span class="title">zsh</span></span></span><br></pre></td></tr></table></figure></p>
+<h6 id="macvim">macvim</h6><p>安装<code>macvim</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install macvim --env-std --with-override-system-vim</span><br></pre></td></tr></table></figure></p>
+<p>配置Vim <code>~/.vimrc</code><br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator"><span class="keyword">set</span> rtp+=/usr/<span class="keyword">local</span>/lib/python2<span class="number">.7</span>/site-packages/powerline/bindings/vim #这里需要改成自己的安装路径</span><br><span class="line"><span class="keyword">set</span> guifont=Meslo\ LG\ S\ <span class="keyword">for</span>\ Powerline</span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line">let <span class="keyword">g</span>:Powerline_symbols = <span class="string">'fancy'</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">encoding</span>=utf-<span class="number">8</span></span><br><span class="line"><span class="keyword">set</span> t_Co=<span class="number">256</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">number</span></span><br><span class="line"><span class="keyword">set</span> fillchars+=stl:\ ,stlnc:\</span><br><span class="line"><span class="keyword">set</span> term=xterm-<span class="number">256</span>color</span><br><span class="line"><span class="keyword">set</span> termencoding=utf-<span class="number">8</span></span></span><br></pre></td></tr></table></figure></p>
+<p>安装<code>Pathogen</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/.vim/<span class="built_in">autoload</span> ~/.vim/bundle &amp;&amp; \</span><br><span class="line"><span class="built_in">cd</span> ~/.vim/</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/tpope/vim-pathogen.git</span><br><span class="line">mv vim-pathogen/<span class="built_in">autoload</span>/* ./<span class="built_in">autoload</span></span><br><span class="line">rm -rf vim-pathogen</span><br></pre></td></tr></table></figure></p>
+<p>在 <code>~/.vimrc</code> 中添加<br><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">execute pathogen#<span class="function"><span class="title">infect</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure></p>
+<p>下载颜色配置<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.vim/bundle</span><br><span class="line">//git <span class="built_in">clone</span> git://github.com/altercation/vim-colors-solarized.git <span class="comment">#solarized颜色主题</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/endel/vim-github-colorscheme.git <span class="comment">#github颜色主题</span></span><br></pre></td></tr></table></figure></p>
+<p>修改 <code>.vimrc</code>，在 <code>execute pathogen#infect()</code> 下面添加<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">syntax</span> enable</span><br><span class="line"><span class="keyword">set</span> background=light</span><br><span class="line"><span class="keyword">colorscheme</span> github</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置">设置</h2><h3 id="Finder">Finder</h3><ul>
+<li>桌面显示的项目：全去掉</li>
+<li>边栏</li>
+<li>高级：搜索当前文件夹</li>
+<li>显示资源文件夹</li>
+</ul>
+<h3 id="系统偏好设置">系统偏好设置</h3><h4 id="开启任何来源">开启<strong>任何来源</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<h4 id="Mission_Control">Mission Control</h4><ul>
+<li>关闭Dashboard</li>
+<li>触发角</li>
+</ul>
+<h4 id="Docker">Docker</h4><ul>
+<li>大小</li>
+<li>关闭应用程序显示指示灯</li>
+</ul>
+<h4 id="安全与隐私">安全与隐私</h4><ul>
+<li>打开防火墙</li>
+</ul>
+<h4 id="Spotlight">Spotlight</h4><h4 id="触摸板">触摸板</h4><h4 id="iCloud">iCloud</h4><ul>
+<li>照片：开启iCloud和照片流</li>
+</ul>
+<h4 id="用户与群组">用户与群组</h4><ul>
+<li>密码提示：当你看到这行字，说明你离我电脑太近了！</li>
+<li>关闭客户登录</li>
+</ul>
+<h3 id="其它">其它</h3><p>下载图标</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/13/gitlab-ci/" rel="next" title="iOS 自动打包发布持续集成系统">
+                <i class="fa fa-chevron-left"></i> iOS 自动打包发布持续集成系统
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/27/index/" rel="prev" title="简介">
+                简介 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="SenPng" />
+          <p class="site-author-name" itemprop="name">SenPng</p>
+          <p class="site-description motion-element" itemprop="description">技术博客</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/senpng" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">1.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本应用"><span class="nav-number">1.1.</span> <span class="nav-text">基本应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cocoapods"><span class="nav-number">1.2.</span> <span class="nav-text">Cocoapods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Brew_安装应用"><span class="nav-number">1.3.</span> <span class="nav-text">Brew 安装应用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Git_SSH-Key"><span class="nav-number">1.3.1.</span> <span class="nav-text">Git SSH-Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NVM"><span class="nav-number">1.3.2.</span> <span class="nav-text">NVM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReactNative"><span class="nav-number">1.3.3.</span> <span class="nav-text">ReactNative</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proxifier"><span class="nav-number">1.3.4.</span> <span class="nav-text">Proxifier</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sublime_Text3"><span class="nav-number">1.3.5.</span> <span class="nav-text">Sublime Text3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clean_My_Mac3"><span class="nav-number">1.3.6.</span> <span class="nav-text">Clean My Mac3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iStat_Menus"><span class="nav-number">1.3.7.</span> <span class="nav-text">iStat Menus</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android_Studio"><span class="nav-number">1.3.8.</span> <span class="nav-text">Android Studio</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Archiver"><span class="nav-number">1.3.9.</span> <span class="nav-text">Archiver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NTFS14"><span class="nav-number">1.3.10.</span> <span class="nav-text">NTFS14</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sketch"><span class="nav-number">1.3.11.</span> <span class="nav-text">Sketch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dash"><span class="nav-number">1.3.12.</span> <span class="nav-text">Dash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reveal"><span class="nav-number">1.3.13.</span> <span class="nav-text">Reveal</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Other"><span class="nav-number">1.3.14.</span> <span class="nav-text">Other</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZSH"><span class="nav-number">1.4.</span> <span class="nav-text">ZSH</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">1.4.1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#主题"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插件"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#autojump"><span class="nav-number">1.4.1.2.1.</span> <span class="nav-text">autojump</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#powerline"><span class="nav-number">1.4.1.2.2.</span> <span class="nav-text">powerline</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#macvim"><span class="nav-number">1.4.1.2.3.</span> <span class="nav-text">macvim</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置"><span class="nav-number">2.</span> <span class="nav-text">设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Finder"><span class="nav-number">2.1.</span> <span class="nav-text">Finder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统偏好设置"><span class="nav-number">2.2.</span> <span class="nav-text">系统偏好设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开启任何来源"><span class="nav-number">2.2.1.</span> <span class="nav-text">开启任何来源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mission_Control"><span class="nav-number">2.2.2.</span> <span class="nav-text">Mission Control</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker"><span class="nav-number">2.2.3.</span> <span class="nav-text">Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全与隐私"><span class="nav-number">2.2.4.</span> <span class="nav-text">安全与隐私</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spotlight"><span class="nav-number">2.2.5.</span> <span class="nav-text">Spotlight</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#触摸板"><span class="nav-number">2.2.6.</span> <span class="nav-text">触摸板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iCloud"><span class="nav-number">2.2.7.</span> <span class="nav-text">iCloud</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户与群组"><span class="nav-number">2.2.8.</span> <span class="nav-text">用户与群组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">2.3.</span> <span class="nav-text">其它</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SenPng</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
