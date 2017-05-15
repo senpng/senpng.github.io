@@ -276,9 +276,9 @@
       
 
       
-        <h2 id="iphone_抓包方式（个人觉得最好之一*2）">iphone 抓包方式（个人觉得最好之一*2）</h2><h3 id="rvictl">rvictl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rvictl [-h][<span class="operator">-l</span>][<span class="operator">-s</span> &lt;udid1&gt; ... &lt;udidN&gt;][-x &lt;udid1&gt; ... &lt;udidN&gt;]</span><br><span class="line"></span><br><span class="line">Remote Virtual Interface Tool starts and stops a remote packet capture instance </span><br><span class="line"><span class="keyword">for</span> any <span class="built_in">set</span> of attached mobile devices. It can also provide feedback on any attached </span><br><span class="line">devices that are currently relaying packets back to this host. </span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">    <span class="operator">-l</span>, -L      List currently active devices</span><br><span class="line">    <span class="operator">-s</span>, -S      Start a device or <span class="built_in">set</span> of devices</span><br><span class="line">    -x, -X      Stop a device or <span class="built_in">set</span> of devices</span><br></pre></td></tr></table></figure>
+        <h2 id="iphone-抓包方式（个人觉得最好之一-2）"><a href="#iphone-抓包方式（个人觉得最好之一-2）" class="headerlink" title="iphone 抓包方式（个人觉得最好之一*2）"></a>iphone 抓包方式（个人觉得最好之一*2）</h2><h3 id="rvictl"><a href="#rvictl" class="headerlink" title="rvictl"></a>rvictl</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">rvictl [-h][<span class="_">-l</span>][<span class="_">-s</span> &lt;udid1&gt; ... &lt;udidN&gt;][-x &lt;udid1&gt; ... &lt;udidN&gt;]</div><div class="line"></div><div class="line">Remote Virtual Interface Tool starts and stops a remote packet capture instance </div><div class="line"><span class="keyword">for</span> any <span class="built_in">set</span> of attached mobile devices. It can also provide feedback on any attached </div><div class="line">devices that are currently relaying packets back to this host. </div><div class="line"></div><div class="line">Options:</div><div class="line">    <span class="_">-l</span>, -L      List currently active devices</div><div class="line">    <span class="_">-s</span>, -S      Start a device or <span class="built_in">set</span> of devices</div><div class="line">    -x, -X      Stop a device or <span class="built_in">set</span> of devices</div></pre></td></tr></table></figure>
 <p>通过该命令在pc上添加一个虚拟网卡。这个网卡的数据就是iphone的流量数据，包括2、3、4G以及wifi。<br>可以使用wireshark来抓取该虚拟网卡上的数据;</p>
-<h3 id="Charles">Charles</h3><p>著名的‘花瓶’抓包工具。这里个人也破解了。。如果有需要可以网上下载，也可以发邮件给我。我会将最新版本破解发给你。<br>主要步骤：<br>1.pc共享一个wifi，供手机端连接。<br>2.打开<code>Charles</code>。<br>3.回到手机端，设置代理，代理IP为共享wifi的这台pc的IP，代理端口默认是<code>8888</code>。<br>4.这个时候回到<code>Charles</code>就可以看到提示有设备访问了，需要点击同意。就能看到手机上的数据了。</p>
+<h3 id="Charles"><a href="#Charles" class="headerlink" title="Charles"></a>Charles</h3><p>著名的‘花瓶’抓包工具。这里个人也破解了。。如果有需要可以网上下载，也可以发邮件给我。我会将最新版本破解发给你。<br>主要步骤：<br>1.pc共享一个wifi，供手机端连接。<br>2.打开<code>Charles</code>。<br>3.回到手机端，设置代理，代理IP为共享wifi的这台pc的IP，代理端口默认是<code>8888</code>。<br>4.这个时候回到<code>Charles</code>就可以看到提示有设备访问了，需要点击同意。就能看到手机上的数据了。</p>
 
       
     </div>
@@ -381,7 +381,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -438,7 +438,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iphone_抓包方式（个人觉得最好之一*2）"><span class="nav-number">1.</span> <span class="nav-text">iphone 抓包方式（个人觉得最好之一*2）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rvictl"><span class="nav-number">1.1.</span> <span class="nav-text">rvictl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Charles"><span class="nav-number">1.2.</span> <span class="nav-text">Charles</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iphone-抓包方式（个人觉得最好之一-2）"><span class="nav-number">1.</span> <span class="nav-text">iphone 抓包方式（个人觉得最好之一*2）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rvictl"><span class="nav-number">1.1.</span> <span class="nav-text">rvictl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Charles"><span class="nav-number">1.2.</span> <span class="nav-text">Charles</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -457,7 +457,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

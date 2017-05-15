@@ -80,20 +80,18 @@
 
 
 
-<meta name="description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
-拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta name="description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案 拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker">
 <meta property="og:url" content="https://senpng.github.io/2016/06/28/docker/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
-拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta property="og:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案 拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
 <meta property="og:image" content="https://senpng.github.io/images/1.jpg">
 <meta property="og:updated_time" content="2016-08-26T15:12:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker">
-<meta name="twitter:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案
-拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta name="twitter:description" content="什么是Docker?简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案 拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image">
+<meta name="twitter:image" content="https://senpng.github.io/images/1.jpg">
 
 
 
@@ -280,37 +278,37 @@
       
 
       
-        <h2 id="什么是Docker?">什么是<code>Docker</code>?</h2><p>简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案</p>
+        <h2 id="什么是Docker"><a href="#什么是Docker" class="headerlink" title="什么是Docker?"></a>什么是<code>Docker</code>?</h2><p>简单的说Docker是一个构建在LXC(Linux Container, 内核虚拟技术)之上的,基于进程容器(Processcontainer)的轻量级VM解决方案</p>
 <p><img src="/images/1.jpg" alt=""><br>拿现实世界中货物的运输作类比, 为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱。<br>Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image,进而发布到不同的平台上运行</p>
-<h2 id="常用命令">常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker search &#123;name&#125; //搜索docker镜像</span><br><span class="line">docker pull &#123;name&#125; //下载指定镜像</span><br><span class="line">docker run &#123;name&#125; <span class="operator">-d</span> -t -i -rm //运行一个容器</span><br></pre></td></tr></table></figure>
-<h2 id="Dockerfile">Dockerfile</h2><p>编写完成Dockerfile之后，可以通过<code>docker build</code>命令来创建镜像。<br>基本的格式为 <code>docker build [选项] 路径</code>，该命令将读取指定路径下（包括子目录）的Dockerfile，并将该路径下所有内容发送给Docker服务端，由服务端来创建镜像。因此一般建议放置Dockerfile的目录为空目录。也可以通过<code>.dockerignore</code>文件（每一行添加一条匹配模式）来让Docker忽略路径下的目录和文件。<br>要指定镜像的标签信息，可以通过<code>-t</code>选项，例如<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo docker build -t myrepo/myapp /tmp/<span class="built_in">test</span>1/</span><br></pre></td></tr></table></figure></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">docker search &#123;name&#125; //搜索docker镜像</div><div class="line">docker pull &#123;name&#125; //下载指定镜像</div><div class="line">docker run &#123;name&#125; <span class="_">-d</span> -t -i -rm //运行一个容器</div></pre></td></tr></table></figure>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><p>编写完成Dockerfile之后，可以通过<code>docker build</code>命令来创建镜像。<br>基本的格式为 <code>docker build [选项] 路径</code>，该命令将读取指定路径下（包括子目录）的Dockerfile，并将该路径下所有内容发送给Docker服务端，由服务端来创建镜像。因此一般建议放置Dockerfile的目录为空目录。也可以通过<code>.dockerignore</code>文件（每一行添加一条匹配模式）来让Docker忽略路径下的目录和文件。<br>要指定镜像的标签信息，可以通过<code>-t</code>选项，例如<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ sudo docker build -t myrepo/myapp /tmp/<span class="built_in">test</span>1/</div></pre></td></tr></table></figure></p>
 <p>###FROM<br>格式为<code>FROM &lt;image&gt;</code>或<code>FROM &lt;image&gt;:&lt;tag&gt;</code>。</p>
 <p>第一条指令必须为<code>FROM</code>指令。并且，如果在同一个Dockerfile中创建多个镜像时，可以使用多个 <code>FROM</code> 指令（每个镜像一次）。</p>
-<h3 id="MAINTAINER">MAINTAINER</h3><p>格式为<code>MAINTAINER &lt;name&gt;</code>, 指定维护者信息</p>
-<h3 id="RUN">RUN</h3><p>格式为<code>RUN &lt;command&gt;</code>或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></p>
-<h3 id="CMD">CMD</h3><p>支持三种格式</p>
+<h3 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a>MAINTAINER</h3><p>格式为<code>MAINTAINER &lt;name&gt;</code>, 指定维护者信息</p>
+<h3 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h3><p>格式为<code>RUN &lt;command&gt;</code>或<code>RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></p>
+<h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><p>支持三种格式</p>
 <ul>
 <li><code>CMD [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></li>
 <li><code>CMD cmmand param1 param2</code></li>
 <li><code>CMD [&quot;param1&quot;, &quot;param2&quot;]</code><br>每个Dockerfile只能有一条<code>CMD</code>命令</li>
 </ul>
-<h3 id="EXPOSR">EXPOSR</h3><p>格式为 <code>EXPOSE &lt;port&gt; [&lt;port&gt;...]</code><br>告诉 <code>Docker</code> 服务端容器暴露的端口号，供互联系统使用。在启动容器时需要通过 <code>-P</code>, <code>Docker</code> 主机会自动分配一个端口转发到指定的端口。</p>
-<h3 id="ENV">ENV</h3><p>格式为 <code>ENV &lt;key&gt; &lt;value&gt;</code><br>指定一个环境变量，可被后续 <code>RUN</code> 指令使用，并在容器运行保持</p>
-<h3 id="ADD">ADD</h3><p>格式为 <code>ADD &lt;src&gt; &lt;dest&gt;</code><br>该命令复制指定的 <code>&lt;src&gt;</code> 到容器中的 <code>&lt;dest&gt;</code>。其中 <code>&lt;src&gt;</code> 可以是Dockerfile所在目录的一个相对路径，也可以是一个URL，还可以是一个tar文件（自动解压为目录）</p>
-<h3 id="COPY">COPY</h3><p>格式为 <code>COPY &lt;src&gt; &lt;dest&gt;</code><br>复制本地主机的 <code>&lt;src&gt;</code> （为Dockerfile所在目录的相对路径）到容器中的 <code>dest</code>。<br>当使用本地目录为源目录时，推荐使用 <code>COPY</code>。</p>
-<h3 id="ENTRYPOINT">ENTRYPOINT</h3><p>两种格式：</p>
+<h3 id="EXPOSR"><a href="#EXPOSR" class="headerlink" title="EXPOSR"></a>EXPOSR</h3><p>格式为 <code>EXPOSE &lt;port&gt; [&lt;port&gt;...]</code><br>告诉 <code>Docker</code> 服务端容器暴露的端口号，供互联系统使用。在启动容器时需要通过 <code>-P</code>, <code>Docker</code> 主机会自动分配一个端口转发到指定的端口。</p>
+<h3 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a>ENV</h3><p>格式为 <code>ENV &lt;key&gt; &lt;value&gt;</code><br>指定一个环境变量，可被后续 <code>RUN</code> 指令使用，并在容器运行保持</p>
+<h3 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a>ADD</h3><p>格式为 <code>ADD &lt;src&gt; &lt;dest&gt;</code><br>该命令复制指定的 <code>&lt;src&gt;</code> 到容器中的 <code>&lt;dest&gt;</code>。其中 <code>&lt;src&gt;</code> 可以是Dockerfile所在目录的一个相对路径，也可以是一个URL，还可以是一个tar文件（自动解压为目录）</p>
+<h3 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a>COPY</h3><p>格式为 <code>COPY &lt;src&gt; &lt;dest&gt;</code><br>复制本地主机的 <code>&lt;src&gt;</code> （为Dockerfile所在目录的相对路径）到容器中的 <code>dest</code>。<br>当使用本地目录为源目录时，推荐使用 <code>COPY</code>。</p>
+<h3 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h3><p>两种格式：</p>
 <ul>
 <li><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></li>
 <li><code>ENTRYPOINT command param1 param2</code><br>配置容器启动后执行的命令，并且不可被 <code>docker run</code> 提供参数覆盖。<br>每个Dockerfile中只能有一个<code>ENTRYPOINT</code>，当指定多个时，只有最后一个起效。</li>
 </ul>
-<h3 id="VOLUME">VOLUME</h3><p>格式为 <code>VOLUME [&quot;/data&quot;]</code><br>创建一个可以从本地主机或者其它容器挂载的挂载点，一般用来存放数据库和需要保持的数据等</p>
-<h3 id="USER">USER</h3><p>格式为 <code>USER daemon</code><br>指定运行容器时的用户名或UID，后续的 <code>RUN</code> 也会使用指定用户<br>当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户，例如：<br><code>RUN groupadd -r postgres &amp;&amp; useradd -r -g postgres postgres</code>。要临时获取管理员权限可以使用 <code>gosu</code>，而不推荐 <code>sudo</code>。</p>
-<h3 id="WORKDIR">WORKDIR</h3><p>格式为 <code>WORKDIR /path/to/workdir</code><br>为后续的 <code>RUN</code>、<code>CMD</code>、<code>ENTRYPOINT</code>指令配置工作目录。<br>可以使用多个 <code>WORKDIR</code> 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径，例如：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a>VOLUME</h3><p>格式为 <code>VOLUME [&quot;/data&quot;]</code><br>创建一个可以从本地主机或者其它容器挂载的挂载点，一般用来存放数据库和需要保持的数据等</p>
+<h3 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h3><p>格式为 <code>USER daemon</code><br>指定运行容器时的用户名或UID，后续的 <code>RUN</code> 也会使用指定用户<br>当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户，例如：<br><code>RUN groupadd -r postgres &amp;&amp; useradd -r -g postgres postgres</code>。要临时获取管理员权限可以使用 <code>gosu</code>，而不推荐 <code>sudo</code>。</p>
+<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><p>格式为 <code>WORKDIR /path/to/workdir</code><br>为后续的 <code>RUN</code>、<code>CMD</code>、<code>ENTRYPOINT</code>指令配置工作目录。<br>可以使用多个 <code>WORKDIR</code> 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径，例如：<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">WORKDIR /a</div><div class="line">WORKDIR b</div><div class="line">WORKDIR c</div><div class="line">RUN <span class="built_in">pwd</span></div></pre></td></tr></table></figure></p>
 <p>则最终路径为 <code>/a/b/c</code></p>
-<h3 id="ONBUILD">ONBUILD</h3><p>格式为 <code>ONBUILD [INSTRUCTION]</code><br>配置当前所创建的镜像作为其它新创镜像的基础镜像时，所执行的操作指令。<br>例如，Dockerfile使用如下的内容创建了镜像<code>image-A</code>。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[...]</span><br><span class="line">ONBUILD ADD . /app/src</span><br><span class="line">ONBUILD RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure></p>
-<p>如果基于<code>image-A</code>创建新的镜像时，新的Dockerfile中使用 <code>FROM image-A</code> 指定基础镜像时，会自动执行 <code>ONBUILD</code> 指定内容，等价于在后面添加了两条指令。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">FROM image-A</span><br><span class="line"></span><br><span class="line"><span class="comment">#Automatically run the following</span></span><br><span class="line">ADD . /app/src</span><br><span class="line">RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</span><br></pre></td></tr></table></figure></p>
+<h3 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h3><p>格式为 <code>ONBUILD [INSTRUCTION]</code><br>配置当前所创建的镜像作为其它新创镜像的基础镜像时，所执行的操作指令。<br>例如，Dockerfile使用如下的内容创建了镜像<code>image-A</code>。<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">[...]</div><div class="line">ONBUILD ADD . /app/src</div><div class="line">ONBUILD RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</div><div class="line">[...]</div></pre></td></tr></table></figure></p>
+<p>如果基于<code>image-A</code>创建新的镜像时，新的Dockerfile中使用 <code>FROM image-A</code> 指定基础镜像时，会自动执行 <code>ONBUILD</code> 指定内容，等价于在后面添加了两条指令。<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">FROM image-A</div><div class="line"></div><div class="line"><span class="comment">#Automatically run the following</span></div><div class="line">ADD . /app/src</div><div class="line">RUN /usr/<span class="built_in">local</span>/bin/python-build --dir /app/src</div></pre></td></tr></table></figure></p>
 <p>使用 <code>ONBUILD</code> 指令的镜像，推荐在标签中注明，例如 <code>ruby:1.9-onbuild</code>。</p>
-<h2 id="导出镜像">导出镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#save 用于持久化镜像,保存的是所有这个镜像的版本记录，包括一些历史数据.</span></span><br><span class="line">docker save -o &lt;save_name&gt;.tar.gz &lt;image_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#export 用于持久化容器,导出的是容器当中所用的镜像内容.</span></span><br><span class="line">docker <span class="built_in">export</span> &lt;container_id&gt; &gt; ./&lt;save_name&gt;.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="导出镜像"><a href="#导出镜像" class="headerlink" title="导出镜像"></a>导出镜像</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment">#save 用于持久化镜像,保存的是所有这个镜像的版本记录，包括一些历史数据.</span></div><div class="line">docker save -o &lt;save_name&gt;.tar.gz &lt;image_name&gt;</div><div class="line"></div><div class="line"><span class="comment">#export 用于持久化容器,导出的是容器当中所用的镜像内容.</span></div><div class="line">docker <span class="built_in">export</span> &lt;container_id&gt; &gt; ./&lt;save_name&gt;.tar.gz</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -412,7 +410,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -469,7 +467,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Docker?"><span class="nav-number">1.</span> <span class="nav-text">什么是Docker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">3.</span> <span class="nav-text">Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAINTAINER"><span class="nav-number">3.1.</span> <span class="nav-text">MAINTAINER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">3.2.</span> <span class="nav-text">RUN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">3.3.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSR"><span class="nav-number">3.4.</span> <span class="nav-text">EXPOSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">3.5.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD"><span class="nav-number">3.6.</span> <span class="nav-text">ADD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COPY"><span class="nav-number">3.7.</span> <span class="nav-text">COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENTRYPOINT"><span class="nav-number">3.8.</span> <span class="nav-text">ENTRYPOINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VOLUME"><span class="nav-number">3.9.</span> <span class="nav-text">VOLUME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">3.10.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">3.11.</span> <span class="nav-text">WORKDIR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONBUILD"><span class="nav-number">3.12.</span> <span class="nav-text">ONBUILD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出镜像"><span class="nav-number">4.</span> <span class="nav-text">导出镜像</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Docker"><span class="nav-number">1.</span> <span class="nav-text">什么是Docker?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用命令"><span class="nav-number">2.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-number">3.</span> <span class="nav-text">Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAINTAINER"><span class="nav-number">3.1.</span> <span class="nav-text">MAINTAINER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">3.2.</span> <span class="nav-text">RUN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">3.3.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSR"><span class="nav-number">3.4.</span> <span class="nav-text">EXPOSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">3.5.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD"><span class="nav-number">3.6.</span> <span class="nav-text">ADD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COPY"><span class="nav-number">3.7.</span> <span class="nav-text">COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENTRYPOINT"><span class="nav-number">3.8.</span> <span class="nav-text">ENTRYPOINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VOLUME"><span class="nav-number">3.9.</span> <span class="nav-text">VOLUME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">3.10.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">3.11.</span> <span class="nav-text">WORKDIR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONBUILD"><span class="nav-number">3.12.</span> <span class="nav-text">ONBUILD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导出镜像"><span class="nav-number">4.</span> <span class="nav-text">导出镜像</span></a></li></ol></div>
             
           </div>
         </section>
@@ -488,7 +486,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

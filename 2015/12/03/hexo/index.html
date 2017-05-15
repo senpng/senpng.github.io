@@ -80,34 +80,17 @@
 
 
 
-<meta name="description" content="Hexohexo是一款基于Node.js的静态博客框架。
-特性
-风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta name="description" content="Hexohexo是一款基于Node.js的静态博客框架。 特性 风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。  流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。  扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta name="keywords" content="Hexo,NexT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo-创建自己的博客">
 <meta property="og:url" content="https://senpng.github.io/2015/12/03/hexo/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="Hexohexo是一款基于Node.js的静态博客框架。
-特性
-风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta property="og:description" content="Hexohexo是一款基于Node.js的静态博客框架。 特性 风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。  流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。  扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
 <meta property="og:updated_time" content="2016-02-22T10:23:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-创建自己的博客">
-<meta name="twitter:description" content="Hexohexo是一款基于Node.js的静态博客框架。
-特性
-风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。
-
-流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。
-
-扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
+<meta name="twitter:description" content="Hexohexo是一款基于Node.js的静态博客框架。 特性 风一般的速度Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。  流畅的撰写支持GitHub Flavored Markdown和所有Octopress的插件。  扩展性Hexo支持EJS、Swig和Stylus。通过插件支持Haml、Jade和Less.">
 
 
 
@@ -313,8 +296,8 @@
       
 
       
-        <h2 id="Hexo"><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a></h2><p>hexo是一款基于Node.js的<strong>静态</strong>博客框架。</p>
-<h3 id="特性">特性</h3><ul>
+        <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a></h2><p>hexo是一款基于Node.js的<strong>静态</strong>博客框架。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
 <li><p>风一般的速度<br>Hexo基于Node.js，支持多进程，几百篇文章也可以秒生成。</p>
 </li>
 <li><p>流畅的撰写<br>支持GitHub Flavored Markdown和所有Octopress的插件。</p>
@@ -323,34 +306,34 @@
 </li>
 </ul>
 <a id="more"></a>
-<h3 id="安装">安装</h3><p>前提是必须先安装 Node.js。</p>
-<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span>
-</code></pre><h3 id="升级">升级</h3><p>更新hexo到最新版</p>
-<pre><code>npm <span class="operator"><span class="keyword">update</span> hexo -<span class="keyword">g</span></span>
-</code></pre><h3 id="初始化">初始化</h3><pre><code>hexo init <span class="tag">&lt;<span class="title">folder</span>&gt;</span>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>前提是必须先安装 Node.js。</p>
+<pre><code>npm install hexo -g
+</code></pre><h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><p>更新hexo到最新版</p>
+<pre><code>npm update hexo -g
+</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><pre><code>hexo init &lt;folder&gt;
 </code></pre><p>如果指定 <code>&lt;folder&gt;</code>，便会在目前的资料夹建立一个名为 <code>&lt;folder&gt;</code> 的新资料夹；否则会在目前资料夹初始化。</p>
-<h3 id="创建新文章">创建新文章</h3><pre><code>hexo <span class="keyword">new</span> [layout] &lt;name&gt;
-hexo <span class="keyword">new</span> <span class="string">"Hello World"</span>
-hexo <span class="keyword">new</span> page <span class="string">"about"</span>
-hexo n page <span class="string">"about"</span>
+<h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre><code>hexo new [layout] &lt;name&gt;
+hexo new &quot;Hello World&quot;
+hexo new page &quot;about&quot;
+hexo n page &quot;about&quot;
 </code></pre><p><code>[layout]</code> 为 <code>scaffolds</code> 目录下的模版文件名。<br>如果不指定 <code>[layout]</code>，默认生成的md文件放在 <code>source/_post/</code> 目录下。</p>
-<h3 id="生成网站">生成网站</h3><pre><code>hexo <span class="keyword">generate</span>
-hexo <span class="keyword">g</span>
-</code></pre><h3 id="服务器">服务器</h3><pre><code>hexo <span class="keyword">server</span>
+<h3 id="生成网站"><a href="#生成网站" class="headerlink" title="生成网站"></a>生成网站</h3><pre><code>hexo generate
+hexo g
+</code></pre><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><pre><code>hexo server
 hexo s
 </code></pre><p>伺服器会跑在 <a href="http://localhost:port" target="_blank" rel="external">http://localhost:port</a> （port 预设为 <strong>4000</strong>，可在 <strong>_config.yml</strong> 设定。</p>
-<h3 id="部署">部署</h3><p>这里介绍下git部署</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>这里介绍下git部署</p>
 <p>安装<strong>hexo-deployer-git</strong></p>
-<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span>
+<pre><code>npm install hexo-deployer-git --save
 </code></pre><p>修改<code>_config.yml</code>:</p>
 <pre><code>deploy:
-  <span class="keyword">type</span>: git
+  type: git
   repo: &lt;repository url&gt;
   branch: [branch]
-  <span class="keyword">message</span>: [<span class="keyword">message</span>]
+  message: [message]
 </code></pre><p>部署</p>
-<pre><code>hexo <span class="keyword">d</span> --<span class="keyword">generate</span>
-</code></pre><h3 id="默认目录结构">默认目录结构</h3><ul>
+<pre><code>hexo d --generate
+</code></pre><h3 id="默认目录结构"><a href="#默认目录结构" class="headerlink" title="默认目录结构"></a>默认目录结构</h3><ul>
 <li>.deploy：执行hexo deploy命令部署到GitHub上的内容目录</li>
 <li>public：执行hexo generate命令，输出的静态网页内容目录</li>
 <li>scaffolds：layout模板文件目录，其中的md文件可以添加编辑</li>
@@ -364,99 +347,99 @@ hexo s
 <li>_config.yml：全局配置文件，大多数的设置都在这里</li>
 <li>package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮</li>
 </ul>
-<h3 id="站点配置文件__config-yml_简单说明">站点配置文件 <em>_config.yml</em> 简单说明</h3><pre><code><span class="preprocessor"># Hexo Configuration</span>
-<span class="preprocessor">## Docs: http://hexo.io/docs/configuration.html</span>
-<span class="preprocessor">## Source: https://github.com/hexojs/hexo/</span>
+<h3 id="站点配置文件-config-yml-简单说明"><a href="#站点配置文件-config-yml-简单说明" class="headerlink" title="站点配置文件 _config.yml 简单说明"></a>站点配置文件 <em>_config.yml</em> 简单说明</h3><pre><code># Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
-<span class="preprocessor"># Site #整站的基本信息</span>
-<span class="label">title:</span> SenPng的技术博客 <span class="preprocessor">#网站标题</span>
-<span class="label">subtitle:</span> <span class="preprocessor">#网站副标题</span>
-<span class="label">description:</span> 技术博客 <span class="preprocessor">#网站描述，给搜索引擎用的，在生成html中的head-&gt;meta中可看到</span>
-<span class="label">author:</span> SenPng <span class="preprocessor">#网站作者，在下方显示</span>
-<span class="label">email:</span> senpng@qq.com <span class="preprocessor">#联系邮箱</span>
-<span class="label">language:</span> <span class="built_in">zh</span>-Hans <span class="preprocessor">#语言</span>
-<span class="label">timezone:</span>
+# Site #整站的基本信息
+title: SenPng的技术博客 #网站标题
+subtitle: #网站副标题
+description: 技术博客 #网站描述，给搜索引擎用的，在生成html中的head-&gt;meta中可看到
+author: SenPng #网站作者，在下方显示
+email: senpng@qq.com #联系邮箱
+language: zh-Hans #语言
+timezone:
 
-<span class="preprocessor"># URL #域名</span>
-<span class="preprocessor">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span>
-<span class="label">url:</span> http://senpng.me <span class="preprocessor">#你的域名</span>
-<span class="label">root:</span> /
-<span class="label">permalink:</span> :year/:month/:day/:title/
-<span class="label">permalink_defaults:</span>
+# URL #域名
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: http://senpng.me #你的域名
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
 
-<span class="preprocessor"># Directory #文件结构</span>
-<span class="label">source_dir:</span> source
-<span class="label">public_dir:</span> public
-<span class="label">tag_dir:</span> tags
-<span class="label">archive_dir:</span> archives
-<span class="label">category_dir:</span> categories
-<span class="label">code_dir:</span> downloads/code
-<span class="label">i18n_dir:</span> :lang
-<span class="label">skip_render:</span>
+# Directory #文件结构
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
 
-<span class="preprocessor"># Writing #写文章选项</span>
-<span class="label">new_post_name:</span> :title.md <span class="preprocessor"># File name of new posts</span>
-<span class="label">default_layout:</span> post <span class="preprocessor">#默认layout方式</span>
-<span class="label">titlecase:</span> false <span class="preprocessor"># Transform title into titlecase</span>
-<span class="label">external_link:</span> true <span class="preprocessor"># Open external links in new tab</span>
-<span class="label">filename_case:</span> <span class="number">0</span>
-<span class="label">render_drafts:</span> false
-<span class="label">post_asset_folder:</span> false
-<span class="label">relative_link:</span> false
-<span class="label">future:</span> true
-<span class="label">highlight:</span> <span class="preprocessor">#代码高亮</span>
-  enable: true <span class="preprocessor">#是否启用</span>
-  line_number: true <span class="preprocessor">#是否显示行号</span>
+# Writing #写文章选项
+new_post_name: :title.md # File name of new posts
+default_layout: post #默认layout方式
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight: #代码高亮
+  enable: true #是否启用
+  line_number: true #是否显示行号
   auto_detect: true
   tab_replace:
 
-<span class="preprocessor"># Category &amp; Tag #分类与标签</span>
-<span class="label">default_category:</span> uncategorized
-<span class="label">category_map:</span>
-<span class="label">tag_map:</span>
+# Category &amp; Tag #分类与标签
+default_category: uncategorized
+category_map:
+tag_map:
 
-<span class="preprocessor"># Server #本地服务参数</span>
-<span class="preprocessor">## Hexo uses Connect as a server</span>
-<span class="preprocessor">## You can customize the logger format as defined in</span>
-<span class="preprocessor">## http://www.senchalabs.org/connect/logger.html</span>
-<span class="label">port:</span> <span class="number">4000</span>
-<span class="label">logger:</span> true
-<span class="label">logger_format:</span>
+# Server #本地服务参数
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: 4000
+logger: true
+logger_format:
 
-<span class="preprocessor"># Date / Time format #日期显示格式</span>
-<span class="preprocessor">## Hexo uses Moment.js to parse and display date</span>
-<span class="preprocessor">## You can customize the date format as defined in</span>
-<span class="preprocessor">## http://momentjs.com/docs/#/displaying/format/</span>
-<span class="label">date_format:</span> YYYY-MM-DD
-<span class="label">time_format:</span> HH:mm:ss
+# Date / Time format #日期显示格式
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
 
-<span class="preprocessor"># Pagination #分页设置</span>
-<span class="preprocessor">## Set per_page to 0 to disable pagination</span>
-<span class="label">per_page:</span> <span class="number">10</span> <span class="preprocessor">#每页10篇文章</span>
-<span class="label">pagination_dir:</span> page
+# Pagination #分页设置
+## Set per_page to 0 to disable pagination
+per_page: 10 #每页10篇文章
+pagination_dir: page
 
-<span class="preprocessor"># Extensions</span>
-<span class="preprocessor">## Plugins: http://hexo.io/plugins/</span>
-<span class="preprocessor">## Themes: http://hexo.io/themes/</span>
-<span class="label">theme:</span> next <span class="preprocessor"># 主题</span>
+# Extensions
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: next # 主题
 
-<span class="preprocessor"># Deployment #部署</span>
-<span class="preprocessor">## Docs: http://hexo.io/docs/deployment.html</span>
-<span class="label">deploy:</span>
+# Deployment #部署
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
   type: git
   repo: git@github.com:senpng/senpng.github.io.git
   branch: master
-  message: Site updated:{.{ now(<span class="string">"YYYY-MM-DD HH:mm:ss"</span>) }} <span class="preprocessor">#这里的 . 需要去掉</span>
-</code></pre><h3 id="常见错误">常见错误</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br><span class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</span><br></pre></td></tr></table></figure>
-<p>解决方法:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo --no-optional</span><br></pre></td></tr></table></figure></p>
-<h2 id="主题_NexT">主题 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></h2><h3 id="下载_NexT_主题">下载 NexT 主题</h3><p>在终端窗口下，定位到 Hexo 站点目录下</p>
-<pre><code><span class="keyword">cd</span> your-hexo-site
-git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/iissnan/hexo-theme-<span class="keyword">next</span> themes/<span class="keyword">next</span>
-</code></pre><h3 id="启用_NexT_主题">启用 NexT 主题</h3><p>克隆/下载 完成后，打开 站点配置文件，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>。</p>
-<h3 id="验证主题是否启用">验证主题是否启用</h3><p>运行 <code>hexo s --debug</code>，并访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，确保站点正确运行。</p>
-<h3 id="主题设定">主题设定</h3><h4 id="选择_Scheme">选择 Scheme</h4><p>NexT 通过 Scheme 提供主题中的主题。 Mist 是 NexT 的第一款 Scheme。<br>启用 Mist 仅需在 主题配置文件 中将 <code>#scheme: Mist</code> 前面的 # 注释去掉即可。</p>
-<h4 id="语言设置">语言设置</h4><p>编辑 站点配置文件，将 <code>language</code> 设置成你所需要的语言。<br>例如选用正体中文，则配置为：</p>
-<pre><code><span class="label">language:</span> <span class="built_in">zh</span>-hk
+  message: Site updated:{.{ now(&quot;YYYY-MM-DD HH:mm:ss&quot;) }} #这里的 . 需要去掉
+</code></pre><h3 id="常见错误"><a href="#常见错误" class="headerlink" title="常见错误"></a>常见错误</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot find module <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure>
+<p>解决方法:<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
+<h2 id="主题-NexT"><a href="#主题-NexT" class="headerlink" title="主题 NexT"></a>主题 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></h2><h3 id="下载-NexT-主题"><a href="#下载-NexT-主题" class="headerlink" title="下载 NexT 主题"></a>下载 NexT 主题</h3><p>在终端窗口下，定位到 Hexo 站点目录下</p>
+<pre><code>cd your-hexo-site
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre><h3 id="启用-NexT-主题"><a href="#启用-NexT-主题" class="headerlink" title="启用 NexT 主题"></a>启用 NexT 主题</h3><p>克隆/下载 完成后，打开 站点配置文件，找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>。</p>
+<h3 id="验证主题是否启用"><a href="#验证主题是否启用" class="headerlink" title="验证主题是否启用"></a>验证主题是否启用</h3><p>运行 <code>hexo s --debug</code>，并访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>，确保站点正确运行。</p>
+<h3 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h3><h4 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h4><p>NexT 通过 Scheme 提供主题中的主题。 Mist 是 NexT 的第一款 Scheme。<br>启用 Mist 仅需在 主题配置文件 中将 <code>#scheme: Mist</code> 前面的 # 注释去掉即可。</p>
+<h4 id="语言设置"><a href="#语言设置" class="headerlink" title="语言设置"></a>语言设置</h4><p>编辑 站点配置文件，将 <code>language</code> 设置成你所需要的语言。<br>例如选用正体中文，则配置为：</p>
+<pre><code>language: zh-hk
 </code></pre><p>可用的语言如以下表格所示：</p>
 <table>
 <thead>
@@ -499,7 +482,7 @@ git clone http<span class="variable">s:</span>//github.<span class="keyword">com
 </tr>
 </tbody>
 </table>
-<h4 id="菜单设置">菜单设置</h4><p>菜单配置在 <strong>主题配置文件</strong> 的 <code>menu</code>。 若你的站点运行在子目录中，请将链接前缀的 <code>/</code> 去掉。默认支持的菜单项有：</p>
+<h4 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h4><p>菜单配置在 <strong>主题配置文件</strong> 的 <code>menu</code>。 若你的站点运行在子目录中，请将链接前缀的 <code>/</code> 去掉。默认支持的菜单项有：</p>
 <table>
 <thead>
 <tr>
@@ -541,44 +524,44 @@ git clone http<span class="variable">s:</span>//github.<span class="keyword">com
 </tr>
 </tbody>
 </table>
-<h5 id="菜单示例配置：">菜单示例配置：</h5><pre><code><span class="tag">menu</span>:
+<h5 id="菜单示例配置："><a href="#菜单示例配置：" class="headerlink" title="菜单示例配置："></a>菜单示例配置：</h5><pre><code>menu:
   home: /
   archives: /archives
-  <span class="id">#about</span>: /about
-  <span class="id">#categories</span>: /categories
+  #about: /about
+  #categories: /categories
   tags: /tags
-  <span class="id">#commonweal</span>: /<span class="number">404</span>.html
-</code></pre><h4 id="侧栏设置">侧栏设置</h4><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示。可以通过修改 <strong>主题配置文件</strong> 中的  <code>sidebar</code> 字段来控制侧栏的行为。</p>
+  #commonweal: /404.html
+</code></pre><h4 id="侧栏设置"><a href="#侧栏设置" class="headerlink" title="侧栏设置"></a>侧栏设置</h4><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示。可以通过修改 <strong>主题配置文件</strong> 中的  <code>sidebar</code> 字段来控制侧栏的行为。</p>
 <p>支持的选项有：</p>
 <ul>
 <li><code>post</code> - 默认行为，在文章页面（拥有目录列表）时显示</li>
 <li><code>always</code> - 在所有页面中都显示</li>
 <li><code>hide</code> - 在所有页面中都隐藏（可以手动展开）</li>
 </ul>
-<h4 id="侧栏示例配置：">侧栏示例配置：</h4><pre><code><span class="attribute">sidebar</span>: <span class="string">post</span>
-</code></pre><h4 id="头像设置">头像设置</h4><p>编辑 站点配置文件，新增字段 <code>avatar</code>， 值设置成头像的链接地址。</p>
+<h4 id="侧栏示例配置："><a href="#侧栏示例配置：" class="headerlink" title="侧栏示例配置："></a>侧栏示例配置：</h4><pre><code>sidebar: post
+</code></pre><h4 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h4><p>编辑 站点配置文件，新增字段 <code>avatar</code>， 值设置成头像的链接地址。</p>
 <p>其中，头像的链接地址可以是：</p>
 <p>地址  值<br>完整的互联网 URL  <code>https://avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</code><br>站点内的地址  <code>/uploads/avatar.jpg</code> - 需要将你的头像图片放置在 站点的 <code>source/uploads/</code>（可能需要新建 <code>uploads</code> 目录）<br><code>/images/avatar.jpg</code> - 需要将你的头像图片放置在 主题的 <code>source/images/</code> 目录下<br>头像设置示例：</p>
-<pre><code><span class="string">avatar:</span> <span class="string">https:</span><span class="comment">//avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</span>
-</code></pre><h4 id="作者名称">作者名称</h4><p>编辑 站点配置文件，设置 <code>author</code> 为你的昵称。</p>
-<h4 id="站点描述设置">站点描述设置</h4><p>编辑 站点配置文件，设置 <code>description</code>字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
-<h4 id="主题配置文件__config-yml_简单说明">主题配置文件 <em>_config.yml</em> 简单说明</h4><pre><code><span class="preprocessor"># 菜单配置</span>
+<pre><code>avatar: https://avatars1.githubusercontent.com/u/32269?v=3&amp;s=460
+</code></pre><h4 id="作者名称"><a href="#作者名称" class="headerlink" title="作者名称"></a>作者名称</h4><p>编辑 站点配置文件，设置 <code>author</code> 为你的昵称。</p>
+<h4 id="站点描述设置"><a href="#站点描述设置" class="headerlink" title="站点描述设置"></a>站点描述设置</h4><p>编辑 站点配置文件，设置 <code>description</code>字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
+<h4 id="主题配置文件-config-yml-简单说明"><a href="#主题配置文件-config-yml-简单说明" class="headerlink" title="主题配置文件 _config.yml 简单说明"></a>主题配置文件 <em>_config.yml</em> 简单说明</h4><pre><code># 菜单配置
 menu:
   home: /
   archives: /archives
   # categories: /categories
   tags: /tags
   about: /about
-  #commonweal: /<span class="number">404.</span>html
+  #commonweal: /404.html
 
 
-<span class="preprocessor"># Enable/Disable menu icons.</span>
-<span class="preprocessor"># Icon Mapping:</span>
-<span class="preprocessor">#   Map a menu item to a specific FontAwesome icon name.</span>
-<span class="preprocessor">#   Key is the name of menu item and value is the name of FontAwsome icon.</span>
-<span class="preprocessor">#   When an question mask icon presenting up means that the item has no mapping icon.</span>
+# Enable/Disable menu icons.
+# Icon Mapping:
+#   Map a menu item to a specific FontAwesome icon name.
+#   Key is the name of menu item and value is the name of FontAwsome icon.
+#   When an question mask icon presenting up means that the item has no mapping icon.
 menu_icons:
-  enable: <span class="literal">true</span>
+  enable: true
   # Icon Mapping.
   home: home
   about: user
@@ -588,87 +571,87 @@ menu_icons:
   commonweal: heartbeat
 
 
-<span class="preprocessor"># Mist</span>
-<span class="preprocessor"># 使用 Mist 主题</span>
-<span class="preprocessor">#scheme: Mist</span>
+# Mist
+# 使用 Mist 主题
+#scheme: Mist
 
-<span class="preprocessor"># Sidebar 侧栏行为，可选值有</span>
-<span class="preprocessor">#  - post   默认值，在文章页面自动展开侧栏</span>
-<span class="preprocessor">#  - always 在所有页面自动展开侧栏</span>
-<span class="preprocessor">#  - hide   在手动点击侧栏的开关按钮时展开</span>
-<span class="preprocessor">#  - remove </span>
-<span class="preprocessor">#sidebar: post</span>
-<span class="preprocessor">#sidebar: always</span>
+# Sidebar 侧栏行为，可选值有
+#  - post   默认值，在文章页面自动展开侧栏
+#  - always 在所有页面自动展开侧栏
+#  - hide   在手动点击侧栏的开关按钮时展开
+#  - remove 
+#sidebar: post
+#sidebar: always
 sidebar: hide
-<span class="preprocessor">#sidebar: remove</span>
+#sidebar: remove
 
-<span class="preprocessor"># Social Icons</span>
+# Social Icons
 social_icons:
-  enable: <span class="literal">true</span>
+  enable: true
   # Icon Mappings
   GitHub: github
   Twitter: twitter
   Weibo: weibo
 
 
-<span class="preprocessor"># Sidebar Avatar ＃头像</span>
+# Sidebar Avatar ＃头像
 avatar: /images/avatar.png
 
 
-<span class="preprocessor"># Social links ＃友情链接</span>
+# Social links ＃友情链接
 social:
-  GitHub: https:<span class="comment">//github.com/senpng</span>
+  GitHub: https://github.com/senpng
 
 
-<span class="preprocessor"># TOC in the Sidebar</span>
+# TOC in the Sidebar
 toc:
-  enable: <span class="literal">true</span>
+  enable: true
 
   # Automatically add list number to toc.
-  number: <span class="literal">true</span>
+  number: true
 
 
-<span class="preprocessor"># 代码高亮主题</span>
-<span class="preprocessor"># available: normal | night | night eighties | night blue | night bright</span>
+# 代码高亮主题
+# available: normal | night | night eighties | night blue | night bright
 highlight_theme: normal
 
-<span class="preprocessor"># `阅读全文` 按钮跳转之后是否自动滚动页面到设置 `&lt;!-- more --&gt;` 的地方。</span>
-scroll_to_more: <span class="literal">true</span>
+# `阅读全文` 按钮跳转之后是否自动滚动页面到设置 `&lt;!-- more --&gt;` 的地方。
+scroll_to_more: true
 
-<span class="preprocessor"># 自动形成摘要</span>
+# 自动形成摘要
 auto_excerpt:
-  enable: <span class="literal">true</span>
-  length: <span class="number">150</span>
+  enable: true
+  length: 150
 
-  默认截取的长度为 <span class="number">150</span> 字符，可以根据需要自行设定
+  默认截取的长度为 150 字符，可以根据需要自行设定
 
-<span class="preprocessor"># Use Lato font</span>
-use_font_lato: <span class="literal">true</span>
+# Use Lato font
+use_font_lato: true
 
-<span class="preprocessor"># MathJax support</span>
-<span class="preprocessor"># 开启数学公式渲染支持，默认关闭。设置为 `true` 开启。</span>
-mathjax: <span class="literal">true</span>
+# MathJax support
+# 开启数学公式渲染支持，默认关闭。设置为 `true` 开启。
+mathjax: true
 
 
-<span class="preprocessor">#! ---------------------------------------------------------------</span>
-<span class="preprocessor">#! DO NOT EDIT THE FOLLOWING SETTINGS</span>
-<span class="preprocessor">#! UNLESS YOU KNOW WHAT YOU ARE DOING</span>
-<span class="preprocessor">#! ---------------------------------------------------------------</span>
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! ---------------------------------------------------------------
 
-<span class="preprocessor"># Motion</span>
-use_motion: <span class="literal">true</span>
+# Motion
+use_motion: true
 
-<span class="preprocessor"># Fancybox</span>
-fancybox: <span class="literal">true</span>
+# Fancybox
+fancybox: true
 
-<span class="preprocessor"># Static files</span>
+# Static files
 vendors: vendors
 css: css
 js: js
 images: images
 
-<span class="preprocessor"># Theme version</span>
-version: <span class="number">0.4</span><span class="number">.5</span><span class="number">.2</span>
+# Theme version
+version: 0.4.5.2
 </code></pre>
       
     </div>
@@ -775,7 +758,7 @@ version: <span class="number">0.4</span><span class="number">.5</span><span clas
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -832,7 +815,7 @@ version: <span class="number">0.4</span><span class="number">.5</span><span clas
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">1.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级"><span class="nav-number">1.3.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">1.5.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成网站"><span class="nav-number">1.6.</span> <span class="nav-text">生成网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器"><span class="nav-number">1.7.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">1.8.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认目录结构"><span class="nav-number">1.9.</span> <span class="nav-text">默认目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点配置文件__config-yml_简单说明"><span class="nav-number">1.10.</span> <span class="nav-text">站点配置文件 _config.yml 简单说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-number">1.11.</span> <span class="nav-text">常见错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题_NexT"><span class="nav-number">2.</span> <span class="nav-text">主题 NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载_NexT_主题"><span class="nav-number">2.1.</span> <span class="nav-text">下载 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用_NexT_主题"><span class="nav-number">2.2.</span> <span class="nav-text">启用 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题是否启用"><span class="nav-number">2.3.</span> <span class="nav-text">验证主题是否启用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题设定"><span class="nav-number">2.4.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择_Scheme"><span class="nav-number">2.4.1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语言设置"><span class="nav-number">2.4.2.</span> <span class="nav-text">语言设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单设置"><span class="nav-number">2.4.3.</span> <span class="nav-text">菜单设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#菜单示例配置："><span class="nav-number">2.4.3.1.</span> <span class="nav-text">菜单示例配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏设置"><span class="nav-number">2.4.4.</span> <span class="nav-text">侧栏设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏示例配置："><span class="nav-number">2.4.5.</span> <span class="nav-text">侧栏示例配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-number">2.4.6.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作者名称"><span class="nav-number">2.4.7.</span> <span class="nav-text">作者名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站点描述设置"><span class="nav-number">2.4.8.</span> <span class="nav-text">站点描述设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置文件__config-yml_简单说明"><span class="nav-number">2.4.9.</span> <span class="nav-text">主题配置文件 _config.yml 简单说明</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo"><span class="nav-number">1.</span> <span class="nav-text">Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">1.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级"><span class="nav-number">1.3.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">1.4.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建新文章"><span class="nav-number">1.5.</span> <span class="nav-text">创建新文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成网站"><span class="nav-number">1.6.</span> <span class="nav-text">生成网站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器"><span class="nav-number">1.7.</span> <span class="nav-text">服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">1.8.</span> <span class="nav-text">部署</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认目录结构"><span class="nav-number">1.9.</span> <span class="nav-text">默认目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点配置文件-config-yml-简单说明"><span class="nav-number">1.10.</span> <span class="nav-text">站点配置文件 _config.yml 简单说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见错误"><span class="nav-number">1.11.</span> <span class="nav-text">常见错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题-NexT"><span class="nav-number">2.</span> <span class="nav-text">主题 NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-NexT-主题"><span class="nav-number">2.1.</span> <span class="nav-text">下载 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用-NexT-主题"><span class="nav-number">2.2.</span> <span class="nav-text">启用 NexT 主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证主题是否启用"><span class="nav-number">2.3.</span> <span class="nav-text">验证主题是否启用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题设定"><span class="nav-number">2.4.</span> <span class="nav-text">主题设定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#选择-Scheme"><span class="nav-number">2.4.1.</span> <span class="nav-text">选择 Scheme</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语言设置"><span class="nav-number">2.4.2.</span> <span class="nav-text">语言设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#菜单设置"><span class="nav-number">2.4.3.</span> <span class="nav-text">菜单设置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#菜单示例配置："><span class="nav-number">2.4.3.1.</span> <span class="nav-text">菜单示例配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏设置"><span class="nav-number">2.4.4.</span> <span class="nav-text">侧栏设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#侧栏示例配置："><span class="nav-number">2.4.5.</span> <span class="nav-text">侧栏示例配置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#头像设置"><span class="nav-number">2.4.6.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作者名称"><span class="nav-number">2.4.7.</span> <span class="nav-text">作者名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站点描述设置"><span class="nav-number">2.4.8.</span> <span class="nav-text">站点描述设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主题配置文件-config-yml-简单说明"><span class="nav-number">2.4.9.</span> <span class="nav-text">主题配置文件 _config.yml 简单说明</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -851,7 +834,7 @@ version: <span class="number">0.4</span><span class="number">.5</span><span clas
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -80,19 +80,17 @@
 
 
 
-<meta name="description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
-Fusion">
+<meta name="description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
+<meta name="keywords" content="Mac OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac OS Installer">
 <meta property="og:url" content="https://senpng.github.io/2016/05/09/macos-installer/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
-Fusion">
-<meta property="og:updated_time" content="2016-05-16T07:07:23.000Z">
+<meta property="og:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
+<meta property="og:updated_time" content="2017-02-09T04:10:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac OS Installer">
-<meta name="twitter:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
-Fusion">
+<meta name="twitter:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
 
 
 
@@ -279,20 +277,25 @@ Fusion">
       
 
       
-        <h2 id="制作安装启动U盘">制作安装启动U盘</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line">sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction</span><br></pre></td></tr></table></figure>
-<h2 id="Fusion_Drive">Fusion Drive</h2><p>对于一些使用混合硬盘的Mac OS电脑，为了更好的<em>体验</em>，我们需要使用<code>Fusion Drive</code></p>
+        <h2 id="制作安装启动U盘"><a href="#制作安装启动U盘" class="headerlink" title="制作安装启动U盘"></a>制作安装启动U盘</h2><figure class="highlight shell"><table><tr><td class="code"><pre><div class="line">sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction</div></pre></td></tr></table></figure>
+<h2 id="Fusion-Drive"><a href="#Fusion-Drive" class="headerlink" title="Fusion Drive"></a>Fusion Drive</h2><p>对于一些使用混合硬盘的Mac OS电脑，为了更好的<em>体验</em>，我们需要使用<code>Fusion Drive</code></p>
 <ol>
 <li>首先我们需要格式化两块硬盘</li>
 <li><p>合并两块硬盘</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">diskutil list   //查看当前磁盘的详细信息</span><br><span class="line">diskutil cs create GroupName disk0 disk1  //合并磁盘</span><br><span class="line">//合并成功之后最后一行显示</span><br><span class="line">Core Storage LVG UUID: 【BBC6AD77-ADF2-<span class="number">40</span>EE-A1D0-<span class="number">68</span>BFE4913966】</span><br><span class="line">Finished CoreStorage operation</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">diskutil list   //查看当前磁盘的详细信息</div><div class="line">diskutil cs create GroupName disk0 disk1  //合并磁盘</div><div class="line">//合并成功之后最后一行显示</div><div class="line">Core Storage LVG UUID: 【BBC6AD77-ADF2-40EE-A1D0-68BFE4913966】</div><div class="line">Finished CoreStorage operation</div></pre></td></tr></table></figure>
 <p>需要复制这段<code>UUID</code>，之后会用到</p>
 </li>
 <li><p>建立<code>Fusion Drive</code></p>
-<pre><code class="bash">diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量
-diskutil coreStorage createVolume BBC6AD77-ADF2-<span class="number">40</span>EE-A1D0-<span class="number">68</span>BFE4913966 jhfs+ Name <span class="number">375</span>g //建立Fusion Drive 后面的容量大小不可大于实际可用容量
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">  diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量</div><div class="line">  diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ Name 375g //建立Fusion Drive 后面的容量大小不可大于实际可用容量</div><div class="line">  ```    </div><div class="line">  </div><div class="line"><span class="comment">## Fix Open Directory Will Not Turn On</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>sudo launchctl unload /System/LIbrary/LaunchDaemons/org.openldap.slapd.plist</p>
+<p>RepairPermissions /</p>
+<p>sudo db_recover -cv -h /var/db/openldap/openldap-data/</p>
+<p>sudo /usr/libexec/slapd -Tt</p>
+<p>sudo db_recover -cv -h /var/db/openldap/authdata/</p>
+<p>sudo /usr/libexec/slapd -Tt</p>
+<p>sudo launchctl load /System/LIbrary/LaunchDaemons/org.openldap.slapd.plist<br>```</p>
 
       
     </div>
@@ -401,7 +404,7 @@ diskutil coreStorage createVolume BBC6AD77-ADF2-<span class="number">40</span>EE
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -458,7 +461,7 @@ diskutil coreStorage createVolume BBC6AD77-ADF2-<span class="number">40</span>EE
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#制作安装启动U盘"><span class="nav-number">1.</span> <span class="nav-text">制作安装启动U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion_Drive"><span class="nav-number">2.</span> <span class="nav-text">Fusion Drive</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#制作安装启动U盘"><span class="nav-number">1.</span> <span class="nav-text">制作安装启动U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion-Drive"><span class="nav-number">2.</span> <span class="nav-text">Fusion Drive</span></a></li></ol></div>
             
           </div>
         </section>
@@ -477,7 +480,7 @@ diskutil coreStorage createVolume BBC6AD77-ADF2-<span class="number">40</span>EE
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

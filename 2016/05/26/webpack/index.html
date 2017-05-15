@@ -80,54 +80,19 @@
 
 
 
-<meta name="description" content="WebPack是什么
-
-一个打包工具
-一个模块加载工具
-各种资源都可以当成模块来处理
-网站 http://webpack.github.io/
-
-
-如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。
-对于模块的组织，通常有如下几种方法：
-
-通过书写在不同文件中，使用script标签进行加载
-CommonJS进">
+<meta name="description" content="WebPack是什么  一个打包工具 一个模块加载工具 各种资源都可以当成模块来处理 网站 http://webpack.github.io/   如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。 对于模块的组织，通常有如下几种方法：  通过书写在不同文件中，使用script标签进行加载 CommonJS进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack">
 <meta property="og:url" content="https://senpng.github.io/2016/05/26/webpack/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="WebPack是什么
-
-一个打包工具
-一个模块加载工具
-各种资源都可以当成模块来处理
-网站 http://webpack.github.io/
-
-
-如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。
-对于模块的组织，通常有如下几种方法：
-
-通过书写在不同文件中，使用script标签进行加载
-CommonJS进">
+<meta property="og:description" content="WebPack是什么  一个打包工具 一个模块加载工具 各种资源都可以当成模块来处理 网站 http://webpack.github.io/   如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。 对于模块的组织，通常有如下几种方法：  通过书写在不同文件中，使用script标签进行加载 CommonJS进">
 <meta property="og:image" content="https://senpng.github.io/images/webpack/webpack.png">
 <meta property="og:image" content="https://senpng.github.io/images/webpack/troubleshooting.png">
 <meta property="og:updated_time" content="2016-09-09T15:24:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack">
-<meta name="twitter:description" content="WebPack是什么
-
-一个打包工具
-一个模块加载工具
-各种资源都可以当成模块来处理
-网站 http://webpack.github.io/
-
-
-如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。
-对于模块的组织，通常有如下几种方法：
-
-通过书写在不同文件中，使用script标签进行加载
-CommonJS进">
+<meta name="twitter:description" content="WebPack是什么  一个打包工具 一个模块加载工具 各种资源都可以当成模块来处理 网站 http://webpack.github.io/   如今，越来越多的JavaScript代码被使用在页面上，我们添加很多的内容在浏览器里。如何去很好的组织这些代码，成为了一个必须要解决的难题。 对于模块的组织，通常有如下几种方法：  通过书写在不同文件中，使用script标签进行加载 CommonJS进">
+<meta name="twitter:image" content="https://senpng.github.io/images/webpack/webpack.png">
 
 
 
@@ -314,7 +279,7 @@ CommonJS进">
       
 
       
-        <h2 id="WebPack是什么">WebPack是什么</h2><blockquote>
+        <h2 id="WebPack是什么"><a href="#WebPack是什么" class="headerlink" title="WebPack是什么"></a>WebPack是什么</h2><blockquote>
 <ol>
 <li>一个打包工具</li>
 <li>一个模块加载工具</li>
@@ -341,13 +306,13 @@ CommonJS进">
 </ul>
 <p>从下图可以比较清晰的看出WebPack的功能</p>
 <p><img src="/images/webpack/webpack.png" alt="示意图"></p>
-<h3 id="特点">特点</h3><ol>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
 <li>丰富的插件，方便进行开发工作</li>
 <li>大量的加载器，包括加载各种静态资源</li>
 <li>代码分割，提供按需加载的能力</li>
 <li>发布工具</li>
 </ol>
-<h3 id="优势">优势</h3><blockquote>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><blockquote>
 <ul>
 <li>丰富的插件，方便进行开发工作</li>
 <li>大量的加载器，包括加载各种静态资源</li>
@@ -355,37 +320,37 @@ CommonJS进">
 <li>发布工具</li>
 </ul>
 </blockquote>
-<h2 id="安装">安装</h2><p>1.安装</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install webpack -g</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>1.安装</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install webpack -g</div></pre></td></tr></table></figure>
 <p>2.使用webpack</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm init <span class="comment"># 自动生成一个package.json文件</span></span><br><span class="line">$ npm install webpack --save-dev <span class="comment"># 将webpack增加到package.json文件中</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm init <span class="comment"># 自动生成一个package.json文件</span></div><div class="line">$ npm install webpack --save-dev <span class="comment"># 将webpack增加到package.json文件中</span></div></pre></td></tr></table></figure>
 <p>3.可以使用不同的版本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install webpack@<span class="number">1.2</span>.x --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install webpack@1.2.x --save-dev</div></pre></td></tr></table></figure>
 <p>4.如果想要安装开发工具</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install webpack-dev-server --save-dev</span><br></pre></td></tr></table></figure>
-<h2 id="配置">配置</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ npm install webpack-dev-server --save-dev</div></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
 <p>每个项目下都必须配置有一个 webpack.config.js ，它的作用如同常规的 gulpfile.js/Gruntfile.js ，就是一个配置项，告诉 webpack 它需要做什么。</p>
 </blockquote>
 <p>下面是一个例子</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</span><br><span class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//插件项</span></span><br><span class="line">    plugins: [commonsPlugin],</span><br><span class="line">    <span class="comment">//页面入口文件配置</span></span><br><span class="line">    entry: &#123;</span><br><span class="line">        index : <span class="string">'./src/js/page/index.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//入口文件输出配置</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: <span class="string">'dist/js/page'</span>,</span><br><span class="line">        filename: <span class="string">'[name].js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        <span class="comment">//加载器配置</span></span><br><span class="line">        loaders: [</span><br><span class="line">            &#123; test: <span class="regexp">/\.css$/</span>, loader: <span class="string">'style-loader!css-loader'</span> &#125;,</span><br><span class="line">            &#123; test: <span class="regexp">/\.js$/</span>, loader: <span class="string">'jsx-loader?harmony'</span> &#125;,</span><br><span class="line">            &#123; test: <span class="regexp">/\.scss$/</span>, loader: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</span><br><span class="line">            &#123; test: <span class="regexp">/\.(png|jpg)$/</span>, loader: <span class="string">'url-loader?limit=8192'</span>&#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//其它解决方案配置</span></span><br><span class="line">    resolve: &#123;</span><br><span class="line">        root: <span class="string">'E:/github/flux-example/src'</span>, <span class="comment">//绝对路径</span></span><br><span class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.scss'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            AppStore : <span class="string">'js/stores/AppStores.js'</span>,</span><br><span class="line">            ActionType : <span class="string">'js/actions/ActionType.js'</span>,</span><br><span class="line">            AppAction : <span class="string">'js/actions/AppAction.js'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> commonsPlugin = <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(<span class="string">'common.js'</span>);</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">//插件项</span></div><div class="line">    plugins: [commonsPlugin],</div><div class="line">    <span class="comment">//页面入口文件配置</span></div><div class="line">    entry: &#123;</div><div class="line">        <span class="attr">index</span> : <span class="string">'./src/js/page/index.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//入口文件输出配置</span></div><div class="line">    output: &#123;</div><div class="line">        <span class="attr">path</span>: <span class="string">'dist/js/page'</span>,</div><div class="line">        <span class="attr">filename</span>: <span class="string">'[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">module</span>: &#123;</div><div class="line">        <span class="comment">//加载器配置</span></div><div class="line">        loaders: [</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">'style-loader!css-loader'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">loader</span>: <span class="string">'jsx-loader?harmony'</span> &#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>, <span class="attr">loader</span>: <span class="string">'style!css!sass?sourceMap'</span>&#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.(png|jpg)$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=8192'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">//其它解决方案配置</span></div><div class="line">    resolve: &#123;</div><div class="line">        <span class="attr">root</span>: <span class="string">'E:/github/flux-example/src'</span>, <span class="comment">//绝对路径</span></div><div class="line">        extensions: [<span class="string">''</span>, <span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.scss'</span>],</div><div class="line">        <span class="attr">alias</span>: &#123;</div><div class="line">            <span class="attr">AppStore</span> : <span class="string">'js/stores/AppStores.js'</span>,</div><div class="line">            <span class="attr">ActionType</span> : <span class="string">'js/actions/ActionType.js'</span>,</div><div class="line">            <span class="attr">AppAction</span> : <span class="string">'js/actions/AppAction.js'</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <ol>
 <li>plugins 是插件项，这里我们使用了一个 CommonsChunkPlugin的插件，它用于提取多个入口文件的公共脚本部分，然后生成一个 common.js 来方便多页面之间进行复用。</li>
 <li>entry 是页面入口文件配置，output 是对应输出项配置 （即入口文件最终要生成什么名字的文件、存放到哪里）</li>
 <li>module.loaders 是最关键的一块配置。它告知 webpack 每一种文件都需要使用什么加载器来处理。 所有加载器需要使用npm来加载</li>
 <li>最后是 resolve 配置，配置查找模块的路径和扩展名和别名（方便书写）</li>
 </ol>
-<h2 id="使用">使用</h2><ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
 <li>正确安装了WebPack，方法可以参考上面</li>
 <li><p>书写app.js文件</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"看看如何让它工作！"</span>);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">document</span>.write(<span class="string">"看看如何让它工作！"</span>);</div></pre></td></tr></table></figure>
 </li>
 <li><p>书写index.html文件</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"bundle.js"</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"bundle.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol>
 <li><p>执行命令，生成bundle.js文件</p>
- <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ webpack ./entry.js bundle.js</span><br></pre></td></tr></table></figure>
+ <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ webpack ./entry.js bundle.js</div></pre></td></tr></table></figure>
 </li>
 <li><p>在浏览器中打开index.html文件，可以正常显示出预期</p>
 </li>
@@ -393,21 +358,21 @@ CommonJS进">
 <p><strong>使用加载器</strong></p>
 <ol>
 <li><p>增加style.css文件</p>
- <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="tag">body</span> <span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">background</span>: yellow;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>修改app.js文件</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">"!style!css!./style.css"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"看看如何让它工作！"</span>);</span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">"!style!css!./style.css"</span>);</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"看看如何让它工作！"</span>);</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol>
 <li><p>执行命令，安装加载器</p>
- <figure class="highlight"><table><tr><td class="code"><pre><span class="line">$ npm install css-loader style-loader   # 安装的时候不使用 -g</span><br></pre></td></tr></table></figure>
+ <figure class="highlight"><table><tr><td class="code"><pre><div class="line">$ npm install css-loader style-loader   # 安装的时候不使用 -g</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <ol>
 <li>执行webpack命令，运行查看效果</li>
 <li><p>可以在命令行中使用loader</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$ webpack ./entry.js bundle.js --<span class="built_in">module</span>-bind <span class="string">"css=style!css"</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">$ webpack ./entry.js bundle.js --<span class="built_in">module</span>-bind <span class="string">"css=style!css"</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p> <strong>使用配置文件</strong></p>
@@ -415,10 +380,10 @@ CommonJS进">
 <p>默认的配置文件为webpack.config.js</p>
 </blockquote>
 <p>增加webpack.config.js文件</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line"> entry: <span class="string">"./entry.js"</span>,</span><br><span class="line"> output: &#123;</span><br><span class="line">     path: __dirname,</span><br><span class="line">     filename: <span class="string">"bundle.js"</span></span><br><span class="line"> &#125;,</span><br><span class="line"> <span class="built_in">module</span>: &#123;</span><br><span class="line">     loaders: [</span><br><span class="line">         &#123; test: <span class="regexp">/\.css$/</span>, loader: <span class="string">"style!css"</span> &#125;</span><br><span class="line">     ]</span><br><span class="line"> &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line"> <span class="attr">entry</span>: <span class="string">"./entry.js"</span>,</div><div class="line"> <span class="attr">output</span>: &#123;</div><div class="line">     <span class="attr">path</span>: __dirname,</div><div class="line">     <span class="attr">filename</span>: <span class="string">"bundle.js"</span></div><div class="line"> &#125;,</div><div class="line"> <span class="attr">module</span>: &#123;</div><div class="line">     <span class="attr">loaders</span>: [</div><div class="line">         &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: <span class="string">"style!css"</span> &#125;</div><div class="line">     ]</div><div class="line"> &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>执行程序</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ webpack</span><br></pre></td></tr></table></figure>
-<h2 id="Webpack-dev-server">Webpack-dev-server</h2><blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ webpack</div></pre></td></tr></table></figure>
+<h2 id="Webpack-dev-server"><a href="#Webpack-dev-server" class="headerlink" title="Webpack-dev-server"></a>Webpack-dev-server</h2><blockquote>
 <p>webpack-dev-server是一个小型的node.js Express服务器,它使用webpack-dev-middleware中间件来为通过webpack打包生成的资源文件提供Web服务。它还有一个通过Socket.IO连接着webpack-dev-server服务器的小型运行时程序。webpack-dev-server发送关于编译状态的消息到客户端，客户端根据消息作出响应。</p>
 </blockquote>
 <p>简单来说，webpack-dev-server就是一个小型的静态文件服务器。使用它，可以为webpack打包生成的资源文件提供Web服务。那么，它能给开发带来什么便利呢？</p>
@@ -427,7 +392,7 @@ CommonJS进">
 <li>使用iframe模式无需额外的配置，只需在浏览器输入<br><a href="http://localhost:8080/webpack-dev-server/index.html" target="_blank" rel="external">http://localhost:8080/webpack-dev-server/index.html</a></li>
 <li><p>使用inline模式有两种方式：命令行方式和Node.js API。</p>
 <p>  1) 命令行方式比较简单，只需加入–line选项即可。例如：</p>
-  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">webpack-dev-server --inline</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">webpack-dev-server --inline</div></pre></td></tr></table></figure>
 <p>  使用–inline选项会自动把webpack-dev-server客户端加到webpack的入口文件配置中。</p>
 <p>  <strong>注意：</strong> 使用webpack-dev-server命令行的时候，会自动查找名为webpack.config.js的配置文件。如果你的配置文件名称不是webpack.config.js，需要在命令行中指明配置文件。例如，我的配置文件是webpack.config.dev.js：<code>webpack-dev-server --inline --config webpack.config.dev.js</code>。</p>
 <p>  2) Node.js API方式需要手动把<code>webpack-dev-server/client?http://localhost:8080</code>加到配置文件的入口文件配置处，因为webpack-dev-server没有<code>inline:true</code>这个配置项。</p>
@@ -436,7 +401,7 @@ CommonJS进">
 <p><strong>第二</strong> webpac-dev-server支持Hot Module Replacement，即模块热替换，在前端代码变动的时候无需整个刷新页面，只把变化的部分替换掉。使用HMR功能也有两种方式：命令行方式和Node.js API。</p>
 <ul>
 <li><p>命令行方式同样比较简单，只需加入–line –hot选项。–hot这个选项干了一件事情，它把<code>webpack/hot/dev-server</code>入口点加入到了webpack配置文件中。这时访问浏览器，你会看见控制台的log信息：</p>
-  <figure class="highlight prolog"><table><tr><td class="code"><pre><span class="line">[<span class="name">HMR</span>] <span class="name">Waiting</span> <span class="atom">for</span> <span class="atom">update</span> <span class="atom">signal</span> <span class="atom">from</span> <span class="name">WDS</span>...</span><br><span class="line">[<span class="name">WDS</span>] <span class="name">Hot</span> <span class="name">Module</span> <span class="name">Replacement</span> <span class="atom">enabled</span>.</span><br></pre></td></tr></table></figure>
+  <figure class="highlight prolog"><table><tr><td class="code"><pre><div class="line">[<span class="symbol">HMR</span>] <span class="symbol">Waiting</span> for update signal from <span class="symbol">WDS</span>...</div><div class="line">[<span class="symbol">WDS</span>] <span class="symbol">Hot</span> <span class="symbol">Module</span> <span class="symbol">Replacement</span> enabled.</div></pre></td></tr></table></figure>
 <p>  HMR前缀的信息由<code>webpack/hot/dev-server</code>模块产生，WDS前缀的信息由<code>webpack-dev-server</code>客户端产生。</p>
 </li>
 <li><p>Node.js API方式需要做三个配置：</p>
@@ -452,7 +417,7 @@ CommonJS进">
 <p>A module can only be updated if you “accept” it. So you need to module.hot.accept the module in the parents or the parents of the parents… I. e. a Router is a good place or a subview.</p>
 </blockquote>
 <p>具体的代码是：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">module</span>.hot)</span><br><span class="line">    <span class="built_in">module</span>.hot.accept();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">module</span>.hot)</div><div class="line">    <span class="built_in">module</span>.hot.accept();</div></pre></td></tr></table></figure>
 <p>也可以使用一些插件去完成这个工作，例如<code>webpack-module-hot-accept</code>插件。不过，webpack-dev-server HMR结合<code>react-hot-loader</code>使用的时候，<code>react-hot-loader</code>会去做这个工作。</p>
 <p>综合上述两点，使用<code>wepack-dev-server</code>辅助开发，使得开发者在开发前端代码的过程中无需频繁手动刷新页面，使用HMR甚至不用等待页面刷新，确实可以给开发者带来很好的体验。</p>
 <p>但是，问题又来了。我要进行前后端联调的时候怎么办呢？毕竟<code>webpack-dev-server</code>只是一个静态文件服务器，不具备动态处理的能力。这个时候就需要将后端服务器与<code>webpack-dev-server</code>结合使用了。<code>webpack-dev-server</code>只用来为webpack打包生成的资源文件提供服务，比如js文件、图片文件、css文件等；后端服务器除提供API接口外，还提供入口HTML。</p>
@@ -564,7 +529,7 @@ CommonJS进">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -640,7 +605,7 @@ CommonJS进">
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

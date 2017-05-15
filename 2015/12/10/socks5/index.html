@@ -80,22 +80,17 @@
 
 
 
-<meta name="description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
+<meta name="description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel 安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic ta">
+<meta name="keywords" content="Linux,socks5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Socks5搭建">
 <meta property="og:url" content="https://senpng.github.io/2015/12/10/socks5/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
+<meta property="og:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel 安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic ta">
 <meta property="og:updated_time" content="2015-12-18T11:06:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Socks5搭建">
-<meta name="twitter:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel
-安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic
-ta">
+<meta name="twitter:description" content="安装socks5安装依赖开发库yum install pam-devel openldap-devel openssl-devel 安装socks 5wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;amp;ts=1396802581&amp;amp;use_mirror=cznic ta">
 
 
 
@@ -282,35 +277,35 @@ ta">
       
 
       
-        <h2 id="安装socks5">安装socks5</h2><h3 id="安装依赖开发库">安装依赖开发库</h3><pre><code>yum <span class="keyword">install</span> pam-devel openldap-devel openssl-devel
-</code></pre><h3 id="安装socks_5">安装socks 5</h3><pre><code>wget http:<span class="comment">//downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;ts=1396802581&amp;use_mirror=cznic</span>
-tar -xzvf ss5-<span class="number">3.8</span><span class="number">.9</span>-<span class="number">8.</span>tar.gz
-cd ss5-<span class="number">3.8</span><span class="number">.9</span>
+        <h2 id="安装socks5"><a href="#安装socks5" class="headerlink" title="安装socks5"></a>安装socks5</h2><h3 id="安装依赖开发库"><a href="#安装依赖开发库" class="headerlink" title="安装依赖开发库"></a>安装依赖开发库</h3><pre><code>yum install pam-devel openldap-devel openssl-devel
+</code></pre><h3 id="安装socks-5"><a href="#安装socks-5" class="headerlink" title="安装socks 5"></a>安装socks 5</h3><pre><code>wget http://downloads.sourceforge.net/project/ss5/ss5/3.8.9-8/ss5-3.8.9-8.tar.gz?r=&amp;ts=1396802581&amp;use_mirror=cznic
+tar -xzvf ss5-3.8.9-8.tar.gz
+cd ss5-3.8.9
 ./configure
 make &amp;&amp; make install
-</code></pre><h2 id="socks_5配置">socks 5配置</h2><h3 id="修改配置文件">修改配置文件</h3><pre><code>vim /etc/opt/ss5/ss5.conf
+</code></pre><h2 id="socks-5配置"><a href="#socks-5配置" class="headerlink" title="socks 5配置"></a>socks 5配置</h2><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><pre><code>vim /etc/opt/ss5/ss5.conf
 
-auth <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – -
+auth 0.0.0.0/0 – -
 改为
-auth <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – u
+auth 0.0.0.0/0 – u
 
-permit – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – – – – -
+permit – 0.0.0.0/0 – 0.0.0.0/0 – – – – -
 改成为
-permit u <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">0</span> – – – – -
-</code></pre><h3 id="添加socket_5用户">添加socket 5用户</h3><pre><code>cat /etc/<span class="built_in">opt</span>/ss5/ss5.passwd
-<span class="preprocessor">#用户  密码</span>
-senpng <span class="number">123456</span>
-</code></pre><h2 id="启动socket_5">启动socket 5</h2><p>默认情况ss5文件没有执行权限</p>
-<pre><code>chmod <span class="keyword">u</span>+x /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/ss5
+permit u 0.0.0.0/0 – 0.0.0.0/0 – – – – -
+</code></pre><h3 id="添加socket-5用户"><a href="#添加socket-5用户" class="headerlink" title="添加socket 5用户"></a>添加socket 5用户</h3><pre><code>cat /etc/opt/ss5/ss5.passwd
+#用户  密码
+senpng 123456
+</code></pre><h2 id="启动socket-5"><a href="#启动socket-5" class="headerlink" title="启动socket 5"></a>启动socket 5</h2><p>默认情况ss5文件没有执行权限</p>
+<pre><code>chmod u+x /etc/rc.d/init.d/ss5
 </code></pre><p>启动</p>
-<pre><code><span class="keyword">sh</span> /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/ss5 start
+<pre><code>sh /etc/rc.d/init.d/ss5 start
 </code></pre><p>如果觉得使用sh来启动麻烦，那么按如下方法：</p>
-<pre><code>chkconfig <span class="comment">--add ss5 //可选</span>
-chkconfig ss5 <span class="command"><span class="keyword">on</span> //可选</span>
-service ss5 <span class="built_in">start</span>
+<pre><code>chkconfig --add ss5 //可选
+chkconfig ss5 on //可选
+service ss5 start
 </code></pre><p>查看是否启动</p>
 <pre><code>netstat -lntp  | grep ss5
-tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">1080</span>   <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:*      LISTEN      <span class="number">14262</span>/ss5
+tcp        0      0 0.0.0.0:1080   0.0.0.0:*      LISTEN      14262/ss5
 </code></pre><p>默认端口1080</p>
 
       
@@ -422,7 +417,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -479,7 +474,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装socks5"><span class="nav-number">1.</span> <span class="nav-text">安装socks5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖开发库"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖开发库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装socks_5"><span class="nav-number">1.2.</span> <span class="nav-text">安装socks 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socks_5配置"><span class="nav-number">2.</span> <span class="nav-text">socks 5配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加socket_5用户"><span class="nav-number">2.2.</span> <span class="nav-text">添加socket 5用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动socket_5"><span class="nav-number">3.</span> <span class="nav-text">启动socket 5</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装socks5"><span class="nav-number">1.</span> <span class="nav-text">安装socks5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖开发库"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖开发库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装socks-5"><span class="nav-number">1.2.</span> <span class="nav-text">安装socks 5</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#socks-5配置"><span class="nav-number">2.</span> <span class="nav-text">socks 5配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加socket-5用户"><span class="nav-number">2.2.</span> <span class="nav-text">添加socket 5用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动socket-5"><span class="nav-number">3.</span> <span class="nav-text">启动socket 5</span></a></li></ol></div>
             
           </div>
         </section>
@@ -498,7 +493,7 @@ tcp        <span class="number">0</span>      <span class="number">0</span> <spa
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

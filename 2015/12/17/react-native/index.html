@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,React,iOS," />
+  <meta name="keywords" content="iOS,React,Android," />
 
 
 
@@ -80,22 +80,17 @@
 
 
 
-<meta name="description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。
-
-Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
+<meta name="description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。  Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
+<meta name="keywords" content="iOS,React,Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native学习笔记">
 <meta property="og:url" content="https://senpng.github.io/2015/12/17/react-native/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。
-
-Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
+<meta property="og:description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。  Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
 <meta property="og:updated_time" content="2016-03-23T06:25:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native学习笔记">
-<meta name="twitter:description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。
-
-Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
+<meta name="twitter:description" content="踩过的一些坑React 使用ES6+语法时 事件绑定疑惑在JavaScript中经常会遇到this的问题，非ES6语法写React大多时候是不用担心this的问题，因为React自动绑定了。  Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its">
 
 
 
@@ -282,7 +277,7 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
       
 
       
-        <h2 id="踩过的一些坑">踩过的一些坑</h2><h3 id="React_使用ES6+语法时_事件绑定疑惑">React 使用ES6+语法时 事件绑定疑惑</h3><p>在JavaScript中经常会遇到<code>this</code>的问题，非ES6语法写React大多时候是不用担心<code>this</code>的问题，因为React自动绑定了。</p>
+        <h2 id="踩过的一些坑"><a href="#踩过的一些坑" class="headerlink" title="踩过的一些坑"></a>踩过的一些坑</h2><h3 id="React-使用ES6-语法时-事件绑定疑惑"><a href="#React-使用ES6-语法时-事件绑定疑惑" class="headerlink" title="React 使用ES6+语法时 事件绑定疑惑"></a>React 使用ES6+语法时 事件绑定疑惑</h3><p>在JavaScript中经常会遇到<code>this</code>的问题，非ES6语法写React大多时候是不用担心<code>this</code>的问题，因为React自动绑定了。</p>
 <blockquote>
 <p>Autobinding: When creating callbacks in JavaScript, you usually need to explicitly bind a method to its instance such that the value of this is correct. With React, every method is automatically bound to its component instance. React caches the bound method such that it’s extremely CPU and memory efficient. It’s also less typing!</p>
 </blockquote>
@@ -291,14 +286,14 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
 <p>No Autobinding<br>Methods follow the same semantics as regular ES6 classes,meaning that they don’t automatically bind <code>this</code> to the instance.You’ll have to explicitly use <code>.bind(this)</code> or arrow functions <code>=&gt;</code></p>
 </blockquote>
 <p>第一种</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">_handleClick(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">onClick</span>=<span class="value">&#123;this._handleClick.bind(this)&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">_handleClick(e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">h1</span> <span class="attr">onClick</span>=<span class="string">&#123;this._handleClick.bind(this)&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>第二种</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>._handleClick = <span class="keyword">this</span>._handleClick.bind(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">_handleClick(e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">onClick</span>=<span class="value">&#123;this._handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第三种<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用箭头函数(arrow function)</span></span><br><span class="line">_handleClick = (e) =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">onClick</span>=<span class="value">&#123;this._handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="关于sendInputEventWithName事件名自定义。">关于<code>sendInputEventWithName</code>事件名自定义。</h3><p>第一种<br>需要重写<code>customDirectEventTypes</code> 或者 <code>customBubblingEventTypes</code>添加自定义事件名称</p>
-<p>第二种<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">RCT_CUSTOM_VIEW_PROPERTY(&#33258;&#23450;&#20041;&#20107;&#20214;&#21517;&#31216;, RCTDirectEventBlock, &#33258;&#23450;&#20041;Manager)&#10;&#123;&#10;&#125;&#10;or&#10;RCT_CUSTOM_VIEW_PROPERTY(&#33258;&#23450;&#20041;&#20107;&#20214;&#21517;&#31216;, RCTBubblingEventBlock, &#33258;&#23450;&#20041;Manager)&#10;&#123;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">this</span>._handleClick = <span class="keyword">this</span>._handleClick.bind(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line">_handleClick(e) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">h1</span> <span class="attr">onClick</span>=<span class="string">&#123;this._handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>第三种<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 使用箭头函数(arrow function)</span></div><div class="line">_handleClick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">h1</span> <span class="attr">onClick</span>=<span class="string">&#123;this._handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="关于sendInputEventWithName事件名自定义。"><a href="#关于sendInputEventWithName事件名自定义。" class="headerlink" title="关于sendInputEventWithName事件名自定义。"></a>关于<code>sendInputEventWithName</code>事件名自定义。</h3><p>第一种<br>需要重写<code>customDirectEventTypes</code> 或者 <code>customBubblingEventTypes</code>添加自定义事件名称</p>
+<p>第二种<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">RCT_CUSTOM_VIEW_PROPERTY(自定义事件名称, RCTDirectEventBlock, 自定义Manager)</div><div class="line">&#123;</div><div class="line">&#125;</div><div class="line">or</div><div class="line">RCT_CUSTOM_VIEW_PROPERTY(自定义事件名称, RCTBubblingEventBlock, 自定义Manager)</div><div class="line">&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><code>RCTDirectEventBlock</code>:直接事件,这种事件类型作为不影响UI的一些事件，比如“图片加载失败”。<br><code>RCTBubblingEventBlock</code>:冒泡事件,就和操作DOM一样，影响UI的事件，比如“点击按钮事件”。</p>
-<h2 id="未完待续">未完待续</h2>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
       
     </div>
 
@@ -319,11 +314,11 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/iOS/" rel="tag">#iOS</a>
           
             <a href="/tags/React/" rel="tag">#React</a>
           
-            <a href="/tags/iOS/" rel="tag">#iOS</a>
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
         </div>
       
@@ -410,7 +405,7 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -467,7 +462,7 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#踩过的一些坑"><span class="nav-number">1.</span> <span class="nav-text">踩过的一些坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React_使用ES6+语法时_事件绑定疑惑"><span class="nav-number">1.1.</span> <span class="nav-text">React 使用ES6+语法时 事件绑定疑惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于sendInputEventWithName事件名自定义。"><span class="nav-number">1.2.</span> <span class="nav-text">关于sendInputEventWithName事件名自定义。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">2.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#踩过的一些坑"><span class="nav-number">1.</span> <span class="nav-text">踩过的一些坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-使用ES6-语法时-事件绑定疑惑"><span class="nav-number">1.1.</span> <span class="nav-text">React 使用ES6+语法时 事件绑定疑惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于sendInputEventWithName事件名自定义。"><span class="nav-number">1.2.</span> <span class="nav-text">关于sendInputEventWithName事件名自定义。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">2.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
             
           </div>
         </section>
@@ -486,7 +481,7 @@ Autobinding: When creating callbacks in JavaScript, you usually need to explicit
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -80,25 +80,17 @@
 
 
 
-<meta name="description" content="安装brew install nvm
-安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4
-查看已经安装的node版本nvm ls
-更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
+<meta name="description" content="安装brew install nvm 安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4 查看已经安装的node版本nvm ls 更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
+<meta name="keywords" content="Node">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node版本管理器:NVM">
 <meta property="og:url" content="https://senpng.github.io/2016/01/14/nvm/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
-<meta property="og:description" content="安装brew install nvm
-安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4
-查看已经安装的node版本nvm ls
-更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
+<meta property="og:description" content="安装brew install nvm 安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4 查看已经安装的node版本nvm ls 更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
 <meta property="og:updated_time" content="2016-01-14T10:09:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node版本管理器:NVM">
-<meta name="twitter:description" content="安装brew install nvm
-安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4
-查看已经安装的node版本nvm ls
-更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
+<meta name="twitter:description" content="安装brew install nvm 安装多版本nodenvm install node &amp;amp;&amp;amp; node alias default node //安装最新node并设置为默认的版本nvm install v4 查看已经安装的node版本nvm ls 更多命令Node Version ManagerNote: &amp;lt;version&amp;gt; refers to any versio">
 
 
 
@@ -285,10 +277,10 @@
       
 
       
-        <h3 id="安装">安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install nvm</span><br></pre></td></tr></table></figure>
-<h3 id="安装多版本node">安装多版本node</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvm install node &amp;&amp; node <span class="built_in">alias</span> default node //安装最新node并设置为默认的版本</span><br><span class="line">nvm install v4</span><br></pre></td></tr></table></figure>
-<h3 id="查看已经安装的node版本">查看已经安装的node版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nvm ls</span><br></pre></td></tr></table></figure>
-<h3 id="更多命令">更多命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Node Version Manager</span><br><span class="line"></span><br><span class="line">Note: &lt;version&gt; refers to any version-like string nvm understands. This includes:</span><br><span class="line">  - full or partial version numbers, starting with an optional <span class="string">"v"</span> (<span class="number">0.10</span>, v0.<span class="number">1.2</span>, v1)</span><br><span class="line">  - default (built-in) aliases: node, stable, unstable, iojs, system</span><br><span class="line">  - custom aliases you define with `nvm <span class="built_in">alias</span> foo`</span><br><span class="line"></span><br><span class="line">Usage:</span><br><span class="line">  nvm <span class="built_in">help</span>                                  Show this message</span><br><span class="line">  nvm --version                             Print out the latest released version of nvm</span><br><span class="line">  nvm install [<span class="operator">-s</span>] &lt;version&gt;                Download and install a &lt;version&gt;, [<span class="operator">-s</span>] from source. Uses .nvmrc <span class="keyword">if</span> available</span><br><span class="line">    --reinstall-packages-from=&lt;version&gt;     When installing, reinstall packages installed <span class="keyword">in</span> &lt;node|iojs|node version number&gt;</span><br><span class="line">  nvm uninstall &lt;version&gt;                   Uninstall a version</span><br><span class="line">  nvm use [--silent] &lt;version&gt;              Modify PATH to use &lt;version&gt;. Uses .nvmrc <span class="keyword">if</span> available</span><br><span class="line">  nvm <span class="built_in">exec</span> [--silent] &lt;version&gt; [&lt;<span class="built_in">command</span>&gt;] Run &lt;<span class="built_in">command</span>&gt; on &lt;version&gt;. Uses .nvmrc <span class="keyword">if</span> available</span><br><span class="line">  nvm run [--silent] &lt;version&gt; [&lt;args&gt;]     Run `node` on &lt;version&gt; with &lt;args&gt; as arguments. Uses .nvmrc <span class="keyword">if</span> available</span><br><span class="line">  nvm current                               Display currently activated version</span><br><span class="line">  nvm ls                                    List installed versions</span><br><span class="line">  nvm ls &lt;version&gt;                          List versions matching a given description</span><br><span class="line">  nvm ls-remote                             List remote versions available <span class="keyword">for</span> install</span><br><span class="line">  nvm version &lt;version&gt;                     Resolve the given description to a single <span class="built_in">local</span> version</span><br><span class="line">  nvm version-remote &lt;version&gt;              Resolve the given description to a single remote version</span><br><span class="line">  nvm deactivate                            Undo effects of `nvm` on current shell</span><br><span class="line">  nvm <span class="built_in">alias</span> [&lt;pattern&gt;]                     Show all aliases beginning with &lt;pattern&gt;</span><br><span class="line">  nvm <span class="built_in">alias</span> &lt;name&gt; &lt;version&gt;                Set an <span class="built_in">alias</span> named &lt;name&gt; pointing to &lt;version&gt;</span><br><span class="line">  nvm <span class="built_in">unalias</span> &lt;name&gt;                        Deletes the <span class="built_in">alias</span> named &lt;name&gt;</span><br><span class="line">  nvm reinstall-packages &lt;version&gt;          Reinstall global `npm` packages contained <span class="keyword">in</span> &lt;version&gt; to current version</span><br><span class="line">  nvm unload                                Unload `nvm` from shell</span><br><span class="line">  nvm <span class="built_in">which</span> [&lt;version&gt;]                     Display path to installed node version. Uses .nvmrc <span class="keyword">if</span> available</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">  nvm install v0.<span class="number">10.32</span>                  Install a specific version number</span><br><span class="line">  nvm use <span class="number">0.10</span>                          Use the latest available <span class="number">0.10</span>.x release</span><br><span class="line">  nvm run <span class="number">0.10</span>.<span class="number">32</span> app.js                Run app.js using node v0.<span class="number">10.32</span></span><br><span class="line">  nvm <span class="built_in">exec</span> <span class="number">0.10</span>.<span class="number">32</span> node app.js          Run `node app.js` with the PATH pointing to node v0.<span class="number">10.32</span></span><br><span class="line">  nvm <span class="built_in">alias</span> default <span class="number">0.10</span>.<span class="number">32</span>             Set default node version on a shell</span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line">  to remove, delete, or uninstall nvm - just remove the `<span class="variable">$NVM_DIR</span>` folder (usually `~/.nvm`)</span><br></pre></td></tr></table></figure>
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew install nvm</div></pre></td></tr></table></figure>
+<h3 id="安装多版本node"><a href="#安装多版本node" class="headerlink" title="安装多版本node"></a>安装多版本node</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">nvm install node &amp;&amp; node <span class="built_in">alias</span> default node //安装最新node并设置为默认的版本</div><div class="line">nvm install v4</div></pre></td></tr></table></figure>
+<h3 id="查看已经安装的node版本"><a href="#查看已经安装的node版本" class="headerlink" title="查看已经安装的node版本"></a>查看已经安装的node版本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">nvm ls</div></pre></td></tr></table></figure>
+<h3 id="更多命令"><a href="#更多命令" class="headerlink" title="更多命令"></a>更多命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">Node Version Manager</div><div class="line"></div><div class="line">Note: &lt;version&gt; refers to any version-like string nvm understands. This includes:</div><div class="line">  - full or partial version numbers, starting with an optional <span class="string">"v"</span> (0.10, v0.1.2, v1)</div><div class="line">  - default (built-in) aliases: node, stable, unstable, iojs, system</div><div class="line">  - custom aliases you define with `nvm <span class="built_in">alias</span> foo`</div><div class="line"></div><div class="line">Usage:</div><div class="line">  nvm <span class="built_in">help</span>                                  Show this message</div><div class="line">  nvm --version                             Print out the latest released version of nvm</div><div class="line">  nvm install [<span class="_">-s</span>] &lt;version&gt;                Download and install a &lt;version&gt;, [<span class="_">-s</span>] from source. Uses .nvmrc <span class="keyword">if</span> available</div><div class="line">    --reinstall-packages-from=&lt;version&gt;     When installing, reinstall packages installed <span class="keyword">in</span> &lt;node|iojs|node version number&gt;</div><div class="line">  nvm uninstall &lt;version&gt;                   Uninstall a version</div><div class="line">  nvm use [--silent] &lt;version&gt;              Modify PATH to use &lt;version&gt;. Uses .nvmrc <span class="keyword">if</span> available</div><div class="line">  nvm <span class="built_in">exec</span> [--silent] &lt;version&gt; [&lt;<span class="built_in">command</span>&gt;] Run &lt;<span class="built_in">command</span>&gt; on &lt;version&gt;. Uses .nvmrc <span class="keyword">if</span> available</div><div class="line">  nvm run [--silent] &lt;version&gt; [&lt;args&gt;]     Run `node` on &lt;version&gt; with &lt;args&gt; as arguments. Uses .nvmrc <span class="keyword">if</span> available</div><div class="line">  nvm current                               Display currently activated version</div><div class="line">  nvm ls                                    List installed versions</div><div class="line">  nvm ls &lt;version&gt;                          List versions matching a given description</div><div class="line">  nvm ls-remote                             List remote versions available <span class="keyword">for</span> install</div><div class="line">  nvm version &lt;version&gt;                     Resolve the given description to a single <span class="built_in">local</span> version</div><div class="line">  nvm version-remote &lt;version&gt;              Resolve the given description to a single remote version</div><div class="line">  nvm deactivate                            Undo effects of `nvm` on current shell</div><div class="line">  nvm <span class="built_in">alias</span> [&lt;pattern&gt;]                     Show all aliases beginning with &lt;pattern&gt;</div><div class="line">  nvm <span class="built_in">alias</span> &lt;name&gt; &lt;version&gt;                Set an <span class="built_in">alias</span> named &lt;name&gt; pointing to &lt;version&gt;</div><div class="line">  nvm <span class="built_in">unalias</span> &lt;name&gt;                        Deletes the <span class="built_in">alias</span> named &lt;name&gt;</div><div class="line">  nvm reinstall-packages &lt;version&gt;          Reinstall global `npm` packages contained <span class="keyword">in</span> &lt;version&gt; to current version</div><div class="line">  nvm unload                                Unload `nvm` from shell</div><div class="line">  nvm <span class="built_in">which</span> [&lt;version&gt;]                     Display path to installed node version. Uses .nvmrc <span class="keyword">if</span> available</div><div class="line"></div><div class="line">Example:</div><div class="line">  nvm install v0.10.32                  Install a specific version number</div><div class="line">  nvm use 0.10                          Use the latest available 0.10.x release</div><div class="line">  nvm run 0.10.32 app.js                Run app.js using node v0.10.32</div><div class="line">  nvm <span class="built_in">exec</span> 0.10.32 node app.js          Run `node app.js` with the PATH pointing to node v0.10.32</div><div class="line">  nvm <span class="built_in">alias</span> default 0.10.32             Set default node version on a shell</div><div class="line"></div><div class="line">Note:</div><div class="line">  to remove, delete, or uninstall nvm - just remove the `<span class="variable">$NVM_DIR</span>` folder (usually `~/.nvm`)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -318,8 +310,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/18/git/" rel="next" title="Git常用命令">
-                <i class="fa fa-chevron-left"></i> Git常用命令
+              <a href="/2015/12/18/index/" rel="next" title="简介">
+                <i class="fa fa-chevron-left"></i> 简介
               </a>
             
           </div>
@@ -396,7 +388,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -472,7 +464,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

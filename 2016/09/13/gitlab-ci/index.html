@@ -86,7 +86,7 @@
 <meta property="og:url" content="https://senpng.github.io/2016/09/13/gitlab-ci/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
 <meta property="og:description" content="iOS 自动打包发布持续集成系统使用 xcodebuild 和 xctool安装xctool:brew install xctoolxctool -workspace &quot;./ios/AppDemo.xcworkspace&quot; -scheme &quot;AppDemo&quot; -sdk iphoneos archive -archivePath &quot;./build/AppDemo.xcarchive&quot; -config">
-<meta property="og:updated_time" content="2016-09-14T09:04:15.000Z">
+<meta property="og:updated_time" content="2016-09-27T05:46:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 自动打包发布持续集成系统">
 <meta name="twitter:description" content="iOS 自动打包发布持续集成系统使用 xcodebuild 和 xctool安装xctool:brew install xctoolxctool -workspace &quot;./ios/AppDemo.xcworkspace&quot; -scheme &quot;AppDemo&quot; -sdk iphoneos archive -archivePath &quot;./build/AppDemo.xcarchive&quot; -config">
@@ -276,8 +276,8 @@
       
 
       
-        <h2 id="iOS_自动打包发布持续集成系统">iOS 自动打包发布持续集成系统</h2><h3 id="使用_xcodebuild_和_xctool">使用 xcodebuild 和 xctool</h3><p>安装<code>xctool</code>:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install xctool</span><br><span class="line">xctool -workspace <span class="string">"./ios/AppDemo.xcworkspace"</span> -scheme <span class="string">"AppDemo"</span> -sdk iphoneos archive -archivePath <span class="string">"./build/AppDemo.xcarchive"</span> -configuration Release</span><br></pre></td></tr></table></figure></p>
-<p>导出IPA:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xcodebuild -exportArchive -archivePath <span class="string">"./build/AppDemo.xcarchive"</span> -exportPath <span class="string">"./build/AppDemo.ipa"</span> -exportOptionsPlist <span class="string">"./scripts/ExportOptions.plist"</span> CODE_SIGN_IDENTITY=<span class="string">"iPhone Distribution: xxxxxxxx"</span> PROVISIONING_PROFILE=<span class="string">"xxxx-xxxx-xxxx-xxxx-xxxx"</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="iOS-自动打包发布持续集成系统"><a href="#iOS-自动打包发布持续集成系统" class="headerlink" title="iOS 自动打包发布持续集成系统"></a>iOS 自动打包发布持续集成系统</h2><h3 id="使用-xcodebuild-和-xctool"><a href="#使用-xcodebuild-和-xctool" class="headerlink" title="使用 xcodebuild 和 xctool"></a>使用 xcodebuild 和 xctool</h3><p>安装<code>xctool</code>:<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">brew install xctool</div><div class="line">xctool -workspace <span class="string">"./ios/AppDemo.xcworkspace"</span> -scheme <span class="string">"AppDemo"</span> -sdk iphoneos archive -archivePath <span class="string">"./build/AppDemo.xcarchive"</span> -configuration Release</div></pre></td></tr></table></figure></p>
+<p>导出IPA:<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">xcodebuild -exportArchive -archivePath <span class="string">"./build/AppDemo.xcarchive"</span> -exportPath <span class="string">"./build/AppDemo.ipa"</span> -exportOptionsPlist <span class="string">"./scripts/ExportOptions.plist"</span> CODE_SIGN_IDENTITY=<span class="string">"iPhone Distribution: xxxxxxxx"</span> PROVISIONING_PROFILE=<span class="string">"xxxx-xxxx-xxxx-xxxx-xxxx"</span></div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -380,7 +380,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -437,7 +437,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS_自动打包发布持续集成系统"><span class="nav-number">1.</span> <span class="nav-text">iOS 自动打包发布持续集成系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用_xcodebuild_和_xctool"><span class="nav-number">1.1.</span> <span class="nav-text">使用 xcodebuild 和 xctool</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS-自动打包发布持续集成系统"><span class="nav-number">1.</span> <span class="nav-text">iOS 自动打包发布持续集成系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-xcodebuild-和-xctool"><span class="nav-number">1.1.</span> <span class="nav-text">使用 xcodebuild 和 xctool</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -456,7 +456,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
