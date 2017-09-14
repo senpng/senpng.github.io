@@ -87,7 +87,7 @@
 <meta property="og:url" content="https://senpng.github.io/2016/05/09/macos-installer/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
 <meta property="og:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
-<meta property="og:updated_time" content="2017-02-09T04:10:43.000Z">
+<meta property="og:updated_time" content="2017-09-14T09:26:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac OS Installer">
 <meta name="twitter:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
@@ -286,7 +286,7 @@
 <p>需要复制这段<code>UUID</code>，之后会用到</p>
 </li>
 <li><p>建立<code>Fusion Drive</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">  diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量</div><div class="line">  diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ Name 375g //建立Fusion Drive 后面的容量大小不可大于实际可用容量</div><div class="line">  ```    </div><div class="line">  </div><div class="line"><span class="comment">## Fix Open Directory Will Not Turn On</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">  diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量</div><div class="line">  diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ Name 375g //建立Fusion Drive 后面的容量大小不可大于实际可用容量</div><div class="line">  ```    </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="comment">## Fix Open Directory Will Not Turn On</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>sudo launchctl unload /System/LIbrary/LaunchDaemons/org.openldap.slapd.plist</p>
