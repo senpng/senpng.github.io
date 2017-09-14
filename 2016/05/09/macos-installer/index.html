@@ -87,7 +87,7 @@
 <meta property="og:url" content="https://senpng.github.io/2016/05/09/macos-installer/index.html">
 <meta property="og:site_name" content="SenPng的技术博客">
 <meta property="og:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
-<meta property="og:updated_time" content="2017-09-14T09:26:53.000Z">
+<meta property="og:updated_time" content="2017-09-14T09:31:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac OS Installer">
 <meta name="twitter:description" content="制作安装启动U盘sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/OSX --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction Fusion">
@@ -286,16 +286,10 @@
 <p>需要复制这段<code>UUID</code>，之后会用到</p>
 </li>
 <li><p>建立<code>Fusion Drive</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">  diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量</div><div class="line">  diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ Name 375g //建立Fusion Drive 后面的容量大小不可大于实际可用容量</div><div class="line">  ```    </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="comment">## Fix Open Directory Will Not Turn On</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">diskutil cs list    //查看逻辑磁盘状态 查看实际可用容量</div><div class="line">diskutil coreStorage createVolume BBC6AD77-ADF2-40EE-A1D0-68BFE4913966 jhfs+ Name 375g //建立Fusion Drive 后面的容量大小不可大于实际可用容量</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>sudo launchctl unload /System/LIbrary/LaunchDaemons/org.openldap.slapd.plist</p>
-<p>RepairPermissions /</p>
-<p>sudo db_recover -cv -h /var/db/openldap/openldap-data/</p>
-<p>sudo /usr/libexec/slapd -Tt</p>
-<p>sudo db_recover -cv -h /var/db/openldap/authdata/</p>
-<p>sudo /usr/libexec/slapd -Tt</p>
-<p>sudo launchctl load /System/LIbrary/LaunchDaemons/org.openldap.slapd.plist<br>```</p>
+<h2 id="Fix-Open-Directory-Will-Not-Turn-On"><a href="#Fix-Open-Directory-Will-Not-Turn-On" class="headerlink" title="Fix Open Directory Will Not Turn On"></a>Fix Open Directory Will Not Turn On</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><div class="line">sudo launchctl unload <span class="regexp">/System/</span>LIbrary<span class="regexp">/LaunchDaemons/</span>org.openldap.slapd.plist</div><div class="line"></div><div class="line">RepairPermissions /</div><div class="line"></div><div class="line">sudo db_recover -cv -h <span class="regexp">/var/</span>db<span class="regexp">/openldap/</span>openldap-data/</div><div class="line"></div><div class="line">sudo <span class="regexp">/usr/</span>libexec/slapd -Tt</div><div class="line"></div><div class="line">sudo db_recover -cv -h <span class="regexp">/var/</span>db<span class="regexp">/openldap/</span>authdata/</div><div class="line"></div><div class="line">sudo <span class="regexp">/usr/</span>libexec/slapd -Tt</div><div class="line"></div><div class="line">sudo launchctl load <span class="regexp">/System/</span>LIbrary<span class="regexp">/LaunchDaemons/</span>org.openldap.slapd.plist</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -461,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#制作安装启动U盘"><span class="nav-number">1.</span> <span class="nav-text">制作安装启动U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion-Drive"><span class="nav-number">2.</span> <span class="nav-text">Fusion Drive</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#制作安装启动U盘"><span class="nav-number">1.</span> <span class="nav-text">制作安装启动U盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fusion-Drive"><span class="nav-number">2.</span> <span class="nav-text">Fusion Drive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fix-Open-Directory-Will-Not-Turn-On"><span class="nav-number">3.</span> <span class="nav-text">Fix Open Directory Will Not Turn On</span></a></li></ol></div>
             
           </div>
         </section>
